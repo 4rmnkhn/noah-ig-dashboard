@@ -36,6 +36,11 @@ FORMAT_COLORS = {
     "Other":        "#9ca3af",
 }
 
+def hex_rgba(hex_color: str, alpha: float) -> str:
+    h = hex_color.lstrip("#")
+    r, g, b = int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16)
+    return f"rgba({r},{g},{b},{alpha})"
+
 # ── CSS injection ─────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
@@ -534,13 +539,13 @@ with fc1:
     fig3.add_trace(go.Bar(
         y=fmt_labels_list, x=fmt_avg_views, name="Avg Views",
         orientation="h",
-        marker=dict(color=[c + "d0" for c in fmt_bar_colors]),
+        marker=dict(color=[hex_rgba(c, 0.82) for c in fmt_bar_colors]),
         hovertemplate="%{y}: %{x:,} avg views<extra></extra>",
     ))
     fig3.add_trace(go.Bar(
         y=fmt_labels_list, x=fmt_avg_saves, name="Avg Saves",
         orientation="h",
-        marker=dict(color=[c + "55" for c in fmt_bar_colors]),
+        marker=dict(color=[hex_rgba(c, 0.33) for c in fmt_bar_colors]),
         hovertemplate="%{y}: %{x} avg saves<extra></extra>",
     ))
     apply_style(fig3, height=200)
