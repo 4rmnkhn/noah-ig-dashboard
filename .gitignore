@@ -1,0 +1,20 @@
+# Secrets / auth
+instagram_cookies.txt
+ig_session.json
+yt_client_secrets.json
+yt_token.json
+model-magnet-*.json
+
+# Local data
+*.csv
+__pycache__/
+*.pyc
+discord_processed_ids.json
+dashboard.html
+
+# Auth packs (never share)
+noah_auth_pack/
+noah_auth_pack.zip
+
+# Everything except what Streamlit Cloud needs
+# metrics.json IS pushed (via GitHub API by sync_ig_metrics.py), so NOT ignored
