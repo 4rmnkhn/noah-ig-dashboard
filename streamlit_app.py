@@ -46,20 +46,50 @@ st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
-html, body, [class*="css"] { font-family: 'Inter', system-ui, sans-serif !important; }
+html, body, .stApp, [data-testid="stAppViewContainer"], [data-testid="stApp"],
+[data-testid="stApp"] *, [data-testid="stMarkdownContainer"] *,
+.stMarkdown, .stMarkdown *,
+button, input, textarea, select, span, div, p, h1, h2, h3, h4, h5, h6, td, th, a {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+}
 
 #MainMenu, footer, header { visibility: hidden; }
 .stApp { background: #07070b !important; }
 .block-container { padding: 28px 36px 48px !important; max-width: 1580px !important; }
 
-/* Plotly chart containers */
-.stPlotlyChart { border-radius: 16px; overflow: hidden; }
+/* Kill scrollbars on every Streamlit wrapper that might clip a chart */
+[data-testid="stPlotlyChart"],
+[data-testid="element-container"],
+[data-testid="stVerticalBlock"],
+[data-testid="stVerticalBlockBorderWrapper"],
+[data-testid="column"],
+.stPlotlyChart,
+.js-plotly-plot,
+.plot-container,
+.svg-container,
+.user-select-none {
+    overflow: visible !important;
+}
+
+/* Plotly chart containers — styled as cards */
+[data-testid="stPlotlyChart"] {
+    background: #0d0d14;
+    border: 1px solid rgba(255,255,255,0.075);
+    border-radius: 16px;
+    padding: 18px 20px 14px;
+}
+[data-testid="stPlotlyChart"] > div { border-radius: 0; }
 
 /* Section headers */
 .nh-sec {
-    font-size: 10.5px; font-weight: 700; color: #444458;
+    font-size: 10.5px; font-weight: 700; color: #525268;
     text-transform: uppercase; letter-spacing: 1.5px;
-    margin: 0 0 13px;
+    margin: 0 0 8px;
+}
+/* Section label that sits directly above a chart card — pulled in tight */
+.nh-sec.chart-lbl {
+    margin: 0 0 8px;
+    padding-left: 2px;
 }
 
 /* Hero cards */
@@ -153,6 +183,39 @@ html, body, [class*="css"] { font-family: 'Inter', system-ui, sans-serif !import
 
 /* Divider */
 .nh-div { height: 1px; background: rgba(255,255,255,0.04); margin: 22px 0; }
+
+/* All-reels table */
+.nh-tbl-wrap {
+    background: #0d0d14;
+    border: 1px solid rgba(255,255,255,0.075);
+    border-radius: 16px;
+    padding: 4px 6px;
+    max-height: 520px;
+    overflow-y: auto;
+}
+.nh-tbl { width: 100%; border-collapse: collapse; font-size: 12px; }
+.nh-tbl thead th {
+    position: sticky; top: 0; background: #0d0d14;
+    color: #3a3a52; text-transform: uppercase; letter-spacing: 1.2px;
+    font-size: 10px; font-weight: 700; text-align: left;
+    padding: 14px 14px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.nh-tbl tbody td {
+    padding: 11px 14px; color: #aaa8c0; font-weight: 500;
+    vertical-align: middle;
+    border-bottom: none;
+}
+.nh-tbl tbody tr:hover td { background: rgba(255,255,255,0.022); }
+.nh-tbl td.num { text-align: right; font-variant-numeric: tabular-nums; color: #d8d8e6; font-weight: 600; }
+.nh-tbl td.dt  { color: #6e6e88; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.nh-tbl td.cap { color: #c8c8d8; max-width: 460px; }
+.nh-tbl td a   { color: #60a5fa; text-decoration: none; font-weight: 600; }
+.nh-tbl td a:hover { text-decoration: underline; }
+.nh-tbl .tag-sm {
+    display: inline-block; font-size: 10px; font-weight: 600;
+    padding: 2px 8px; border-radius: 4px; white-space: nowrap;
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -231,27 +294,32 @@ def load_data():
 # ── Plotly layout helper ──────────────────────────────────────────────────────
 
 def apply_style(fig, height=220, show_legend=True, legend_right=False):
-    lp = dict(orientation="h", font=dict(color="#7a7a95", size=11), bgcolor="rgba(0,0,0,0)")
+    lp = dict(orientation="h", font=dict(color="#6b6b85", size=11), bgcolor="rgba(0,0,0,0)")
     if legend_right:
         lp.update(orientation="v", x=1.02, y=1, xanchor="left")
     fig.update_layout(
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
         height=height,
-        font=dict(family="Inter, system-ui, sans-serif", color="#606078", size=11),
+        font=dict(family="Inter, system-ui, sans-serif", color="#505068", size=11),
         margin=dict(l=4, r=4, t=8, b=4),
         legend=lp if show_legend else dict(visible=False),
         xaxis=dict(
             gridcolor="rgba(255,255,255,0.04)",
             zerolinecolor="rgba(0,0,0,0)",
-            tickfont=dict(color="#606078", size=10),
+            tickfont=dict(color="#505068", size=10),
             linecolor="rgba(0,0,0,0)",
         ),
         yaxis=dict(
             gridcolor="rgba(255,255,255,0.04)",
             zerolinecolor="rgba(0,0,0,0)",
-            tickfont=dict(color="#606078", size=10),
+            tickfont=dict(color="#505068", size=10),
             linecolor="rgba(0,0,0,0)",
+        ),
+        hoverlabel=dict(
+            bgcolor="#16161e",
+            bordercolor="rgba(255,255,255,0.12)",
+            font=dict(family="Inter, system-ui, sans-serif", color="#eaeaf8", size=13),
         ),
     )
     return fig
@@ -389,7 +457,7 @@ with hc1:
     st.markdown("""
     <div style="margin-bottom:6px">
       <span style="font-size:22px;font-weight:900;letter-spacing:-0.8px;color:#f2f2fa">@noah.haupt</span>
-      <span style="font-size:13px;color:#444458;font-weight:500;margin-left:12px">Instagram Performance</span>
+      <span style="font-size:13px;color:#444458;font-weight:500;margin-left:12px">Instagram Performance Overview</span>
     </div>
     """, unsafe_allow_html=True)
 with hc2:
@@ -476,7 +544,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 cc1, cc2 = st.columns([1.65, 1])
 
 with cc1:
-    st.markdown('<div class="chart-card"><div class="nh-sec">Monthly Content Performance</div>', unsafe_allow_html=True)
+    st.markdown('<div class="nh-sec chart-lbl">Monthly Content Performance</div>', unsafe_allow_html=True)
     fig = go.Figure()
     fig.add_trace(go.Scatter(
         x=trend_labels, y=trend_views, name="Views",
@@ -498,23 +566,23 @@ with cc1:
     ))
     apply_style(fig, height=230)
     fig.update_layout(legend=dict(
-        orientation="h", font=dict(color="#7a7a95", size=11),
+        orientation="h", font=dict(color="#6b6b85", size=11),
         bgcolor="rgba(0,0,0,0)", y=-0.18,
     ))
     st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
-    st.markdown('</div>', unsafe_allow_html=True)
 
 with cc2:
-    st.markdown('<div class="chart-card"><div class="nh-sec">New Followers per Day (60d)</div>', unsafe_allow_html=True)
+    st.markdown('<div class="nh-sec chart-lbl">New Followers per Day (60d)</div>', unsafe_allow_html=True)
     fig2 = go.Figure(go.Bar(
         x=fc_dates, y=fc_values,
         marker=dict(color="rgba(74,222,128,0.5)", line=dict(color="#4ade80", width=0)),
         hovertemplate="%{x}: +%{y}<extra></extra>",
     ))
     apply_style(fig2, height=230, show_legend=False)
-    fig2.update_layout(xaxis=dict(tickfont=dict(size=9), nticks=10))
+    fig2.update_layout(xaxis=dict(
+        type="category", tickfont=dict(color="#505068", size=9), nticks=10,
+    ))
     st.plotly_chart(fig2, use_container_width=True, config={"displayModeBar": False})
-    st.markdown('</div>', unsafe_allow_html=True)
 
 st.markdown("<br>", unsafe_allow_html=True)
 
@@ -522,7 +590,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 fc1, fc2 = st.columns([1.65, 1])
 
 with fc1:
-    st.markdown('<div class="chart-card"><div class="nh-sec">Performance by Format — Avg Views per Reel</div>', unsafe_allow_html=True)
+    st.markdown('<div class="nh-sec chart-lbl">Performance by Format — Avg Views per Reel</div>', unsafe_allow_html=True)
     fmt_labels_list = []
     fmt_avg_views   = []
     fmt_avg_saves   = []
@@ -548,16 +616,16 @@ with fc1:
         marker=dict(color=[hex_rgba(c, 0.33) for c in fmt_bar_colors]),
         hovertemplate="%{y}: %{x} avg saves<extra></extra>",
     ))
-    apply_style(fig3, height=200)
+    apply_style(fig3, height=280)
     fig3.update_layout(
         barmode="overlay",
-        xaxis=dict(gridcolor="rgba(255,255,255,0.04)"),
+        margin=dict(l=4, r=4, t=8, b=40),
+        xaxis=dict(gridcolor="rgba(255,255,255,0.04)", tickfont=dict(color="#505068", size=10)),
         yaxis=dict(tickfont=dict(color="#9898aa", size=11), gridcolor="rgba(0,0,0,0)"),
         legend=dict(orientation="h", font=dict(color="#6b6b85", size=11),
-                    bgcolor="rgba(0,0,0,0)", y=-0.2),
+                    bgcolor="rgba(0,0,0,0)", y=-0.22, yanchor="top"),
     )
     st.plotly_chart(fig3, use_container_width=True, config={"displayModeBar": False})
-    st.markdown('</div>', unsafe_allow_html=True)
 
 with fc2:
     def cmp_row_html(label, curr_v, prev_v, color):
@@ -640,7 +708,7 @@ with gc1:
     """, unsafe_allow_html=True)
 
 with gc2:
-    st.markdown('<div class="chart-card"><div class="nh-sec">Content Mix</div>', unsafe_allow_html=True)
+    st.markdown('<div class="nh-sec chart-lbl">Content Mix</div>', unsafe_allow_html=True)
     mix_labels = []
     mix_counts = []
     mix_colors = []
@@ -656,16 +724,15 @@ with gc2:
         hole=0.68, hovertemplate="%{label}: %{value} reels<extra></extra>",
         textinfo="none",
     ))
-    apply_style(fig4, height=190, show_legend=True, legend_right=False)
+    apply_style(fig4, height=260, show_legend=True, legend_right=False)
     fig4.update_layout(
         legend=dict(
-            orientation="v", font=dict(color="#7a7a95", size=11),
-            bgcolor="rgba(0,0,0,0)", x=1.0, y=0.5, xanchor="left", yanchor="middle",
+            orientation="v", font=dict(color="#6b6b85", size=11),
+            bgcolor="rgba(0,0,0,0)", x=1.02, y=0.5, xanchor="left", yanchor="middle",
         ),
-        margin=dict(l=0, r=0, t=4, b=4),
+        margin=dict(l=4, r=140, t=8, b=8),
     )
     st.plotly_chart(fig4, use_container_width=True, config={"displayModeBar": False})
-    st.markdown('</div>', unsafe_allow_html=True)
 
 st.markdown("<br>", unsafe_allow_html=True)
 
@@ -713,35 +780,41 @@ st.markdown("<br>", unsafe_allow_html=True)
 # ── Section 7: All Reels Table ────────────────────────────────────────────────
 st.markdown('<div class="nh-sec">All Reels</div>', unsafe_allow_html=True)
 
-table_rows = [{
-    "Date":    r["date"],
-    "Caption": trunc(r.get("caption", "") or r.get("shortcode", ""), 70),
-    "Format":  r["format"],
-    "Views":   r["views"],
-    "Likes":   r["likes"],
-    "Saves":   r["saves"],
-    "Shares":  r["shares"],
-    "Save %":  r["save_rate"],
-    "Link":    r.get("permalink", ""),
-} for r in by_views]
+def reel_row_html(r):
+    cap   = trunc(r.get("caption", "") or r.get("shortcode", ""), 75).replace("<", "&lt;")
+    fname = r.get("format", "Other")
+    fc    = FORMAT_COLORS.get(fname, "#9ca3af")
+    link  = r.get("permalink", "")
+    link_html = f'<a href="{link}" target="_blank">Open ↗</a>' if link else ""
+    return (
+        f"<tr>"
+        f'<td class="dt">{r["date"]}</td>'
+        f'<td class="cap">{cap}</td>'
+        f'<td><span class="tag-sm" style="background:{fc}22;color:{fc};border:1px solid {fc}44">{fname}</span></td>'
+        f'<td class="num">{r["views"]:,}</td>'
+        f'<td class="num">{r["likes"]:,}</td>'
+        f'<td class="num">{r["saves"]:,}</td>'
+        f'<td class="num">{r["shares"]:,}</td>'
+        f'<td class="num">{r["save_rate"]:.2f}%</td>'
+        f'<td>{link_html}</td>'
+        f"</tr>"
+    )
 
-st.dataframe(
-    table_rows,
-    column_config={
-        "Date":    st.column_config.TextColumn("Date",    width="small"),
-        "Caption": st.column_config.TextColumn("Caption", width="large"),
-        "Format":  st.column_config.TextColumn("Format",  width="medium"),
-        "Views":   st.column_config.NumberColumn("Views",   format="%d"),
-        "Likes":   st.column_config.NumberColumn("Likes",   format="%d"),
-        "Saves":   st.column_config.NumberColumn("Saves",   format="%d"),
-        "Shares":  st.column_config.NumberColumn("Shares",  format="%d"),
-        "Save %":  st.column_config.NumberColumn("Save %",  format="%.2f%%"),
-        "Link":    st.column_config.LinkColumn("Link", display_text="Open ↗"),
-    },
-    hide_index=True,
-    use_container_width=True,
-    height=480,
+table_html = (
+    '<div class="nh-tbl-wrap"><table class="nh-tbl">'
+    '<thead><tr>'
+    '<th>Date</th><th>Caption</th><th>Format</th>'
+    '<th style="text-align:right">Views</th>'
+    '<th style="text-align:right">Likes</th>'
+    '<th style="text-align:right">Saves</th>'
+    '<th style="text-align:right">Shares</th>'
+    '<th style="text-align:right">Save %</th>'
+    '<th>Link</th>'
+    '</tr></thead><tbody>'
+    + "".join(reel_row_html(r) for r in by_views)
+    + '</tbody></table></div>'
 )
+st.markdown(table_html, unsafe_allow_html=True)
 
 # ── Footer ────────────────────────────────────────────────────────────────────
 st.markdown(f"""
