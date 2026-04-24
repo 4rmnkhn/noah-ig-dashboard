@@ -58,17 +58,21 @@ button, input, textarea, select, span, div, p, h1, h2, h3, h4, h5, h6, td, th, a
 .block-container { padding: 28px 36px 48px !important; max-width: 1580px !important; }
 
 /* Kill scrollbars on every Streamlit wrapper that might clip a chart */
+[data-testid="stElementContainer"],
 [data-testid="stPlotlyChart"],
-[data-testid="element-container"],
 [data-testid="stVerticalBlock"],
 [data-testid="stVerticalBlockBorderWrapper"],
 [data-testid="column"],
+.element-container,
+.stElementContainer,
 .stPlotlyChart,
 .js-plotly-plot,
 .plot-container,
 .svg-container,
 .user-select-none {
     overflow: visible !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
 }
 
 /* Plotly chart containers — styled as cards */
