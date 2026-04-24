@@ -18,9 +18,15 @@ import streamlit as st
 import plotly.graph_objects as go
 import requests as rq
 
+from claude_insights import (
+    insight_snapshot, insight_make_more, insight_avoid,
+    insight_format, insight_growth,
+    composite_score, cohort_max,
+)
+
 # ── Page config ───────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="@noah.haupt — IG Dashboard",
+    page_title="@noah.haupt: IG Dashboard",
     page_icon="📊",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -44,12 +50,19 @@ FORMAT_COLORS = {
     "Coaching-Call-Type":  "#fb923c",   # orange
     "Green-Screen-Type":   "#fbbf24",   # yellow
     "Discord-QA":          "#60a5fa",   # blue
-    "Discord-Ideas":       "#f472b6",   # pink
     "Talking-Head":        "#cbd5e1",   # light gray (default in Notion)
     "Podcast-Type":        "#4ade80",   # green
     "Long-Form-Clip-Type": "#f87171",   # red
-    "Other":               "#6b7280",   # gray
+    "Uncategorized":       "#6b7280",   # gray
 }
+
+def pillar_label(name: str) -> str:
+    """Display label for a Notion Pillar value: strip '-Type' suffix and replace dashes with spaces.
+    Examples: 'Green-Screen-Type' -> 'Green Screen', 'Coaching-Call-Type' -> 'Coaching Call',
+              'Talking-Head' -> 'Talking Head', 'Discord-QA' -> 'Discord QA'."""
+    if not name:
+        return "Uncategorized"
+    return name.replace("-Type", "").replace("-", " ")
 
 def hex_rgba(hex_color: str, alpha: float) -> str:
     h = hex_color.lstrip("#")
@@ -99,16 +112,28 @@ button, input, textarea, select, span, div, p, h1, h2, h3, h4, h5, h6, td, th, a
 }
 [data-testid="stPlotlyChart"] > div { border-radius: 0; }
 
-/* Section headers */
+/* Section headers — actual visible headings */
 .nh-sec {
+    font-size: 22px; font-weight: 800; color: #f2f2fa;
+    letter-spacing: -0.6px;
+    margin: 32px 0 14px;
+    padding: 0 0 0 14px;
+    border-left: 4px solid #a78bfa;
+    line-height: 1.2;
+}
+.nh-sec .nh-sec-sub {
+    display: block;
+    font-size: 11px; font-weight: 600; color: #6e6e88;
+    text-transform: uppercase; letter-spacing: 1.4px;
+    margin-top: 4px;
+}
+/* Smaller variant: chart axis labels etc. */
+.nh-sec.chart-lbl {
     font-size: 10.5px; font-weight: 700; color: #525268;
     text-transform: uppercase; letter-spacing: 1.5px;
     margin: 0 0 8px;
-}
-/* Section label that sits directly above a chart card — pulled in tight */
-.nh-sec.chart-lbl {
-    margin: 0 0 8px;
     padding-left: 2px;
+    border-left: none;
 }
 
 /* Hero cards */
@@ -211,6 +236,133 @@ button, input, textarea, select, span, div, p, h1, h2, h3, h4, h5, h6, td, th, a
 /* Divider */
 .nh-div { height: 1px; background: rgba(255,255,255,0.04); margin: 22px 0; }
 
+/* Claude insight line — sits above each section */
+.nh-insight {
+    background: linear-gradient(135deg, rgba(167,139,250,0.07), rgba(96,165,250,0.04));
+    border: 1px solid rgba(167,139,250,0.18);
+    border-left: 3px solid #a78bfa;
+    border-radius: 12px;
+    padding: 13px 18px;
+    margin: 0 0 14px;
+    font-size: 13.5px;
+    color: #c8c8e0;
+    line-height: 1.5;
+    font-weight: 500;
+}
+.nh-insight.empty {
+    background: rgba(255,255,255,0.02);
+    border: 1px dashed rgba(255,255,255,0.08);
+    border-left: 3px dashed rgba(255,255,255,0.15);
+    color: #45455a;
+    font-style: italic;
+}
+.nh-insight-label {
+    display: inline-block;
+    font-size: 9.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    color: #a78bfa;
+    margin-right: 8px;
+    vertical-align: 2px;
+}
+
+/* Reel card grid — 3 cards per row */
+.reel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 10px;
+}
+@media (max-width: 1200px) { .reel-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 720px)  { .reel-grid { grid-template-columns: 1fr; } }
+
+.reel-card {
+    display: grid;
+    grid-template-columns: 38% 62%;
+    gap: 10px;
+    background: #0d0d14;
+    border: 1px solid rgba(255,255,255,0.075);
+    border-radius: 14px;
+    padding: 10px;
+    align-items: stretch;
+}
+.reel-card.win    { border-left: 3px solid #4ade80; }
+.reel-card.lose   { border-left: 3px solid #f87171; }
+.reel-card.recent { border-left: 3px solid #60a5fa; }
+
+.reel-thumb-wrap {
+    width: 100%;
+    aspect-ratio: 9 / 14;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #1a1a24;
+    position: relative;
+}
+.reel-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.reel-body {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 10px;
+    flex: 1;
+}
+.reel-head { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.reel-cap {
+    font-size: 12.5px;
+    color: #d8d8e6;
+    font-weight: 500;
+    line-height: 1.4;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+.reel-meta { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.reel-date { font-size: 11px; color: #555568; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.reel-link { font-size: 11px; color: #60a5fa; text-decoration: none; font-weight: 600; white-space: nowrap; }
+.reel-link:hover { text-decoration: underline; }
+
+/* Pill-style stats — each metric is a chip */
+.reel-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+.reel-stat {
+    display: inline-flex; align-items: baseline; gap: 6px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 999px;
+    padding: 6px 13px;
+    font-size: 11px; color: #8a8aa0; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.6px;
+    white-space: nowrap;
+}
+.reel-stat b {
+    font-size: 16px; font-weight: 800; color: #eaeaf8;
+    letter-spacing: -0.2px; font-variant-numeric: tabular-nums;
+    text-transform: none;
+}
+.reel-stat.vw { background: rgba(96,165,250,0.10); border-color: rgba(96,165,250,0.22); }
+.reel-stat.vw b { color: #60a5fa; }
+.reel-stat.sv { background: rgba(74,222,128,0.10); border-color: rgba(74,222,128,0.22); }
+.reel-stat.sv b { color: #4ade80; }
+.reel-stat.sh { background: rgba(167,139,250,0.10); border-color: rgba(167,139,250,0.22); }
+.reel-stat.sh b { color: #a78bfa; }
+.reel-stat.cm { background: rgba(249,168,212,0.10); border-color: rgba(249,168,212,0.22); }
+.reel-stat.cm b { color: #f9a8d4; }
+.reel-stat.cr { background: rgba(251,191,36,0.10); border-color: rgba(251,191,36,0.22); }
+.reel-stat.cr b { color: #fbbf24; }
+
 /* All-reels table */
 .nh-tbl-wrap {
     background: #0d0d14;
@@ -293,12 +445,100 @@ def detect_format(caption: str) -> str:
 def delta_html(curr, prev, suffix=" vs prev 30d"):
     """Returns HTML for the trend delta shown under hero values."""
     if prev == 0:
-        return f'<span class="flat">First period — no comparison yet</span>'
+        return f'<span class="flat">First period: no comparison yet</span>'
     pct = (curr - prev) / prev * 100
     sign = "+" if pct >= 0 else ""
     cls  = "up" if pct >= 0 else "dn"
     arr  = "▲" if pct >= 0 else "▼"
     return f'{arr} <span class="{cls}">{sign}{pct:.0f}%</span>{suffix}'
+
+
+def render_insight(text: str, label: str = "INSIGHT"):
+    """Render Claude-generated insight line above a section. Empty text = empty placeholder."""
+    if text:
+        clean = text.replace("**", "").replace("__", "")
+        st.markdown(
+            f'<div class="nh-insight">'
+            f'<span class="nh-insight-label">{label}</span>'
+            f'{clean}</div>',
+            unsafe_allow_html=True,
+        )
+    else:
+        st.markdown(
+            f'<div class="nh-insight empty">'
+            f'<span class="nh-insight-label" style="color:#3a3a4e">{label}</span>'
+            f'Set ANTHROPIC_API_KEY to surface AI insights here.</div>',
+            unsafe_allow_html=True,
+        )
+
+
+def reel_row_card(reel: dict, variant: str = "recent") -> str:
+    """HTML for a reel card: thumbnail on the LEFT half, caption/meta/stats on the RIGHT.
+    Cards wrap inside a .reel-grid container so they render 2 per row.
+    variant: 'win' (green), 'lose' (red), 'recent' (blue)."""
+    cap   = trunc(reel.get("caption", "") or reel.get("shortcode", ""), 160).replace('"', "'")
+    thumb = reel.get("thumbnail", "")
+    link  = reel.get("permalink", "")
+    fname = reel.get("format", "Uncategorized")
+    fc    = FORMAT_COLORS.get(fname, "#9ca3af")
+    flbl  = pillar_label(fname)
+    date  = reel.get("date", "")[:10]
+    cr    = reel.get("completion_rate", 0) or 0
+    sv    = reel.get("saves", 0)
+    sh    = reel.get("shares", 0)
+    vw    = reel.get("views", 0)
+    cm    = reel.get("comments", 0) or 0
+    thumb_html = (
+        f'<img src="{thumb}" class="reel-thumb" onerror="this.parentElement.innerHTML=\'\'">'
+        if thumb else ''
+    )
+    link_html = f'<a class="reel-link" href="{link}" target="_blank">Open ↗</a>' if link else ""
+    badge_html = (
+        f'<span class="tag" style="background:{fc}22;color:{fc};border:1px solid {fc}44;'
+        f'font-size:10px;padding:2px 8px;border-radius:5px;font-weight:600">{flbl}</span>'
+    )
+    return (
+        f'<div class="reel-card {variant}">'
+        f'  <div class="reel-thumb-wrap">{thumb_html}</div>'
+        f'  <div class="reel-body">'
+        f'    <div class="reel-head">'
+        f'      <div class="reel-meta">{badge_html}<span class="reel-date">{date}</span>{link_html}</div>'
+        f'      <div class="reel-cap">{cap}</div>'
+        f'    </div>'
+        f'    <div class="reel-stats">'
+        f'      <span class="reel-stat vw"><b>{vw:,}</b>Views</span>'
+        f'      <span class="reel-stat sv"><b>{sv}</b>Saves</span>'
+        f'      <span class="reel-stat sh"><b>{sh}</b>Sends</span>'
+        f'      <span class="reel-stat cm"><b>{cm}</b>Comments</span>'
+        f'      <span class="reel-stat cr"><b>{cr:.0f}%</b>Completion</span>'
+        f'    </div>'
+        f'  </div>'
+        f'</div>'
+    )
+
+
+@st.cache_data(ttl=21600)  # 6h cache — Claude calls only fire when data changes
+def cached_insight(fn_name: str, payload_str: str) -> str:
+    """Wrapper to cache Claude calls by function + payload hash."""
+    from claude_insights import (
+        insight_snapshot as _i_snap,
+        insight_make_more as _i_mm,
+        insight_avoid as _i_av,
+        insight_format as _i_fmt,
+        insight_growth as _i_gr,
+    )
+    fn_map = {
+        "snapshot":  _i_snap,
+        "make_more": _i_mm,
+        "avoid":     _i_av,
+        "format":    _i_fmt,
+        "growth":    _i_gr,
+    }
+    fn = fn_map.get(fn_name)
+    if not fn:
+        return ""
+    payload = json.loads(payload_str)
+    return fn(payload)
 
 
 # ── Data loading ──────────────────────────────────────────────────────────────
@@ -374,12 +614,13 @@ if not reels:
 COLLAB_START = "2026-04-03"
 reels = [r for r in reels if r.get("date", "") >= COLLAB_START]
 
-# Pillar (from Notion) is the source of truth for categorization.
-# sync_pillars_from_notion.py writes `pillar` per reel from Notion's Pillar select.
-# If pillar is missing/blank, the reel goes into "Other".
+# Pillar (from Notion) is the ONLY source of truth for categorization.
+# Blank Pillar = Uncategorized. The made-up detect_format keyword classifier
+# is intentionally ignored. Noah-solo uploads get auto-tagged Talking-Head
+# by push_to_notion when their orphan row is created.
 for r in reels:
     p = r.get("pillar")
-    r["format"] = p if p else "Other"
+    r["format"] = p if p else "Uncategorized"
 
 # ── Account data ──────────────────────────────────────────────────────────────
 profile  = data.get("account_profile", {})
@@ -437,15 +678,6 @@ total_reels  = len(reels)
 viral_reels  = sum(1 for r in reels if r["views"] >= 5_000)
 avg_save_r   = round(sum(r["save_rate"] for r in reels) / total_reels, 2) if total_reels else 0
 
-# ── Trajectory goals ──────────────────────────────────────────────────────────
-goal_monthly_views     = max(round(curr["views"] * 1.25 / 1000) * 1000, 10_000)
-goal_monthly_followers = max(round(new_followers_30d * 1.3 / 10) * 10, 50)
-goal_avg_save_rate     = round(max(avg_save_r * 1.5, avg_save_r + 0.3), 1)
-goal_5k_reels          = max(viral_reels + 1, 2)
-
-def pct_toward(val, goal):
-    return min(round((val / goal) * 100), 100) if goal else 0
-
 # ── Monthly trend ─────────────────────────────────────────────────────────────
 monthly = defaultdict(lambda: {"views": 0, "saves": 0, "shares": 0, "count": 0})
 for r in reels:
@@ -481,10 +713,22 @@ fc_recent = [d for d in fc_history if d.get("date", "") >= str(d60)]
 fc_dates  = [d["date"][5:] for d in fc_recent]   # MM-DD
 fc_values = [d["value"] for d in fc_recent]
 
-# ── Best performers ───────────────────────────────────────────────────────────
-by_views = sorted(reels, key=lambda r: r["views"],     reverse=True)
-by_saver = sorted(reels, key=lambda r: r["save_rate"], reverse=True)
-by_share = sorted(reels, key=lambda r: r["shares"],    reverse=True)
+# ── Best performers (kept for All-Reels table sort) ─────────────────────────
+by_views = sorted(reels, key=lambda r: r["views"], reverse=True)
+
+# ── Composite score: 0.4×saves + 0.3×shares + 0.3×completion_rate ────────────
+# Normalized across the current cohort. Reels without completion_rate still
+# score — just get 0 weight on that axis.
+_cmax = cohort_max(reels)
+for r in reels:
+    r["_score"] = composite_score(r, _cmax)
+
+scored_reels = sorted(reels, key=lambda r: r["_score"], reverse=True)
+top_5    = scored_reels[:5]
+bottom_3 = [r for r in scored_reels[-3:] if r["_score"] > 0][::-1]  # worst-first
+
+# Last 7 posted reels (by date desc)
+last_7 = sorted(reels, key=lambda r: r.get("date", ""), reverse=True)[:7]
 
 
 # ── Layout ────────────────────────────────────────────────────────────────────
@@ -509,21 +753,43 @@ with hc2:
 
 st.markdown('<div class="nh-div"></div>', unsafe_allow_html=True)
 
-# ── Section 1: Growth Signals (30d hero cards) ────────────────────────────────
-st.markdown('<div class="nh-sec">Growth Signals — Last 30 Days</div>', unsafe_allow_html=True)
+# ── Section 1: Growth Snapshot ────────────────────────────────────────────────
+st.markdown('<div class="nh-sec">Growth Snapshot: Last 30 Days</div>', unsafe_allow_html=True)
 
-h1, h2, h3, h4 = st.columns(4)
+snapshot_payload = {
+    "followers_total": followers,
+    "new_followers_this_30d": new_followers_30d,
+    "new_followers_prev_30d": new_followers_prev30,
+    "account_reach_30d": account_reach_30d,
+    "reels_posted_this_30d": curr["count"],
+    "reels_posted_prev_30d": prev["count"],
+    "views_this_30d": curr["views"],
+    "views_prev_30d": prev["views"],
+    "saves_this_30d": curr["saves"],
+    "saves_prev_30d": prev["saves"],
+    "avg_save_rate_this_30d": curr["avg_save_rate"],
+    "avg_save_rate_prev_30d": prev["avg_save_rate"],
+}
+render_insight(cached_insight("snapshot", json.dumps(snapshot_payload)))
 
+h1, h2, h3, h4, h5 = st.columns(5)
 with h1:
     st.markdown(f"""
     <div class="hero-card hl">
-      <div class="hero-lbl">Views (30d)</div>
-      <div class="hero-val bl">{fmt(curr["views"])}</div>
+      <div class="hero-lbl">Followers</div>
+      <div class="hero-val bl">{followers:,}</div>
+      <div class="hero-delta"><span style="color:#4ade80">+{new_followers_30d} in 30d</span> &middot; {delta_html(new_followers_30d, new_followers_prev30)}</div>
+    </div>
+    """, unsafe_allow_html=True)
+with h2:
+    st.markdown(f"""
+    <div class="hero-card">
+      <div class="hero-lbl">Reel Views (30d)</div>
+      <div class="hero-val">{fmt(curr["views"])}</div>
       <div class="hero-delta">{delta_html(curr["views"], prev["views"])}</div>
     </div>
     """, unsafe_allow_html=True)
-
-with h2:
+with h3:
     st.markdown(f"""
     <div class="hero-card">
       <div class="hero-lbl">Saves (30d)</div>
@@ -531,309 +797,195 @@ with h2:
       <div class="hero-delta">{delta_html(curr["saves"], prev["saves"])}</div>
     </div>
     """, unsafe_allow_html=True)
-
-with h3:
-    st.markdown(f"""
-    <div class="hero-card">
-      <div class="hero-lbl">New Followers (30d)</div>
-      <div class="hero-val pu">+{new_followers_30d:,}</div>
-      <div class="hero-delta">{delta_html(new_followers_30d, new_followers_prev30)}</div>
-    </div>
-    """, unsafe_allow_html=True)
-
 with h4:
     st.markdown(f"""
     <div class="hero-card">
       <div class="hero-lbl">Avg Save Rate (30d)</div>
-      <div class="hero-val am">{curr["avg_save_rate"]}%</div>
-      <div class="hero-delta">{delta_html(curr["avg_save_rate"], prev["avg_save_rate"], " vs prev 30d")}</div>
+      <div class="hero-val pu">{curr["avg_save_rate"]}%</div>
+      <div class="hero-delta">{delta_html(curr["avg_save_rate"], prev["avg_save_rate"])}</div>
+    </div>
+    """, unsafe_allow_html=True)
+with h5:
+    st.markdown(f"""
+    <div class="hero-card">
+      <div class="hero-lbl">Reels Posted (30d)</div>
+      <div class="hero-val am">{curr["count"]}</div>
+      <div class="hero-delta">{delta_html(curr["count"], prev["count"])}</div>
     </div>
     """, unsafe_allow_html=True)
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-# ── Section 2: Account Overview ───────────────────────────────────────────────
-st.markdown('<div class="nh-sec">Account Overview</div>', unsafe_allow_html=True)
+# ── Section 2: Make More Like This ────────────────────────────────────────────
+st.markdown('<div class="nh-sec">Make More Like This: Top 5 by Composite Score</div>', unsafe_allow_html=True)
 
-reels_30d = sum(1 for r in reels if reel_date(r) >= d30_ago)
+if top_5:
+    mm_payload = [
+        {
+            "caption": (r.get("caption") or "")[:140],
+            "format": pillar_label(r.get("format", "Uncategorized")),
+            "saves": r.get("saves", 0),
+            "shares": r.get("shares", 0),
+            "completion_rate": r.get("completion_rate", 0),
+            "duration_sec": r.get("duration_sec", 0),
+        } for r in top_5
+    ]
+    render_insight(cached_insight("make_more", json.dumps(mm_payload)), label="PATTERN")
 
-ao1, ao2, ao3, ao4 = st.columns(4)
-account_cards = [
-    (ao1, "Followers",       f"{followers:,}",                     "Total audience",          True,  ""),
-    (ao2, "Account Reach",   fmt(account_reach_30d) if account_reach_30d else "—", "Last 30 days", False, ""),
-    (ao3, "Reels Posted",    str(reels_30d),                       "Last 30 days",            False, ""),
-    (ao4, "Total Reels",     str(total_reels),                     "All time",                False, ""),
-]
-for col, lbl, val, sub, hl, val_cls in account_cards:
-    with col:
-        klass = "hero-card hl" if hl else "hero-card"
-        vcls  = f"hero-val {val_cls}" if val_cls else "hero-val"
-        if hl: vcls += " bl"
-        st.markdown(f"""
-        <div class="{klass}" style="min-height:108px">
-          <div class="hero-lbl">{lbl}</div>
-          <div class="{vcls}" style="font-size:32px">{val}</div>
-          <div class="hero-delta">{sub}</div>
-        </div>
-        """, unsafe_allow_html=True)
+    rows_html = "".join(reel_row_card(r, "win") for r in top_5)
+    st.markdown(f'<div class="reel-grid">{rows_html}</div>', unsafe_allow_html=True)
+else:
+    st.markdown('<div style="color:#555568;font-size:13px;padding:20px 0">Not enough data yet.</div>',
+                unsafe_allow_html=True)
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-# ── Section 3: Content Performance ────────────────────────────────────────────
-st.markdown('<div class="nh-sec">Content Performance</div>', unsafe_allow_html=True)
+# ── Section 3: Avoid ──────────────────────────────────────────────────────────
+st.markdown('<div class="nh-sec">Avoid: Bottom 3 by Composite Score</div>', unsafe_allow_html=True)
 
-cp1, cp2, cp3, cp4, cp5 = st.columns(5)
-content_cards = [
-    (cp1, "Total Views",     fmt(all_["views"]),        "All time",                 ""),
-    (cp2, "Avg Views/Reel",  fmt(all_["avg_views"]),    "All reels",                ""),
-    (cp3, "Total Saves",     fmt(all_["saves"]),        "All time",                 "gr"),
-    (cp4, "Avg Save Rate",   f"{avg_save_r}%",          "All reels",                "am"),
-    (cp5, "5K+ Reels",       str(viral_reels),          "Reels that broke through", "pu"),
-]
-for col, lbl, val, sub, val_cls in content_cards:
-    with col:
-        vcls = f"hero-val {val_cls}" if val_cls else "hero-val"
-        st.markdown(f"""
-        <div class="hero-card" style="min-height:108px">
-          <div class="hero-lbl">{lbl}</div>
-          <div class="{vcls}" style="font-size:32px">{val}</div>
-          <div class="hero-delta">{sub}</div>
-        </div>
-        """, unsafe_allow_html=True)
+if bottom_3:
+    av_payload = [
+        {
+            "caption": (r.get("caption") or "")[:140],
+            "format": pillar_label(r.get("format", "Uncategorized")),
+            "saves": r.get("saves", 0),
+            "shares": r.get("shares", 0),
+            "completion_rate": r.get("completion_rate", 0),
+            "duration_sec": r.get("duration_sec", 0),
+        } for r in bottom_3
+    ]
+    render_insight(cached_insight("avoid", json.dumps(av_payload)), label="FAILURE PATTERN")
+
+    rows_html = "".join(reel_row_card(r, "lose") for r in bottom_3)
+    st.markdown(f'<div class="reel-grid">{rows_html}</div>', unsafe_allow_html=True)
+else:
+    st.markdown('<div style="color:#555568;font-size:13px;padding:20px 0">Not enough data yet.</div>',
+                unsafe_allow_html=True)
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-# ── Section 3: Charts ─────────────────────────────────────────────────────────
-cc1, cc2 = st.columns([1.65, 1])
+# ── Section 4: Format Performance ─────────────────────────────────────────────
+st.markdown('<div class="nh-sec">Format Performance</div>', unsafe_allow_html=True)
 
-with cc1:
-    st.markdown('<div class="nh-sec chart-lbl">Monthly Content Performance</div>', unsafe_allow_html=True)
-    fig = go.Figure()
-    fig.add_trace(go.Scatter(
-        x=trend_labels, y=trend_views, name="Views",
-        line=dict(color="#60a5fa", width=2),
-        fill="tozeroy", fillcolor="rgba(96,165,250,0.08)",
-        mode="lines+markers", marker=dict(size=4),
-    ))
-    fig.add_trace(go.Scatter(
-        x=trend_labels, y=trend_saves, name="Saves",
-        line=dict(color="#4ade80", width=2),
-        fill="tozeroy", fillcolor="rgba(74,222,128,0.06)",
-        mode="lines+markers", marker=dict(size=4),
-    ))
-    fig.add_trace(go.Scatter(
-        x=trend_labels, y=trend_shares, name="Shares",
-        line=dict(color="#fbbf24", width=2),
-        fill="tozeroy", fillcolor="rgba(251,191,36,0.05)",
-        mode="lines+markers", marker=dict(size=4),
-    ))
-    apply_style(fig, height=340)
-    st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
+fmt_stats_for_claude = []
+for f in FORMAT_ORDER:
+    d = fmt_data.get(f)
+    if d and d["count"] > 0:
+        reels_in_fmt = [r for r in reels if r["format"] == f]
+        avg_cr = round(
+            sum(r.get("completion_rate", 0) or 0 for r in reels_in_fmt) / len(reels_in_fmt), 1
+        ) if reels_in_fmt else 0
+        fmt_stats_for_claude.append({
+            "format": f,
+            "reel_count": d["count"],
+            "avg_views": round(d["views"] / d["count"]),
+            "avg_saves": round(d["saves"] / d["count"], 1),
+            "avg_completion_rate": avg_cr,
+        })
 
-with cc2:
+fmt_stats_for_claude_clean = [
+    {**s, "format": pillar_label(s["format"])} for s in fmt_stats_for_claude
+]
+render_insight(cached_insight("format", json.dumps(fmt_stats_for_claude_clean)), label="FORMAT TAKE")
+
+st.markdown('<div class="nh-sec chart-lbl">Avg Views + Saves by Format</div>', unsafe_allow_html=True)
+fmt_labels_list = [pillar_label(s["format"]) for s in fmt_stats_for_claude]
+fmt_avg_views   = [s["avg_views"] for s in fmt_stats_for_claude]
+fmt_avg_saves   = [s["avg_saves"] for s in fmt_stats_for_claude]
+fmt_bar_colors  = [FORMAT_COLORS.get(s["format"], "#9ca3af") for s in fmt_stats_for_claude]
+
+fig3 = go.Figure()
+fig3.add_trace(go.Bar(
+    y=fmt_labels_list, x=fmt_avg_views, name="Avg Views",
+    orientation="h",
+    marker=dict(color=[hex_rgba(c, 0.82) for c in fmt_bar_colors]),
+    hovertemplate="%{y}: %{x:,} avg views<extra></extra>",
+))
+fig3.add_trace(go.Bar(
+    y=fmt_labels_list, x=fmt_avg_saves, name="Avg Saves",
+    orientation="h",
+    marker=dict(color=[hex_rgba(c, 0.33) for c in fmt_bar_colors]),
+    hovertemplate="%{y}: %{x} avg saves<extra></extra>",
+))
+apply_style(fig3, height=320)
+fig3.update_layout(
+    barmode="overlay",
+    xaxis=dict(gridcolor="rgba(255,255,255,0.04)", tickfont=dict(color="#505068", size=10)),
+    yaxis=dict(tickfont=dict(color="#9898aa", size=11), gridcolor="rgba(0,0,0,0)"),
+)
+st.plotly_chart(fig3, use_container_width=True, config={"displayModeBar": False})
+
+st.markdown("<br>", unsafe_allow_html=True)
+
+# ── Section 5: Weekly Growth ──────────────────────────────────────────────────
+st.markdown('<div class="nh-sec">Weekly Growth</div>', unsafe_allow_html=True)
+
+weekly_followers = fc_values[-28:] if len(fc_values) >= 28 else fc_values
+weekly_avg_cr = []
+for wk_start in range(28, 0, -7):
+    wk_end = wk_start - 7
+    wk_reels = [
+        r for r in reels
+        if r.get("completion_rate", 0)
+        and (today - timedelta(days=wk_start)) <= reel_date(r) < (today - timedelta(days=wk_end))
+    ]
+    if wk_reels:
+        weekly_avg_cr.append(round(
+            sum(r["completion_rate"] for r in wk_reels) / len(wk_reels), 1
+        ))
+    else:
+        weekly_avg_cr.append(0)
+
+growth_payload = {
+    "followers_daily_last_60d": fc_values[-60:],
+    "new_followers_this_30d": new_followers_30d,
+    "new_followers_prev_30d": new_followers_prev30,
+    "weekly_avg_completion_rate_oldest_to_newest": weekly_avg_cr,
+}
+render_insight(cached_insight("growth", json.dumps(growth_payload)), label="MOMENTUM")
+
+wg1, wg2 = st.columns(2)
+with wg1:
     st.markdown('<div class="nh-sec chart-lbl">New Followers per Day (60d)</div>', unsafe_allow_html=True)
     fig2 = go.Figure(go.Bar(
         x=fc_dates, y=fc_values,
         marker=dict(color="rgba(74,222,128,0.5)", line=dict(color="#4ade80", width=0)),
         hovertemplate="%{x}: +%{y}<extra></extra>",
     ))
-    apply_style(fig2, height=340, show_legend=False)
+    apply_style(fig2, height=300, show_legend=False)
     fig2.update_layout(xaxis=dict(
         type="category", tickfont=dict(color="#505068", size=9), nticks=10,
     ))
     st.plotly_chart(fig2, use_container_width=True, config={"displayModeBar": False})
 
-st.markdown("<br>", unsafe_allow_html=True)
-
-# ── Section 4: Format Analysis + 30d Comparison ──────────────────────────────
-fc1, fc2 = st.columns([1.65, 1])
-
-with fc1:
-    st.markdown('<div class="nh-sec chart-lbl">Performance by Format — Avg Views per Reel</div>', unsafe_allow_html=True)
-    fmt_labels_list = []
-    fmt_avg_views   = []
-    fmt_avg_saves   = []
-    fmt_bar_colors  = []
-    for f in FORMAT_ORDER:
-        d = fmt_data.get(f)
-        if d and d["count"] > 0:
-            fmt_labels_list.append(f)
-            fmt_avg_views.append(round(d["views"] / d["count"]))
-            fmt_avg_saves.append(round(d["saves"] / d["count"]))
-            fmt_bar_colors.append(FORMAT_COLORS[f])
-
-    fig3 = go.Figure()
-    fig3.add_trace(go.Bar(
-        y=fmt_labels_list, x=fmt_avg_views, name="Avg Views",
-        orientation="h",
-        marker=dict(color=[hex_rgba(c, 0.82) for c in fmt_bar_colors]),
-        hovertemplate="%{y}: %{x:,} avg views<extra></extra>",
+with wg2:
+    st.markdown('<div class="nh-sec chart-lbl">Avg Completion Rate by Week</div>', unsafe_allow_html=True)
+    wk_labels = [f"W-{i+1}" for i in range(len(weekly_avg_cr))][::-1]
+    fig_cr = go.Figure(go.Scatter(
+        x=wk_labels, y=weekly_avg_cr,
+        mode="lines+markers",
+        line=dict(color="#fbbf24", width=2),
+        fill="tozeroy", fillcolor="rgba(251,191,36,0.08)",
+        marker=dict(size=6, color="#fbbf24"),
+        hovertemplate="%{x}: %{y}%<extra></extra>",
     ))
-    fig3.add_trace(go.Bar(
-        y=fmt_labels_list, x=fmt_avg_saves, name="Avg Saves",
-        orientation="h",
-        marker=dict(color=[hex_rgba(c, 0.33) for c in fmt_bar_colors]),
-        hovertemplate="%{y}: %{x} avg saves<extra></extra>",
-    ))
-    apply_style(fig3, height=320)
-    fig3.update_layout(
-        barmode="overlay",
-        xaxis=dict(gridcolor="rgba(255,255,255,0.04)", tickfont=dict(color="#505068", size=10)),
-        yaxis=dict(tickfont=dict(color="#9898aa", size=11), gridcolor="rgba(0,0,0,0)"),
+    apply_style(fig_cr, height=300, show_legend=False)
+    fig_cr.update_layout(
+        yaxis=dict(ticksuffix="%", tickfont=dict(color="#505068", size=10)),
     )
-    st.plotly_chart(fig3, use_container_width=True, config={"displayModeBar": False})
-
-with fc2:
-    def cmp_row_html(label, curr_v, prev_v, color):
-        if prev_v == 0:
-            delta_str = '<span class="flat">—</span>'
-        else:
-            pct = (curr_v - prev_v) / prev_v * 100
-            sign = "+" if pct >= 0 else ""
-            cls  = "up" if pct >= 0 else "dn"
-            delta_str = f'<span class="cmp-delta {cls}">{sign}{pct:.0f}%</span>'
-        cv = f"{curr_v:,}" if isinstance(curr_v, int) else str(curr_v)
-        pv = f"{prev_v:,}" if isinstance(prev_v, int) else str(prev_v)
-        return (
-            f'<div class="cmp-row">'
-            f'<span class="cmp-lbl">{label}</span>'
-            f'<span class="cmp-right">'
-            f'<span class="cmp-prev">{pv}</span>'
-            f'<span class="cmp-arr">→</span>'
-            f'<span class="cmp-curr" style="color:{color}">{cv}</span>'
-            f'{delta_str}'
-            f'</span></div>'
-        )
-
-    cmp_html = (
-        cmp_row_html("Reel Views",    curr["views"],   prev["views"],   "#60a5fa") +
-        cmp_row_html("Saves",         curr["saves"],   prev["saves"],   "#4ade80") +
-        cmp_row_html("Shares",        curr["shares"],  prev["shares"],  "#fbbf24") +
-        cmp_row_html("New Followers", new_followers_30d, new_followers_prev30, "#a78bfa") +
-        cmp_row_html("Reels Posted",  curr["count"],   prev["count"],   "#d8d8e6")
-    )
-    st.markdown(f"""
-    <div class="chart-card">
-      <div class="nh-sec">Last 30 Days vs Previous 30</div>
-      <div class="cmp-wrap">{cmp_html}</div>
-    </div>
-    """, unsafe_allow_html=True)
+    st.plotly_chart(fig_cr, use_container_width=True, config={"displayModeBar": False})
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-# ── Section 5: Goals + Content Mix ───────────────────────────────────────────
-gc1, gc2 = st.columns([1.3, 1])
+# ── Section 6: Last 7 Days Posted ─────────────────────────────────────────────
+st.markdown('<div class="nh-sec">Last 7 Reels Posted: Proof of Work</div>', unsafe_allow_html=True)
 
-with gc1:
-    def goal_bar_html(label, curr_val, goal_val, curr_str, goal_str):
-        p = min(round((curr_val / goal_val) * 100), 100) if goal_val else 0
-        if p >= 100:   color = "#4ade80"; icon = "✓"
-        elif p >= 65:  color = "#fbbf24"; icon = "△"
-        else:          color = "#f87171"; icon = "○"
-        return (
-            f'<div class="goal-row">'
-            f'<div class="goal-top">'
-            f'<span class="goal-lbl">{icon} {label}</span>'
-            f'<span class="goal-vv" style="color:{color}">{curr_str}'
-            f' <span class="goal-tgt">/ {goal_str}</span></span>'
-            f'</div>'
-            f'<div class="goal-bg"><div class="goal-fill" '
-            f'style="width:{p}%;background:{color}"></div></div>'
-            f'</div>'
-        )
-
-    goals_html = (
-        goal_bar_html("New Followers (30d)", new_followers_30d,
-                      goal_monthly_followers,
-                      str(new_followers_30d), str(goal_monthly_followers)) +
-        goal_bar_html("Monthly Views", curr["views"],
-                      goal_monthly_views,
-                      fmt(curr["views"]), fmt(goal_monthly_views)) +
-        goal_bar_html("Avg Save Rate", curr["avg_save_rate"],
-                      goal_avg_save_rate,
-                      f"{curr['avg_save_rate']}%", f"{goal_avg_save_rate}%") +
-        goal_bar_html("5K+ Reels (total)", viral_reels,
-                      goal_5k_reels,
-                      str(viral_reels), str(goal_5k_reels))
-    )
-    st.markdown(f"""
-    <div class="chart-card">
-      <div class="nh-sec">Goals — Trajectory-Based Targets</div>
-      {goals_html}
-    </div>
-    """, unsafe_allow_html=True)
-
-with gc2:
-    with st.container(border=True):
-        st.markdown('<div class="nh-sec chart-lbl">Content Mix</div>', unsafe_allow_html=True)
-        mix_labels = []
-        mix_counts = []
-        mix_colors = []
-        for f in FORMAT_ORDER:
-            d = fmt_data.get(f)
-            if d and d["count"] > 0:
-                mix_labels.append(f"{f} ({d['count']})")
-                mix_counts.append(d["count"])
-                mix_colors.append(FORMAT_COLORS[f])
-        fig4 = go.Figure(go.Pie(
-            labels=mix_labels, values=mix_counts,
-            marker=dict(colors=mix_colors, line=dict(width=0)),
-            hole=0.68, hovertemplate="%{label}: %{value} reels<extra></extra>",
-            textinfo="none",
-            sort=False,
-        ))
-        # Legend below — keeps the donut centered and prevents overflow past card edge
-        apply_style(fig4, height=320, show_legend=True, legend_right=False)
-        fig4.update_layout(
-            margin=dict(l=8, r=8, t=8, b=70),
-            legend=dict(
-                orientation="h", x=0.5, xanchor="center", y=-0.05, yanchor="top",
-                font=dict(color="#9898aa", size=10),
-                bgcolor="rgba(0,0,0,0)",
-            ),
-        )
-        st.plotly_chart(fig4, use_container_width=True, config={"displayModeBar": False})
-
-st.markdown("<br>", unsafe_allow_html=True)
-
-# ── Section 6: Best Performers ────────────────────────────────────────────────
-st.markdown('<div class="nh-sec">Best Performers</div>', unsafe_allow_html=True)
-bp1, bp2, bp3 = st.columns(3)
-
-def perf_card_html(label, color, reel):
-    if not reel:
-        return ""
-    cap      = trunc(reel.get("caption", ""), 62).replace('"', "'")
-    fmt_name = reel.get("format", "Other")
-    fc       = FORMAT_COLORS.get(fmt_name, "#9ca3af")
-    thumb    = reel.get("thumbnail", "")
-    thumb_html = (
-        f'<img src="{thumb}" class="perf-thumb" onerror="this.style.display=\'none\'">'
-        if thumb else ""
-    )
-    link = reel.get("permalink", "#")
-    return f"""
-    <div class="perf-card">
-      {thumb_html}
-      <div class="perf-lbl" style="color:{color}">{label}</div>
-      <div class="perf-cap">{cap or reel.get("shortcode", "")}</div>
-      <div class="perf-tag">
-        <span class="tag" style="background:{fc}22;color:{fc};border:1px solid {fc}44">{fmt_name}</span>
-      </div>
-      <div class="perf-stats">
-        <div class="perf-m"><span style="color:#60a5fa">{reel.get("views",0):,}</span>Views</div>
-        <div class="perf-m"><span style="color:#4ade80">{reel.get("saves",0)}</span>Saves</div>
-        <div class="perf-m"><span style="color:#fbbf24">{reel.get("shares",0)}</span>Shares</div>
-        <div class="perf-m"><span style="color:#a78bfa">{reel.get("save_rate",0)}%</span>Save rate</div>
-      </div>
-    </div>"""
-
-with bp1:
-    st.markdown(perf_card_html("Most Viewed",   "#60a5fa", by_views[0] if by_views else None), unsafe_allow_html=True)
-with bp2:
-    st.markdown(perf_card_html("Top Save Rate", "#4ade80", by_saver[0] if by_saver else None), unsafe_allow_html=True)
-with bp3:
-    st.markdown(perf_card_html("Most Shared",   "#fbbf24", by_share[0] if by_share else None), unsafe_allow_html=True)
+if last_7:
+    rows_html = "".join(reel_row_card(r, "recent") for r in last_7)
+    st.markdown(f'<div class="reel-grid">{rows_html}</div>', unsafe_allow_html=True)
+else:
+    st.markdown('<div style="color:#555568;font-size:13px;padding:20px 0">No recent reels.</div>',
+                unsafe_allow_html=True)
 
 st.markdown("<br>", unsafe_allow_html=True)
 
@@ -842,36 +994,42 @@ st.markdown('<div class="nh-sec">All Reels</div>', unsafe_allow_html=True)
 
 def reel_row_html(r):
     cap   = trunc(r.get("caption", "") or r.get("shortcode", ""), 75).replace("<", "&lt;")
-    fname = r.get("format", "Other")
+    fname = r.get("format", "Uncategorized")
     fc    = FORMAT_COLORS.get(fname, "#9ca3af")
+    flbl  = pillar_label(fname)
     link  = r.get("permalink", "")
     link_html = f'<a href="{link}" target="_blank">Open ↗</a>' if link else ""
+    cr    = r.get("completion_rate", 0) or 0
+    cr_str = f'{cr:.0f}%' if cr else '-'
     return (
         f"<tr>"
         f'<td class="dt">{r["date"]}</td>'
         f'<td class="cap">{cap}</td>'
-        f'<td><span class="tag-sm" style="background:{fc}22;color:{fc};border:1px solid {fc}44">{fname}</span></td>'
+        f'<td><span class="tag-sm" style="background:{fc}22;color:{fc};border:1px solid {fc}44">{flbl}</span></td>'
         f'<td class="num">{r["views"]:,}</td>'
-        f'<td class="num">{r["likes"]:,}</td>'
         f'<td class="num">{r["saves"]:,}</td>'
         f'<td class="num">{r["shares"]:,}</td>'
+        f'<td class="num">{cr_str}</td>'
         f'<td class="num">{r["save_rate"]:.2f}%</td>'
         f'<td>{link_html}</td>'
         f"</tr>"
     )
+
+# Default sort by composite score (best first), so the table mirrors Make More ordering
+table_reels = sorted(reels, key=lambda r: r["_score"], reverse=True)
 
 table_html = (
     '<div class="nh-tbl-wrap"><table class="nh-tbl">'
     '<thead><tr>'
     '<th>Date</th><th>Caption</th><th>Format</th>'
     '<th style="text-align:right">Views</th>'
-    '<th style="text-align:right">Likes</th>'
     '<th style="text-align:right">Saves</th>'
-    '<th style="text-align:right">Shares</th>'
+    '<th style="text-align:right">Sends</th>'
+    '<th style="text-align:right">Compl. %</th>'
     '<th style="text-align:right">Save %</th>'
     '<th>Link</th>'
     '</tr></thead><tbody>'
-    + "".join(reel_row_html(r) for r in by_views)
+    + "".join(reel_row_html(r) for r in table_reels)
     + '</tbody></table></div>'
 )
 st.markdown(table_html, unsafe_allow_html=True)
