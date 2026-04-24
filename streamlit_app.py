@@ -295,10 +295,10 @@ def load_data():
 
 def apply_style(fig, height=220, show_legend=True, legend_right=False):
     lp = dict(orientation="h", font=dict(color="#6b6b85", size=11),
-              bgcolor="rgba(0,0,0,0)", x=0.5, xanchor="center", y=-0.05, yanchor="top")
+              bgcolor="rgba(0,0,0,0)", x=0.5, xanchor="center", y=-0.28, yanchor="top")
     if legend_right:
         lp.update(orientation="v", x=1.02, y=0.5, xanchor="left", yanchor="middle")
-    bottom_margin = 8 if (not show_legend or legend_right) else 50
+    bottom_margin = 24 if (not show_legend or legend_right) else 75
     fig.update_layout(
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
