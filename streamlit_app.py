@@ -369,6 +369,11 @@ if not reels:
     st.error("No reels in metrics.json. Run the sync and refresh.")
     st.stop()
 
+# Filter out pre-collab reels (Noah-solo content before Arman started April 3, 2026).
+# Keeps dashboard focused on the work we're actually accountable for.
+COLLAB_START = "2026-04-03"
+reels = [r for r in reels if r.get("date", "") >= COLLAB_START]
+
 # Pillar (from Notion) is the source of truth for categorization.
 # sync_pillars_from_notion.py writes `pillar` per reel from Notion's Pillar select.
 # If pillar is missing/blank, the reel goes into "Other".
