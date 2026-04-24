@@ -874,7 +874,7 @@
       "save_rate": 3.14,
       "share_rate": 2.11,
       "synced_at": "2026-04-24T02:32:17.625758+00:00",
-      "pillar": null
+      "pillar": "Talking-Head"
     },
     {
       "id": "18006767690715564",
@@ -1064,7 +1064,7 @@
       "save_rate": 0.62,
       "share_rate": 0.44,
       "synced_at": "2026-04-24T02:32:46.638252+00:00",
-      "pillar": null
+      "pillar": "Coaching-Call-Type"
     },
     {
       "id": "17868828003503664",
@@ -1083,7 +1083,7 @@
       "save_rate": 1.41,
       "share_rate": 0.71,
       "synced_at": "2026-04-24T02:32:49.518800+00:00",
-      "pillar": null
+      "pillar": "Green-Screen-Type"
     },
     {
       "id": "18101947078760842",
@@ -1102,7 +1102,7 @@
       "save_rate": 0.28,
       "share_rate": 0.28,
       "synced_at": "2026-04-24T02:32:52.400691+00:00",
-      "pillar": null
+      "pillar": "Podcast-Type"
     },
     {
       "id": "18105697894931102",
@@ -1121,7 +1121,7 @@
       "save_rate": 1.57,
       "share_rate": 1.09,
       "synced_at": "2026-04-24T02:32:55.203065+00:00",
-      "pillar": null
+      "pillar": "Podcast-Type"
     },
     {
       "id": "18091448813334665",
@@ -1140,7 +1140,7 @@
       "save_rate": 0.75,
       "share_rate": 0.3,
       "synced_at": "2026-04-24T02:32:58.959534+00:00",
-      "pillar": null
+      "pillar": "Coaching-Call-Type"
     },
     {
       "id": "18177957745382686",
@@ -1159,7 +1159,7 @@
       "save_rate": 1.46,
       "share_rate": 1.12,
       "synced_at": "2026-04-24T02:33:01.854001+00:00",
-      "pillar": null
+      "pillar": "Green-Screen-Type"
     },
     {
       "id": "18572364577056105",
@@ -1178,7 +1178,7 @@
       "save_rate": 0.32,
       "share_rate": 0.11,
       "synced_at": "2026-04-24T02:33:04.770805+00:00",
-      "pillar": null
+      "pillar": "Talking-Head"
     },
     {
       "id": "17878941480549427",
@@ -1197,7 +1197,7 @@
       "save_rate": 0.35,
       "share_rate": 0.46,
       "synced_at": "2026-04-24T02:33:07.596363+00:00",
-      "pillar": null
+      "pillar": "Long-Form-Clip-Type"
     },
     {
       "id": "18059074964443157",
@@ -1216,7 +1216,7 @@
       "save_rate": 1.99,
       "share_rate": 1.61,
       "synced_at": "2026-04-24T02:33:10.479170+00:00",
-      "pillar": null
+      "pillar": "Green-Screen-Type"
     },
     {
       "id": "17955454929095335",
