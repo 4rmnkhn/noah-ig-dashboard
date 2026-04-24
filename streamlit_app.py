@@ -27,13 +27,28 @@ st.set_page_config(
 )
 
 # ── Constants ─────────────────────────────────────────────────────────────────
-FORMAT_ORDER  = ["Discord AI", "Social Proof", "Tutorial", "Talking Head", "Other"]
+# Pillar values come from Notion IG Reels Tracker → "Pillar" select field.
+# sync_pillars_from_notion.py writes them into metrics.json as `pillar`.
+# "Other" is the fallback bucket for reels with no Pillar set in Notion.
+FORMAT_ORDER  = [
+    "Coaching-Call-Type",
+    "Green-Screen-Type",
+    "Discord-QA",
+    "Discord-Ideas",
+    "Talking-Head",
+    "Podcast-Type",
+    "Long-Form-Clip-Type",
+    "Other",
+]
 FORMAT_COLORS = {
-    "Discord AI":   "#a78bfa",
-    "Social Proof": "#4ade80",
-    "Tutorial":     "#60a5fa",
-    "Talking Head": "#fbbf24",
-    "Other":        "#9ca3af",
+    "Coaching-Call-Type":  "#fb923c",   # orange
+    "Green-Screen-Type":   "#fbbf24",   # yellow
+    "Discord-QA":          "#60a5fa",   # blue
+    "Discord-Ideas":       "#f472b6",   # pink
+    "Talking-Head":        "#cbd5e1",   # light gray (default in Notion)
+    "Podcast-Type":        "#4ade80",   # green
+    "Long-Form-Clip-Type": "#f87171",   # red
+    "Other":               "#6b7280",   # gray
 }
 
 def hex_rgba(hex_color: str, alpha: float) -> str:
@@ -346,10 +361,12 @@ if not reels:
     st.error("No reels in metrics.json. Run the sync and refresh.")
     st.stop()
 
-# Ensure format is set on every reel
+# Pillar (from Notion) is the source of truth for categorization.
+# sync_pillars_from_notion.py writes `pillar` per reel from Notion's Pillar select.
+# If pillar is missing/blank, the reel goes into "Other".
 for r in reels:
-    if not r.get("format"):
-        r["format"] = detect_format(r.get("caption", ""))
+    p = r.get("pillar")
+    r["format"] = p if p else "Other"
 
 # ── Account data ──────────────────────────────────────────────────────────────
 profile  = data.get("account_profile", {})
