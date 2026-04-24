@@ -460,19 +460,22 @@ by_share = sorted(reels, key=lambda r: r["shares"],    reverse=True)
 # Header
 hc1, hc2 = st.columns([3, 1])
 with hc1:
-    st.markdown("""
-    <div style="margin-bottom:6px">
-      <span style="font-size:22px;font-weight:900;letter-spacing:-0.8px;color:#f2f2fa">@noah.haupt</span>
-      <span style="font-size:13px;color:#444458;font-weight:500;margin-left:12px">Instagram Performance Overview</span>
+    st.markdown(f"""
+    <div style="display:flex;align-items:flex-end;gap:18px;margin-bottom:4px">
+      <span style="font-size:24px;font-weight:900;letter-spacing:-0.8px;color:#f2f2fa;line-height:1">@noah.haupt</span>
+      <span style="font-size:13px;color:#7a7a95;font-weight:500;line-height:1;padding-bottom:3px">Instagram Performance Overview</span>
+    </div>
+    <div style="display:flex;align-items:baseline;gap:10px;margin-top:8px">
+      <span style="font-size:36px;font-weight:800;letter-spacing:-1.5px;color:#f2f2fa;line-height:1">{followers:,}</span>
+      <span style="font-size:13px;color:#7a7a95;font-weight:500;letter-spacing:0.4px">Followers</span>
+      <span style="font-size:11px;color:#3a3a52;font-weight:500;margin-left:6px">· {total_reels} reels</span>
     </div>
     """, unsafe_allow_html=True)
 with hc2:
     st.markdown(f"""
-    <div style="text-align:right;padding-top:4px">
-      <span style="font-size:11px;color:#444458;font-weight:500">
-        Last sync &nbsp;<b style="color:#4ade80;font-weight:700">{synced}</b>
-      </span><br>
-      <span style="font-size:10px;color:#333348">{followers:,} followers · {total_reels} reels</span>
+    <div style="text-align:right;padding-top:8px">
+      <span style="font-size:11px;color:#7a7a95;font-weight:500;text-transform:uppercase;letter-spacing:1.2px">Last Sync</span><br>
+      <span style="font-size:13px;color:#4ade80;font-weight:700">{synced}</span>
     </div>
     """, unsafe_allow_html=True)
 
@@ -524,14 +527,13 @@ st.markdown("<br>", unsafe_allow_html=True)
 # ── Section 2: All-Time Context ───────────────────────────────────────────────
 st.markdown('<div class="nh-sec">All-Time Context</div>', unsafe_allow_html=True)
 
-a1, a2, a3, a4, a5 = st.columns(5)
+a1, a2, a3, a4 = st.columns(4)
 
 ctx_cards = [
-    (a1, "Followers",      f"{followers:,}",      "Total audience"),
-    (a2, "Total Reels",    str(total_reels),        "All time"),
-    (a3, "5K+ Views",      str(viral_reels),        "Reels that broke through"),
-    (a4, "Avg Views/Reel", fmt(all_["avg_views"]),  "All reels"),
-    (a5, "Avg Save Rate",  f"{avg_save_r}%",        "All reels"),
+    (a1, "Total Reels",    str(total_reels),        "All time"),
+    (a2, "5K+ Views",      str(viral_reels),        "Reels that broke through"),
+    (a3, "Avg Views/Reel", fmt(all_["avg_views"]),  "All reels"),
+    (a4, "Avg Save Rate",  f"{avg_save_r}%",        "All reels"),
 ]
 
 for col, lbl, val, sub in ctx_cards:
