@@ -152,6 +152,14 @@ button, input, textarea, select, span, div, p, h1, h2, h3, h4, h5, h6, td, th, a
 }
 .chart-card .nh-sec { margin-bottom: 10px; }
 
+/* Make st.container(border=True) look like .chart-card (used for Content Mix) */
+[data-testid="stVerticalBlockBorderWrapper"] {
+    background: #0d0d14 !important;
+    border: 1px solid rgba(255,255,255,0.075) !important;
+    border-radius: 16px !important;
+    padding: 20px 20px 14px !important;
+}
+
 /* Comparison rows */
 .cmp-wrap { display: flex; flex-direction: column; gap: 0; }
 .cmp-row {
@@ -751,25 +759,35 @@ with gc1:
     """, unsafe_allow_html=True)
 
 with gc2:
-    st.markdown('<div class="nh-sec chart-lbl">Content Mix</div>', unsafe_allow_html=True)
-    mix_labels = []
-    mix_counts = []
-    mix_colors = []
-    for f in FORMAT_ORDER:
-        d = fmt_data.get(f)
-        if d and d["count"] > 0:
-            mix_labels.append(f"{f} ({d['count']})")
-            mix_counts.append(d["count"])
-            mix_colors.append(FORMAT_COLORS[f])
-    fig4 = go.Figure(go.Pie(
-        labels=mix_labels, values=mix_counts,
-        marker=dict(colors=mix_colors, line=dict(width=0)),
-        hole=0.68, hovertemplate="%{label}: %{value} reels<extra></extra>",
-        textinfo="none",
-    ))
-    apply_style(fig4, height=280, show_legend=True, legend_right=True)
-    fig4.update_layout(margin=dict(l=8, r=140, t=12, b=12))
-    st.plotly_chart(fig4, use_container_width=True, config={"displayModeBar": False})
+    with st.container(border=True):
+        st.markdown('<div class="nh-sec chart-lbl">Content Mix</div>', unsafe_allow_html=True)
+        mix_labels = []
+        mix_counts = []
+        mix_colors = []
+        for f in FORMAT_ORDER:
+            d = fmt_data.get(f)
+            if d and d["count"] > 0:
+                mix_labels.append(f"{f} ({d['count']})")
+                mix_counts.append(d["count"])
+                mix_colors.append(FORMAT_COLORS[f])
+        fig4 = go.Figure(go.Pie(
+            labels=mix_labels, values=mix_counts,
+            marker=dict(colors=mix_colors, line=dict(width=0)),
+            hole=0.68, hovertemplate="%{label}: %{value} reels<extra></extra>",
+            textinfo="none",
+            sort=False,
+        ))
+        # Legend below — keeps the donut centered and prevents overflow past card edge
+        apply_style(fig4, height=320, show_legend=True, legend_right=False)
+        fig4.update_layout(
+            margin=dict(l=8, r=8, t=8, b=70),
+            legend=dict(
+                orientation="h", x=0.5, xanchor="center", y=-0.05, yanchor="top",
+                font=dict(color="#9898aa", size=10),
+                bgcolor="rgba(0,0,0,0)",
+            ),
+        )
+        st.plotly_chart(fig4, use_container_width=True, config={"displayModeBar": False})
 
 st.markdown("<br>", unsafe_allow_html=True)
 
