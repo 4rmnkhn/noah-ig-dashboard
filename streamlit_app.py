@@ -294,15 +294,17 @@ def load_data():
 # ── Plotly layout helper ──────────────────────────────────────────────────────
 
 def apply_style(fig, height=220, show_legend=True, legend_right=False):
-    lp = dict(orientation="h", font=dict(color="#6b6b85", size=11), bgcolor="rgba(0,0,0,0)")
+    lp = dict(orientation="h", font=dict(color="#6b6b85", size=11),
+              bgcolor="rgba(0,0,0,0)", x=0.5, xanchor="center", y=-0.05, yanchor="top")
     if legend_right:
-        lp.update(orientation="v", x=1.02, y=1, xanchor="left")
+        lp.update(orientation="v", x=1.02, y=0.5, xanchor="left", yanchor="middle")
+    bottom_margin = 8 if (not show_legend or legend_right) else 50
     fig.update_layout(
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
         height=height,
         font=dict(family="Inter, system-ui, sans-serif", color="#505068", size=11),
-        margin=dict(l=4, r=4, t=8, b=4),
+        margin=dict(l=8, r=8, t=12, b=bottom_margin),
         legend=lp if show_legend else dict(visible=False),
         xaxis=dict(
             gridcolor="rgba(255,255,255,0.04)",
@@ -564,11 +566,7 @@ with cc1:
         fill="tozeroy", fillcolor="rgba(251,191,36,0.05)",
         mode="lines+markers", marker=dict(size=4),
     ))
-    apply_style(fig, height=230)
-    fig.update_layout(legend=dict(
-        orientation="h", font=dict(color="#6b6b85", size=11),
-        bgcolor="rgba(0,0,0,0)", y=-0.18,
-    ))
+    apply_style(fig, height=290)
     st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
 
 with cc2:
@@ -578,7 +576,7 @@ with cc2:
         marker=dict(color="rgba(74,222,128,0.5)", line=dict(color="#4ade80", width=0)),
         hovertemplate="%{x}: +%{y}<extra></extra>",
     ))
-    apply_style(fig2, height=230, show_legend=False)
+    apply_style(fig2, height=290, show_legend=False)
     fig2.update_layout(xaxis=dict(
         type="category", tickfont=dict(color="#505068", size=9), nticks=10,
     ))
@@ -616,14 +614,11 @@ with fc1:
         marker=dict(color=[hex_rgba(c, 0.33) for c in fmt_bar_colors]),
         hovertemplate="%{y}: %{x} avg saves<extra></extra>",
     ))
-    apply_style(fig3, height=280)
+    apply_style(fig3, height=320)
     fig3.update_layout(
         barmode="overlay",
-        margin=dict(l=4, r=4, t=8, b=40),
         xaxis=dict(gridcolor="rgba(255,255,255,0.04)", tickfont=dict(color="#505068", size=10)),
         yaxis=dict(tickfont=dict(color="#9898aa", size=11), gridcolor="rgba(0,0,0,0)"),
-        legend=dict(orientation="h", font=dict(color="#6b6b85", size=11),
-                    bgcolor="rgba(0,0,0,0)", y=-0.22, yanchor="top"),
     )
     st.plotly_chart(fig3, use_container_width=True, config={"displayModeBar": False})
 
@@ -724,14 +719,8 @@ with gc2:
         hole=0.68, hovertemplate="%{label}: %{value} reels<extra></extra>",
         textinfo="none",
     ))
-    apply_style(fig4, height=260, show_legend=True, legend_right=False)
-    fig4.update_layout(
-        legend=dict(
-            orientation="v", font=dict(color="#6b6b85", size=11),
-            bgcolor="rgba(0,0,0,0)", x=1.02, y=0.5, xanchor="left", yanchor="middle",
-        ),
-        margin=dict(l=4, r=140, t=8, b=8),
-    )
+    apply_style(fig4, height=280, show_legend=True, legend_right=True)
+    fig4.update_layout(margin=dict(l=8, r=140, t=12, b=12))
     st.plotly_chart(fig4, use_container_width=True, config={"displayModeBar": False})
 
 st.markdown("<br>", unsafe_allow_html=True)
