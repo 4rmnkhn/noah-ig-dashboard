@@ -1,18 +1,18 @@
 {
   "account": "noah.haupt",
   "ig_user_id": "17841405699947455",
-  "last_sync": "2026-04-23T10:49:29.859725+00:00",
-  "total_reels": 124,
+  "last_sync": "2026-04-24T02:34:11.639047+00:00",
+  "total_reels": 125,
   "account_profile": {
     "username": "noah.haupt",
-    "followers": 1881,
+    "followers": 1882,
     "following": 274,
     "biography": "i run ads for local businesses\nwent from $5k to $77k/mo in 8 months\nwatch highlights to see 'the proof'",
     "website": "https://www.youtube.com/@noahhauptads"
   },
   "account_insights": {
     "follower_count": {
-      "total": 783,
+      "total": 797,
       "history": [
         {
           "date": "2026-01-24",
@@ -368,7 +368,7 @@
         },
         {
           "date": "2026-04-22",
-          "value": 0
+          "value": 14
         },
         {
           "date": "2026-04-23",
@@ -377,7 +377,7 @@
       ]
     },
     "reach": {
-      "total": 84683,
+      "total": 85583,
       "history": [
         {
           "date": "2026-01-24",
@@ -737,29 +737,47 @@
         },
         {
           "date": "2026-04-23",
-          "value": 166
+          "value": 1066
         }
       ]
     }
   },
   "reels": [
     {
+      "id": "18125710465592767",
+      "shortcode": "dxfbtarkql9",
+      "permalink": "https://www.instagram.com/reel/DXfBTARkQl9/",
+      "date": "2026-04-23",
+      "caption": "the way, I scaled my agency to $77k/mo was by detaching myself\n\nA lot of people stuck between $5-10k/mo with their agency take everything so serious and end up not executing or removing as quickly as ",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/671834667_1508510974120014_2264153618433731387_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=8BXrPJoQTikQ7kNvwGQD6u7&_nc_oc=AdpV7JO5kO5clypXmjwbOvKlb6VXuedJeTT3hx4pXzEGWJEQ4aZIDjW_EGIyCRWzrZWw30xUWUxcxwGB52FJd48V&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQF3WGMOqOAQm2LuOYNbhMgBKFU798doM3WD3qcGMaaX4pHCHYeYcDXoJCsCRRaslh-Zwgm7v_7e&oh=00_Af3mh2n1FfXws_HiR2iTxAS84ixtDFbQOfhRVjo_WI05ng&oe=69F08E4F",
+      "format": "Social Proof",
+      "views": 416,
+      "reach": 416,
+      "likes": 18,
+      "saves": 7,
+      "shares": 1,
+      "follows": 0,
+      "save_rate": 1.68,
+      "share_rate": 0.24,
+      "synced_at": "2026-04-24T02:32:00.418936+00:00"
+    },
+    {
       "id": "18160257736448491",
       "shortcode": "dxc5xmajqtt",
       "permalink": "https://www.instagram.com/reel/DXc5XMAjQTT/",
       "date": "2026-04-22",
       "caption": "stop obsessing over getting the highest positive reply rate possible…\n\nit doesn’t automatically mean more appointments",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/671158787_1710269396960759_8161625880686927449_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=M1tbxPSM6rAQ7kNvwFefrJb&_nc_oc=Adrq2I1gUk97D8dgTHa6ss1E9iQjYmv16uxhQg-4Qs7lK1kqHGNiVLFZy3PxI5_8RkuQfqn-cp4ZJxl8OGUb3gEB&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQHrj5j-fZsTpJqWD5FSE92j8RKMfR2Wo79L28JNa0zMqTdIdzjXpD7ZOvmNUnzBd7fLgs6yF51b&oh=00_Af2201xSFuF_2RleDc7aPJnBvxFGTD8AG_KX9WlO0uaLFw&oe=69EFAFA2",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/671158787_1710269396960759_8161625880686927449_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=M1tbxPSM6rAQ7kNvwFpLA4z&_nc_oc=AdrEmqdv4VFbMC2_5Sc5atEwRC-AqPaLv7U2W0YbFmhvR-Z-ZKMoD2yrhTzUoqnbRJC-RoF9ckp9wDJSNrEIVYvg&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQGaOH5E8cF7h2SPMYtZ6Qmm4dq-8uYuRYX_DO8ELS1GEACUh2_xLIGh-XXucwwFfqOWTQwe5YoJ&oh=00_Af3YVLYgy7Sb9XG4AwxxZGKxwmM6AlJK2nZSAHKczk7Kcw&oe=69F090A2",
       "format": "Talking Head",
-      "views": 398,
-      "reach": 398,
-      "likes": 18,
+      "views": 511,
+      "reach": 511,
+      "likes": 22,
       "saves": 2,
-      "shares": 2,
+      "shares": 4,
       "follows": 0,
-      "save_rate": 0.5,
-      "share_rate": 0.5,
-      "synced_at": "2026-04-23T10:43:39.044222+00:00"
+      "save_rate": 0.39,
+      "share_rate": 0.78,
+      "synced_at": "2026-04-24T02:32:03.276877+00:00"
     },
     {
       "id": "18061570169704048",
@@ -767,17 +785,17 @@
       "permalink": "https://www.instagram.com/reel/DXcbs3IkaD4/",
       "date": "2026-04-22",
       "caption": "I was stuck under $50k/mo for longer than I planned…\n\nreason for that is, I wanted to have all the control\n\nI didn’t think I needed to delegate or hire. I was the business.\n\nbut I started tracking my ",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/671206589_1107009394971005_8283667306555281888_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=U_mbO3WZOGgQ7kNvwE5Q9Vn&_nc_oc=AdoGxsCH5KwJCQO3rcvAz_h7I-WTByz-TSEqLgbdSVYxgxJ-5as_j6xp9_8zUuFslEj-09gmJHYaN5D_jOHIurv7&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQEF1apKpY6lQtQICMxs5YjbSC7GHaA71X849xU_kyR4LY49i8CFshujn-_HX_cG7OcZaRWIdvBL&oh=00_Af1bxtLW6u-9KqhK6kduPOPLiqABW5scgP4npovmrVZWyw&oe=69EFD68D",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/671206589_1107009394971005_8283667306555281888_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=ZhSXHFD7rJMQ7kNvwHHcQ6o&_nc_oc=AdqE0XzBzXQBnHmhAqnBMn5XIDQlP1lKy8nLCL3NZbBY-K_lQNuuatTJZ1jcmm9Y2Dc5Vs-RYHYJG6noE7ekCYQ-&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQE-SCNoUswq8jeEPZTOOrGZnNGFzQ3qHC0E60poKNaEPVN7exNe1PHyYEH_NgwJP8lNPDs9hDfM&oh=00_Af1p0X7-RY-bx5RaJM2BPx6Wstp0yYxMWnwNj17Q_4zFuw&oe=69F0B78D",
       "format": "Other",
-      "views": 478,
-      "reach": 478,
-      "likes": 23,
-      "saves": 3,
+      "views": 583,
+      "reach": 583,
+      "likes": 28,
+      "saves": 4,
       "shares": 1,
       "follows": 0,
-      "save_rate": 0.63,
-      "share_rate": 0.21,
-      "synced_at": "2026-04-23T10:43:41.584405+00:00"
+      "save_rate": 0.69,
+      "share_rate": 0.17,
+      "synced_at": "2026-04-24T02:32:06.413977+00:00"
     },
     {
       "id": "17912224872183982",
@@ -785,17 +803,17 @@
       "permalink": "https://www.instagram.com/reel/DXaVBWPDfzX/",
       "date": "2026-04-21",
       "caption": "if you’re serious about your relationship with God & scaling an agency, here’s the truth…\n\nIt’s definitely not easy, but still 100% doable\n\nWhere you spend your time reflects where your priorities are",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/671112945_920124204354525_7898629699649183202_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=LHpsDWpqs5sQ7kNvwHsH6XV&_nc_oc=AdoPS4vt92Fpp6aAJeN2D0CiNem6CFq3J9dFL-zMGXAD02u_7r4arUKugckAxox514tO6Uj5JsjaOKMI_xSw4ivL&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQElt2BEs0WsDhHlds3_Rk3Do9bgoC3RQK-hd5SjYqEWH88ORn4bK2pvcl30CWv2hnZMUFMdVFLp&oh=00_Af0VSijBn3zqGVVqw6YDFZG6Zw6F8Py8ma571CJuXsGO2Q&oe=69EFDACA",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/671112945_920124204354525_7898629699649183202_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=LHpsDWpqs5sQ7kNvwHMQfur&_nc_oc=Adp5yctO4zIhWhsXACJw-iLgOk4p4lvDn691A4A3Y-X1afjTHcEbFC-LqLyX987uh7EXqvLeSFtqhrFaP2PRUPji&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQGv5gv7HEWtRtLRGBhLX6xkS7WLyOGf07sAkxb_sO5ZBCeQ3IOSaV6fL_rmo4sMcLZsN7KA1yxx&oh=00_Af1iAbRYlW8oSLcXAwsimtgHSyLpZOq0M2iZO1qn72qdoA&oe=69F0BBCA",
       "format": "Talking Head",
-      "views": 592,
-      "reach": 592,
-      "likes": 36,
+      "views": 639,
+      "reach": 639,
+      "likes": 39,
       "saves": 9,
       "shares": 0,
       "follows": 0,
-      "save_rate": 1.52,
+      "save_rate": 1.41,
       "share_rate": 0.0,
-      "synced_at": "2026-04-23T10:43:44.563810+00:00"
+      "synced_at": "2026-04-24T02:32:09.264292+00:00"
     },
     {
       "id": "18071663618299773",
@@ -803,17 +821,17 @@
       "permalink": "https://www.instagram.com/reel/DXZnIi4Eb1u/",
       "date": "2026-04-21",
       "caption": "at $1,500 every invoice was a debate\n\nat $5,000 nobody questions it\n\nthe price isn’t the product\n\nit’s the filter\n\nraise the price\n\nthe client changes",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/657940287_902532709424749_6994985379549782683_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=mf2Aqcpn4noQ7kNvwH5Ua-m&_nc_oc=AdqSXvhf-GdUN86Gv_OCXsh0-rvFEULEuAG0DOslMkc2FOOS_zaOajqNp7XZ60IndbW83dZ_3vSCw75aoIBWuc01&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQF2-JqGiJCMkYYlkn6BwnX4BQVDgRb8MmUcqGN6TaNfO9-A-t9lnlmLdnVNbrU__yqcmZZHQmap&oh=00_Af3qm2qqu2t-MjBGBX4SMjJ3TbHfHnibBZUYVPqUK8q3Vg&oe=69EFDBC0",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/657940287_902532709424749_6994985379549782683_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=mf2Aqcpn4noQ7kNvwG1jlWf&_nc_oc=AdrPYcM3sK-Bz-vo_fvWa-rWZW2jSYmGktZjaowt-m3ZA2aI1YoNGr3bUa7H6Sz8rdbZEQ9PuHafV2l_aCneUM1l&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQEWCzSVM1Tu_SLCu_E164RKjSkdmqVV9HsjR5ib4SaItYRhIEJH4ib_IeKEEHCFXAQSSTfdijdZ&oh=00_Af1Fh0IBGyLDqrj2LlIC455A3kTBpA_ppOJfNJnjzxO8bg&oe=69F0BCC0",
       "format": "Other",
-      "views": 1349,
-      "reach": 1349,
-      "likes": 74,
-      "saves": 21,
-      "shares": 11,
+      "views": 1478,
+      "reach": 1478,
+      "likes": 77,
+      "saves": 24,
+      "shares": 15,
       "follows": 0,
-      "save_rate": 1.56,
-      "share_rate": 0.82,
-      "synced_at": "2026-04-23T10:43:47.455523+00:00"
+      "save_rate": 1.62,
+      "share_rate": 1.01,
+      "synced_at": "2026-04-24T02:32:12.044727+00:00"
     },
     {
       "id": "17886104811487410",
@@ -821,17 +839,17 @@
       "permalink": "https://www.instagram.com/reel/DXXOsb6EcCe/",
       "date": "2026-04-20",
       "caption": "someone in my discord asked my ai what to do when a prospect no-shows\n\nthis is what it said:\n\nHere are the main levers Noah uses to increase show rate, step by step:\n\n1) Calendar + confirmations\n- Mak",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/670610270_1315889780442474_5301807281711064530_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=bh18yOxhO7MQ7kNvwHu4g8G&_nc_oc=AdpNqqETA3mSQkxEA-oY02LkBTskyCJmsnxVq9u-sJkfaQR1JBU2AiKVkKKJ0OONQGpXZ2DLcQlr5iZMtVCVRo_i&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQHEWlhManI3lYM7MD_SMDv9recPdpmWbH8bCOUYeUmGUEJyyzSIBzVAahJYE5YcuY17PNbf-YA6&oh=00_Af2DL6vt4qZAAFnBA3TPYXVB27ryeY3_U1OeO12q8HkOIQ&oe=69EFC5AB",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/670610270_1315889780442474_5301807281711064530_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=9eYT1lt3blEQ7kNvwFSWsDq&_nc_oc=AdoMnMVH1AqWuZukcNwocguwxJ-8e-t0nRoNStYvBDRCL8pWvZ3ui0001ECyzWk5I0EgD01ggZNluxRIXp9kP3zE&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQF8PW2hWYBZ0h2w-0zR4tJqNa2Y8iKnvlu-BU7wrp4Yfb2XHut0BAFHqXhZAC6zsNl0xC3hmM39&oh=00_Af14MPQqoKZF_o-InCRD8-NSpwkj1IqRtE66qm1meK00_Q&oe=69F0A6AB",
       "format": "Discord AI",
-      "views": 893,
-      "reach": 893,
-      "likes": 33,
+      "views": 923,
+      "reach": 923,
+      "likes": 35,
       "saves": 12,
       "shares": 5,
       "follows": 0,
-      "save_rate": 1.34,
-      "share_rate": 0.56,
-      "synced_at": "2026-04-23T10:43:50.094300+00:00"
+      "save_rate": 1.3,
+      "share_rate": 0.54,
+      "synced_at": "2026-04-24T02:32:14.875479+00:00"
     },
     {
       "id": "17900655756264325",
@@ -839,17 +857,17 @@
       "permalink": "https://www.instagram.com/reel/DXUjuQ-ERjd/",
       "date": "2026-04-19",
       "caption": "this is the easiest way to book 10 appointments today for your agency\n\nStop over complicating it\n\n1. Set up SMS in go high-level.\n\n2. Test at least 2 to 4 SMS variations.\n\n3. Track your data - message",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/670291454_4355341998128744_7479277971512899034_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=utNZgewNVWgQ7kNvwGrc_w6&_nc_oc=AdrO0xPLV-CkJE4nUWnRxShACJJuUsLW9VL11tx37GnWcU7K2nNtb1Xr-4YCc0gK1eaq5xIKY2NH9cNrLE_c2nll&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQFLTJdu-b4SmIS1upMaCzomZIKmKb9vuF2FKFPC7O_ohu0i6KYA0Ixpq75SQQ7JlsxC5vVZS-bQ&oh=00_Af3Obittflkiv5TNTxYewCiW8lBAP6povOXkD7RQJQyWOw&oe=69EFDA47",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/670291454_4355341998128744_7479277971512899034_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=yrx9D8K_WjcQ7kNvwFdIoBv&_nc_oc=AdrqZqz6u18Q-H7OYZijApcVXoXMBSn14JejKk5N84pxQMsVXAj6MqpRTxNhw6zBk1pDlB34fhHZWRdbjxr8PBzz&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQFvZCwVDpcuE9Q5bD1Z6qptWzk5-r47fxtHdKpti_geiGYRglakX9aEZWVEJyr55bFVCfwPvnEm&oh=00_Af2h95shEk_jhV2XjaxZPhcuzG71-4g1Dq61_DJ_Xp87AQ&oe=69F0BB47",
       "format": "Tutorial",
-      "views": 6301,
-      "reach": 6301,
-      "likes": 279,
-      "saves": 197,
-      "shares": 133,
+      "views": 6343,
+      "reach": 6343,
+      "likes": 282,
+      "saves": 199,
+      "shares": 134,
       "follows": 0,
-      "save_rate": 3.13,
+      "save_rate": 3.14,
       "share_rate": 2.11,
-      "synced_at": "2026-04-23T10:43:53.098514+00:00"
+      "synced_at": "2026-04-24T02:32:17.625758+00:00"
     },
     {
       "id": "18006767690715564",
@@ -857,17 +875,17 @@
       "permalink": "https://www.instagram.com/reel/DXR27A6DU6C/",
       "date": "2026-04-18",
       "caption": "you used to idolize making $10k/mo, and now it’s nothing.\n\nI realized you never fulfilled at the amount you’re at and you’re always gonna feel like you’re behind\n\nThis is why entrepreneurship can be e",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/671800896_1538367064574409_2595406326561014460_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=teCkQ-5P0RUQ7kNvwE_-HO5&_nc_oc=AdrQBl3Fbdc50mj16CTr5BskqEYjCt1K3VqoahepJgspga2U6Mdm15RG11DdBXGnfhquO6VfNLNmYnLxOCXyPFQj&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQE4JISXiu1yAOpJ_eIUZ37Edz_HtFjc8GLezRIK56O8irUVPR6TlfqBlcX07iiPFpPktiQx7RVH&oh=00_Af0BJm1zsLQqJ0nl6dRZDOkKLNTvAfGNwfHPgpxtXbKAPA&oe=69EFD27E",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/671800896_1538367064574409_2595406326561014460_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=teCkQ-5P0RUQ7kNvwHXbZEd&_nc_oc=AdpMP6YREJFeVkt44LxoxLwQink840TYk_DxYBHAc-ap4ZWFuLTOAtsmbn5w3jkmIEh0FpV5GMzia19QDjnbBWFA&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQFUuuDQEZSgsp2Gr-cQqhBQ2iTJxAGLQ44I2d34Yh-W9xMuXc1HQcONyob-py-V31rTk55tjd4c&oh=00_Af2eAn5A9jk8nkIhCU3nfaETvqLpM5jw2PQp_ZPbhYAK_Q&oe=69F0B37E",
       "format": "Talking Head",
-      "views": 1632,
-      "reach": 1632,
-      "likes": 65,
+      "views": 1648,
+      "reach": 1648,
+      "likes": 69,
       "saves": 8,
       "shares": 9,
       "follows": 0,
       "save_rate": 0.49,
       "share_rate": 0.55,
-      "synced_at": "2026-04-23T10:43:55.737756+00:00"
+      "synced_at": "2026-04-24T02:32:20.565503+00:00"
     },
     {
       "id": "18113829502781437",
@@ -875,17 +893,17 @@
       "permalink": "https://www.instagram.com/reel/DXP0LbBkRV2/",
       "date": "2026-04-17",
       "caption": "i haven’t explained my deliverables on a sales call in months.\n\nmy close rate went up.\n\nwhen you explain everything on the call, you’re asking someone to process information and make a decision at the",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/670634341_969283878910820_9221551825513863913_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=pjQvkRtWsOcQ7kNvwGepcvP&_nc_oc=AdrGT-2_qoPzASSNALbQd1jvN-YiJwHVe7xNZ6yAD6HaAm76coQwZFX-PDIz6Ogl23qomqQy1KgJjVaj8aSYcPXC&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQGW-XpaEHFcjKk4u7jszM6aScw03VXTC41yDEWXvL9mY6TqV4wQOfI0z3MpaLLnONv05qdJ2G1K&oh=00_Af3fupf2V2wV1P00U_75ETb_UldVGWoC0J72zy_9DPDQxQ&oe=69EFB73D",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/670634341_969283878910820_9221551825513863913_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=pjQvkRtWsOcQ7kNvwFi1fdI&_nc_oc=AdpAQH3uMbVzR5eL1yayPnaBQJGtLA0buekin8Oa_1SCO3BRyZMQ5JaNtQZrjqupEcksyj8VIZGDJ5C3D4Sxp2lr&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQGn302EvAssVPMbrC-KhlAQcjRiSoE9l0GOXQf1v3nRATZRdCLQfudyf4CqpBGPbfdJhzHwrZAe&oh=00_Af0O4YdwGLnzEo35q_2aFhvTVF9Bv1dEUIx3QrqNfz7xCA&oe=69F0983D",
       "format": "Other",
-      "views": 700,
-      "reach": 700,
+      "views": 711,
+      "reach": 711,
       "likes": 43,
       "saves": 19,
       "shares": 3,
       "follows": 0,
-      "save_rate": 2.71,
-      "share_rate": 0.43,
-      "synced_at": "2026-04-23T10:43:58.509534+00:00"
+      "save_rate": 2.67,
+      "share_rate": 0.42,
+      "synced_at": "2026-04-24T02:32:23.493425+00:00"
     },
     {
       "id": "18092765041939503",
@@ -893,17 +911,17 @@
       "permalink": "https://www.instagram.com/reel/DXO82MIjT0X/",
       "date": "2026-04-17",
       "caption": "watch this if you’re doing cold SMS to get clients for your agency\n\nThe number one goal of cold SMS should be to get and immediately go to pay ads\n\nI delayed this for so long but when I made the switc",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/671105991_1532390981926817_6755314183108990826_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=hbTLXgPpfswQ7kNvwHEWxTv&_nc_oc=AdoNXvbppbaFILGEcVIV01XX9kynu1JAKorcaDPDusLGQcobreEDZRMbxtkJMMtE9oeBbeii_8a0UstI1tcLnqDQ&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQGwN7cpUCJv2NIJasSSMcNy7_Sol3vvfKP-YSKTKyjjDPnu28RGpWzeMrBbEHmigjRrKb48n2NR&oh=00_Af2VvGCJdBj81jgv-iYl6gXvLb6_M9zhQkpvIoOukDZuQQ&oe=69EFE0E7",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/671105991_1532390981926817_6755314183108990826_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=hbTLXgPpfswQ7kNvwFlbBai&_nc_oc=AdpLYoGQWhVz4i4wms9Han4J5vXQxftB-0ph_y6Fe4wA8uOaSN8Mi5_5HEHXjzJlFBdQVxuVopFZH8-157zyUP9h&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQED6yr8Yyr6TMFP-DauWddah4g2x99cFQjIPmT0nhmYQhABVyBuiPXhKMh01IayN9Qb2I4Zez9e&oh=00_Af0qKng2Dgx9MON7g7hjT3qHoDrsu1Gavc-6Nc25OaIBsA&oe=69F0C1E7",
       "format": "Tutorial",
-      "views": 2057,
-      "reach": 2057,
-      "likes": 82,
-      "saves": 25,
+      "views": 2068,
+      "reach": 2068,
+      "likes": 85,
+      "saves": 26,
       "shares": 26,
       "follows": 0,
-      "save_rate": 1.22,
+      "save_rate": 1.26,
       "share_rate": 1.26,
-      "synced_at": "2026-04-23T10:44:01.336625+00:00"
+      "synced_at": "2026-04-24T02:32:26.409429+00:00"
     },
     {
       "id": "18040054355577129",
@@ -911,17 +929,17 @@
       "permalink": "https://www.instagram.com/reel/DXNUOQmEbdp/",
       "date": "2026-04-16",
       "caption": "trained an ai on every sales framework and call transcript i’ve used to close agency clients\n\nasked it where a prospect went cold after “let me think about it”\n\nmy students paste in their own calls an",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/670462572_1469073345005497_2247196683724139908_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=xvDkFxeZnaUQ7kNvwGOuUUn&_nc_oc=Adr7FktqkOXZbZWcF1rcbcdgDKa0DSLBkNB2CpS2cN-GGXp-MEjDPIfwZ8E72N1QbrlVC6RHuerERwfwaJ-bYThF&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQGeqr_F74ggINWnHwAlHPeLAMRpSYG_KXFXTlz1BNWd6s2PghkGQLDzEt5reZ_KvUhRAFm1FZim&oh=00_Af1UzgYVxEDvejv5EFzPnYARq4JkRuMhGMDN7S7fwEefdQ&oe=69EFDDC0",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/670462572_1469073345005497_2247196683724139908_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=xvDkFxeZnaUQ7kNvwHilpaD&_nc_oc=AdqsR7sgvHYwxkCrHZKKHv8II8IDJN-AGp0utxDNXigW7lS1doar_bLTaSRYuOTJdSeUse9xE9blpMnzIBclyOVk&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQFBmCs-I5TOPZaWa_ffh_c2jreYh9jo1Ugo7SFvXXqHpcYVzZtcPe1ggVYIyHmvMS7W2Ms6LGyi&oh=00_Af1TQ0vEcQxje8alFsOEB31o3aiiBc_2fXD5BpL3vxKzdQ&oe=69F0BEC0",
       "format": "Discord AI",
-      "views": 1108,
-      "reach": 1108,
-      "likes": 36,
+      "views": 1122,
+      "reach": 1122,
+      "likes": 37,
       "saves": 14,
       "shares": 10,
       "follows": 0,
-      "save_rate": 1.26,
-      "share_rate": 0.9,
-      "synced_at": "2026-04-23T10:44:04.210426+00:00"
+      "save_rate": 1.25,
+      "share_rate": 0.89,
+      "synced_at": "2026-04-24T02:32:29.367048+00:00"
     },
     {
       "id": "17930730036072010",
@@ -929,17 +947,17 @@
       "permalink": "https://www.instagram.com/reel/DXM6R6DkbC6/",
       "date": "2026-04-16",
       "caption": "if you’re agency has been at $5-10k/mo for more than 30 days, you need to do these 2 things asap…\n\n1. Track literally everything\n\nIt’s such a simple and basic thing, but when I say everything, I mean ",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/670634525_710651298771308_124484677954836559_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=ZFEX7_NqRKcQ7kNvwFG0OiR&_nc_oc=Adr6N1tFEh8p7bHhpsafDlMwpV1WQo97D0DkF_xGGaVPMuaFL_Q2FPtYlVDLue0rKn8opDmcpuY5O7nU57jAPn95&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQGV3hER2JRHuxl-ISNDKOLnriyP_wlfNM__UNbEYtqOvtWw-TrrkKy7sZo6J0ACu_NODQWzhgGg&oh=00_Af0MdGee66W4cj6V_RNeDgaMIIOxKvMhGENbFO31Q_N4Lg&oe=69EFC5A0",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/670634525_710651298771308_124484677954836559_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=ZFEX7_NqRKcQ7kNvwE7Ra6S&_nc_oc=AdqL-fniss6P1QdUEYZnOxTeYkAk3Qql0oGtokiTYWaN5m3fzk8oKsXnnwfrKEXDdignS2k4b8jb3mgQ-WuO-0wI&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQGcv3B9wZzSn8-wRvEYgS7MYWPHjxdX9z2Q71miZB0A8pwMoJEDhs4UhCw2c8kwoHW7rzA474JS&oh=00_Af1ZxJQcvaZhAIqszsw3XDFYB8JOMt7P0p4-dYjNaeJOWw&oe=69F0A6A0",
       "format": "Talking Head",
-      "views": 1442,
-      "reach": 1442,
+      "views": 1444,
+      "reach": 1444,
       "likes": 55,
       "saves": 15,
       "shares": 1,
       "follows": 0,
       "save_rate": 1.04,
       "share_rate": 0.07,
-      "synced_at": "2026-04-23T10:44:07.093715+00:00"
+      "synced_at": "2026-04-24T02:32:32.132164+00:00"
     },
     {
       "id": "18094940522275553",
@@ -947,7 +965,7 @@
       "permalink": "https://www.instagram.com/reel/DXKJwvoEdoO/",
       "date": "2026-04-15",
       "caption": "i was losing more deals at $800/month than i am at $5,000.\n\ntook me a while to understand why.\n\nwhen your price is too low for the result you deliver, it creates doubt. the client doesn’t say it, but ",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/671104068_1632232107990813_5518235465806780839_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=Z5jFCYheaQ8Q7kNvwGO3zLT&_nc_oc=AdrHhck5tmu5Crm6tWmtb82FX08Iz4tFVexlJnqaDPBXmHIp3-t_pLlSS-vD0omX2JXiHUepQYh0v02hNIlTQe6P&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQFrle4PGM3YM8Fh2pJJAXyho4mmXiiobhhK_vYLjdrEDOTLLC99GdwZcTcVC2P0dzDYvZ4XVyEq&oh=00_Af2IPIRLSZQSbphUF8gfIKXM3fHMsJY4oDd0YuBRaLWb-g&oe=69EFE0E5",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/671104068_1632232107990813_5518235465806780839_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=Z5jFCYheaQ8Q7kNvwGNQNUT&_nc_oc=AdrNCbe7-RKRot89qp3BbNHs1nTuFeJrzmc3oDdzyLfEiTbX0uPQ536zj-P9IfcplaHgCtdyqo2DoC9cYFULxemL&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQF5Ze6rke0h2NAHh9ybYVrPtm3o5pgzJVLN0suvNHYnrIOS_j2xaRK0th1ZgxHykwtcyJns3fTT&oh=00_Af3AK7bw58HD-MQWkrGKU94863RHGQghEAA27viwfBtE0A&oe=69F0C1E5",
       "format": "Social Proof",
       "views": 3471,
       "reach": 3471,
@@ -957,7 +975,7 @@
       "follows": 0,
       "save_rate": 1.3,
       "share_rate": 1.5,
-      "synced_at": "2026-04-23T10:44:09.817141+00:00"
+      "synced_at": "2026-04-24T02:32:35.114719+00:00"
     },
     {
       "id": "17949089097160788",
@@ -965,17 +983,17 @@
       "permalink": "https://www.instagram.com/reel/DXH2GOlkZ_C/",
       "date": "2026-04-14",
       "caption": "I scaled my agency from $35k - $78k in 30 days by switching from SMS to paid ads\n\nany form of outreach should be a funding source for paid ads.\n\nonce you’re ads are profitable, you just keep reinvesti",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/670636632_898734436500807_7675097180470895549_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=VYgVJmFYob8Q7kNvwHXuv3d&_nc_oc=AdrIeyrV3Aj61CdSg37d2kxcN231D3rfrYpVcE0b4zvzMlbtZAAdFGEMLezu4qG7-JTL1BF0CQfDbz8fCBL_ANvJ&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQF955s98S43I0aI20nP4U7g5CG0UYS-7Xt5nnyeSAJLt_ikL7F_rfAkBSqVOFUgD9F6aOgdjh4V&oh=00_Af3vRdbA0I5K_jDQj6RdMhu0JQOorYxMINvLXidY2qGulQ&oe=69EFCB3F",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/670636632_898734436500807_7675097180470895549_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=VYgVJmFYob8Q7kNvwEjt3Kt&_nc_oc=Adpnn1faVrwLeDmPN_z2LQ-llhU137e8DdlSFtnG4k0ykWlHfUkmx4DEGmhV1jQBefkQ6-SPzfw8Vdj7YbbKwQw1&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQGZerQ-64ZuwwjM_3-_lKCjoIp9xi4EBpTZcgygXNosfNoocI_9P1r9HpURwP6LUC66pQB9LxTN&oh=00_Af1WWA5d12mIsJFhMBePHEUCoF1O_duQW54HI_FIoPgB0g&oe=69F0AC3F",
       "format": "Social Proof",
-      "views": 831,
-      "reach": 831,
+      "views": 832,
+      "reach": 832,
       "likes": 35,
       "saves": 3,
       "shares": 2,
       "follows": 0,
       "save_rate": 0.36,
       "share_rate": 0.24,
-      "synced_at": "2026-04-23T10:44:12.695807+00:00"
+      "synced_at": "2026-04-24T02:32:37.994767+00:00"
     },
     {
       "id": "17924537313269396",
@@ -983,17 +1001,17 @@
       "permalink": "https://www.instagram.com/reel/DXFTR5TEfZ5/",
       "date": "2026-04-13",
       "caption": "if you’re not signing 5-7 new clients every 10 days, it’s not your offer. it’s your volume and your follow-through.\n\ni ran this same system across 15+ different niches. same funnel, same steps, same r",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/669170266_2144756839635755_3818540292926649735_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=4K2XidfQHWMQ7kNvwHUpSYt&_nc_oc=Adocifca65_gOfR0f8b3FK1yJV-IDt4tszv-y6suSnLJ5y5pJLx9ze-DkLvuadqxOBkP9Fc49v16B5ZnMH2Pf3XK&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQF4nRYweHbFZNA8bsf8ssAByzEUcy0Di-NcMP9LhGdZTmJWv65ageJOo8j2FnnXkauHnXsdolfs&oh=00_Af2NOWOqGg0MbGUYTmXlYPeASB2v8zFpzHUJwv27G6ZFIQ&oe=69EFCBF8",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/669170266_2144756839635755_3818540292926649735_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=4K2XidfQHWMQ7kNvwEZYOvp&_nc_oc=AdqqbKlgowE7WfuI7fS77xzyxss9XNBv3f5S3lQtLgKmRSJCo1WMid35PlZ6yzu09WTptnoB_NXigI4wunW5bNUU&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQG9Eqdx3Ss67rEZBJ_8rqECyztGML6QfJfwfj63pxpfTySEDlcO-Tq5WE6axdnW7oasPLTh9yRr&oh=00_Af3R9FOduXVpPdoYS7V7DLVwUlfQBtydNutZr2hedmoQUQ&oe=69F0ACF8",
       "format": "Talking Head",
-      "views": 912,
-      "reach": 912,
+      "views": 918,
+      "reach": 918,
       "likes": 51,
       "saves": 19,
       "shares": 13,
       "follows": 0,
-      "save_rate": 2.08,
-      "share_rate": 1.43,
-      "synced_at": "2026-04-23T10:44:15.417680+00:00"
+      "save_rate": 2.07,
+      "share_rate": 1.42,
+      "synced_at": "2026-04-24T02:32:40.730869+00:00"
     },
     {
       "id": "18322981168250599",
@@ -1001,17 +1019,17 @@
       "permalink": "https://www.instagram.com/reel/DXCpz9_kepM/",
       "date": "2026-04-12",
       "caption": "The truth about Claude code for agency owners…",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/670339061_2810098399334974_694327305968553334_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=uukWdIeb-D0Q7kNvwG2uzOY&_nc_oc=AdqCezIL_MtGc9JZEnTIc8WMbrfjJey1x3mOjELdFtPCI8uODFPBcpNqi4lwCH-HvqdyUIAJdYtwGl3GAf3ZGGAx&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQEBj7MkirQpI2mAAseFQpA4mpHXPWidH9TdHOAWACRLem9AG_hdkENqHMOB4BXB4XWtiWYrdyPp&oh=00_Af1tDB__uzUiYMOyzxAvGc1EBP5cWenpuIho-KiEl8vwcA&oe=69EFDAA2",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/670339061_2810098399334974_694327305968553334_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=zw_2FModRF4Q7kNvwFPnKIZ&_nc_oc=AdrS-J9uTET3oHTDZBe2L8Qp8TJkGszuzGvvOaufH2oZJgjjMUKNGGmr-JYgAs2XjPrkm0qmiFxN-iPpt3yUkbqd&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQFBB5RgEtlPVLOtmLOZu9_8mi0aFVek0Omg2yyyElPR14EObPpLMzRdZUvk2oHHnhpzeLYigRNk&oh=00_Af3TiqtKgp4AprgRzM0MBY2LCi-EGguY5UrPXxZnTzK5Wg&oe=69F0BBA2",
       "format": "Tutorial",
-      "views": 1560,
-      "reach": 1560,
+      "views": 1562,
+      "reach": 1562,
       "likes": 49,
       "saves": 12,
       "shares": 0,
       "follows": 0,
       "save_rate": 0.77,
       "share_rate": 0.0,
-      "synced_at": "2026-04-23T10:44:18.137696+00:00"
+      "synced_at": "2026-04-24T02:32:43.599670+00:00"
     },
     {
       "id": "18114945988666329",
@@ -1019,17 +1037,17 @@
       "permalink": "https://www.instagram.com/reel/DXAM0q1kQqq/",
       "date": "2026-04-11",
       "caption": "stop undervaluing your time, and start doing what you truly want to do.\n\nif you truly want to make it work, then you don’t need a plan b.\n\nyou will find a way.",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/669651073_1404972434714856_2622186205952222634_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=jHAYDJDoFFsQ7kNvwEjT12o&_nc_oc=AdpEzmuA7l15-fLWfqM_V7OxPNN691mVCir4NZBY3EjBXNhn6vkv1b8j3RRObuhFYJEyxMi6HT9Ng-z4PQjXWkWE&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQHqp2uwXDNlBGSCHvElbHzWgH8rn4Sokd-fhOvZByh8JFbAGXt54SkBOs6k1NudNPs34atIoneO&oh=00_Af1fcma6PRnJl5OY_TGmYrdMdH5a6Np_opDkqjjZc3M6zw&oe=69EFB6EC",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/669651073_1404972434714856_2622186205952222634_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=jHAYDJDoFFsQ7kNvwGHqWE7&_nc_oc=AdqvneGs-OsQZCw8uyoCrNY44mNWCp-KZ1VLEaEgzobYJ-qbXGIaMQFzXn7oemzKgNDjG6dISYFlJAxb6ch7w_B5&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQEFeetqygnfUYBzDKY3_rh6vSYzmB3n2xa_TabRW02BHR7OX6Mc9dnw7JkeEvDvt3HX7jp1dLXI&oh=00_Af1wRGJbeOT-0IvlUbGkrA_aSJK9zG7wiFb0p628HNw4-A&oe=69F097EC",
       "format": "Talking Head",
-      "views": 1122,
-      "reach": 1122,
-      "likes": 50,
+      "views": 1133,
+      "reach": 1133,
+      "likes": 51,
       "saves": 7,
       "shares": 5,
       "follows": 0,
       "save_rate": 0.62,
-      "share_rate": 0.45,
-      "synced_at": "2026-04-23T10:44:20.827546+00:00"
+      "share_rate": 0.44,
+      "synced_at": "2026-04-24T02:32:46.638252+00:00"
     },
     {
       "id": "17868828003503664",
@@ -1037,17 +1055,17 @@
       "permalink": "https://www.instagram.com/reel/DW9nTrHEUqi/",
       "date": "2026-04-10",
       "caption": "i work less hours now than i did when i was making $5,000 a month.\n\nevery time i’ve made a real jump it didn’t come from adding more. it came from stopping, getting clear on why i was doing it, and tr",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/670235379_2922354474619945_2931635830521533657_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=1SuH2QpIujYQ7kNvwEFsUY9&_nc_oc=AdpXvyjI8U_m_V8hztu7FIZtNi2pIY7VTsudfaNsD5uN7ZVkE542JnLuNe7qiYy1STi5hFXS-g6hKp6ZmpHAcfFq&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQGRV5gLQtpSpyhhbebxTA337kSQa5JXaBVdXBmd_BSCabIdCzD5N4nnd5sl_6uVEKlfOygAOYET&oh=00_Af2r6dLWVaS6WCsKQD-84tArDwGDKlDGJuOpDvvuRPY0Gg&oe=69EFD66D",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/670235379_2922354474619945_2931635830521533657_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=1SuH2QpIujYQ7kNvwGAQpSl&_nc_oc=AdraCKO3bcXP3wfiezBQNKmfFNnk4lXMVPbZvKnTFd6_KvIaBPU6Ehbwgu1AE0wRjOIWw9KlhNvfRglBEhOezIT9&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQFXI4vPTKDM8hD59N56kh20HXIJO-Bg-zmxx23HQV9iuk26NZQHQVkzWIQHk31H1boSR2aqBND4&oh=00_Af29gRFflwCXWgVpBKlVkaAxHojZJZfyYk48n7RiPSRnDg&oe=69F0B76D",
       "format": "Talking Head",
-      "views": 702,
-      "reach": 702,
+      "views": 707,
+      "reach": 707,
       "likes": 28,
       "saves": 10,
       "shares": 5,
       "follows": 0,
-      "save_rate": 1.42,
+      "save_rate": 1.41,
       "share_rate": 0.71,
-      "synced_at": "2026-04-23T10:44:23.504547+00:00"
+      "synced_at": "2026-04-24T02:32:49.518800+00:00"
     },
     {
       "id": "18101947078760842",
@@ -1055,17 +1073,17 @@
       "permalink": "https://www.instagram.com/reel/DW6-F1qEZt9/",
       "date": "2026-04-09",
       "caption": "kobe won 5 rings and said his teammates never really liked him. his marriage almost didn’t survive it. most of his closest relationships didn’t either.\n\nand he chose it anyway.\n\npeople think the cost ",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/670282317_1725678715263229_5513519437600867252_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=zFjlK5xezc8Q7kNvwHK7L-N&_nc_oc=Adr7hGP6tFwoCoU1YRY3Hct99PnEZAz2VB0RGEl76YfXpJJ6zpMt7vwXWl5AV1kiwIXkesaJ9LJ4qE9y3JB4J-Oi&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQHkrv_hMgwH84DLHBQbthBDGn_x9ByzBpcj1BPyJxB7uHhjVN7vC7c3GaDB1mnmbcI5fM3aE-4G&oh=00_Af12LSmsaJOWQeGSHy200IxONNjhmLduOsQfVKtVSROAuw&oe=69EFB50A",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/670282317_1725678715263229_5513519437600867252_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=Nx1G5_u2ZMUQ7kNvwHVnfzm&_nc_oc=Ado7TXvxYSfXSfymdAoPWrsSey1PS483XdrY4hLz-MO5DleMx6S_quLajQQn9tMUedtXsmog7zAvsZtebsxLbZZ-&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQFn5gDWkJG56fdVgC0w_mAZTq65xLD15nvx0KaPvkFB--63H5EQOd0OLnS5cMdE7wHxbCYk-Uqm&oh=00_Af16g4VbLp6sJ9FOcpegKcH1oRnPFvS5FKgnqYQOUNJw3w&oe=69F0960A",
       "format": "Talking Head",
-      "views": 707,
-      "reach": 707,
+      "views": 709,
+      "reach": 709,
       "likes": 23,
       "saves": 2,
       "shares": 2,
       "follows": 0,
       "save_rate": 0.28,
       "share_rate": 0.28,
-      "synced_at": "2026-04-23T10:44:26.652373+00:00"
+      "synced_at": "2026-04-24T02:32:52.400691+00:00"
     },
     {
       "id": "18105697894931102",
@@ -1073,17 +1091,17 @@
       "permalink": "https://www.instagram.com/reel/DW4hJOFkUFO/",
       "date": "2026-04-08",
       "caption": "if you still make less than $30k with your agency, one of these is ‘why’.\n\nand it’s probably not just one. it’s usually two or three of them stacking on top of each other and you’re so deep in the day",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/661154374_26665152046458278_7462022654687587360_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=EQO6s0-OhH8Q7kNvwHTaDJj&_nc_oc=Adq-hsdyZbnZIrospKZC2DY5bEDtULk5kxKVs1B4vhfAVQ4vBWQFxFT8HTjuk831IqsaL4xu60FRj6Fm2CHhJeK3&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQHb6ck2wfQnbAYF9RYjsdm6y7K6nMt_CFCp7ZgKxAkMZLSGrRyihsx9UhpaEmKgBCxgNLEVtYEf&oh=00_Af2pp8WagCHSAYIE_dLKzizv6JEQkwK3ItF3YH8I-m2W7Q&oe=69EFD5C9",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/661154374_26665152046458278_7462022654687587360_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=EQO6s0-OhH8Q7kNvwFhGQor&_nc_oc=AdoI24kTLy5KXD7RTofSRSUcuUruMLMdxzXXbbYwRymaVMI80rOwnuWqUEK93iUDVYGZjP5sMll_clGxWRZQG7Z5&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQH4VnQ2__f4KluH4MtOtJetTemuk4snCvCUE6iKODX5Wu0rgfewXcojrZVJ3L97bGLv0WOqc1-c&oh=00_Af1xKd1RITuxHIJKO7QoSYw_nN036XobvVyKQ6rjNdpRzw&oe=69F0B6C9",
       "format": "Talking Head",
-      "views": 826,
-      "reach": 826,
-      "likes": 45,
+      "views": 829,
+      "reach": 829,
+      "likes": 46,
       "saves": 13,
       "shares": 9,
       "follows": 0,
       "save_rate": 1.57,
       "share_rate": 1.09,
-      "synced_at": "2026-04-23T10:44:29.487849+00:00"
+      "synced_at": "2026-04-24T02:32:55.203065+00:00"
     },
     {
       "id": "18091448813334665",
@@ -1091,7 +1109,7 @@
       "permalink": "https://www.instagram.com/reel/DW2CHLKEfFN/",
       "date": "2026-04-07",
       "caption": "most agency owners overcomplicating why they’re not at 10k/month.\n\nit comes down to three numbers.\n\nappointments per day. show rate. close rate.\n\nthat’s it. if you’re not at 10k yet, one of those thre",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/658534156_924353143848375_1735432520856733721_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=HQiJ7LygVfIQ7kNvwHRDqG7&_nc_oc=AdrYxjSMn9YoZpmNZnNO0DLvL0pamaLAESeZ9KYsEdJ-MwcC2vp0St7qDcveCbmfksDnKEEvPOOC2mYUwHxAPMvD&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQH7PsYFZtDxGupu7nQKjSV6g2n9GVUFi9BsdzWex4WwjJCF5howDNZb6gc-IpCcV9A0P7vlNmRU&oh=00_Af3xaRxnqqs-6_qskF-9KRa5lRDH6UqXaFJ6JSX3_VMjqQ&oe=69EFD638",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/658534156_924353143848375_1735432520856733721_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=HQiJ7LygVfIQ7kNvwE9SkH0&_nc_oc=AdqE_Oo-WtIv20ptbG5AsGd-JrRZpGcJMWYnpkufousyTVmYhoHOl1hOGK7zg0dgUPkuIaklwkti_FlNMkKfnh5Y&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQEm2JLJ3RmSzmklNEAg9GdM5e7AYe-rmYlty_RqUXQ6cQMOLEp_A-uNaOg80pVDGLKvbbrm-b8C&oh=00_Af1sIA-1qB-UWj3tFe5J2ilU2aL_HlBoWqIWCyjh_wqbuQ&oe=69F0B738",
       "format": "Talking Head",
       "views": 665,
       "reach": 665,
@@ -1101,7 +1119,7 @@
       "follows": 0,
       "save_rate": 0.75,
       "share_rate": 0.3,
-      "synced_at": "2026-04-23T10:44:32.749674+00:00"
+      "synced_at": "2026-04-24T02:32:58.959534+00:00"
     },
     {
       "id": "18177957745382686",
@@ -1109,17 +1127,17 @@
       "permalink": "https://www.instagram.com/reel/DWzXObrkRs-/",
       "date": "2026-04-06",
       "caption": "most agency owners are stuck charging low ticket not because they can’t deliver high ticket results but because they’re selling the wrong thing.\n\n$800/month buys your time. $5,000/month buys an outcom",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/660770753_2129053857948407_285312741323726598_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=zOKNlk5arz4Q7kNvwF9hQrE&_nc_oc=AdqZTlP_rshmptDZZJxFZ8aVb27Dp4zcBAUEQWfTITo5qwVtFY08xiEl3171vY54h9M0ckAcp9-BTbszy75ZLdRT&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQHrP7Ywkw0Yjhx3vTv955rAxXbeVnBbl8GLtQdg0FnI4-hQSkGENOxIPSJ6zggoLaArc71Ng4TB&oh=00_Af2zy7ON7z9binYK6aY9DjIn5RJGWLEVuTeyKKETb8X9aw&oe=69EFB4A7",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/660770753_2129053857948407_285312741323726598_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=zOKNlk5arz4Q7kNvwEbZAc4&_nc_oc=Adp1SAx5Uw7NPvR4pfCv1O7H4NvE14Z0xjQWEh3URyE5kItp_cJfiLRd60p5nYx4vTgJVmdix7Ob8PXEUiO_ovNe&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQF0vEG4HnWIWHESElv67dmEwtTX8-SWeRJDrBnwLTWPBmxXZ_H-G8ebZ9CSuUPnuyY09fVfjEDT&oh=00_Af2KYvdi0f4codMDlY0e72NtgYPvZVq15sUs01Lmh7p_FA&oe=69F095A7",
       "format": "Tutorial",
-      "views": 1777,
-      "reach": 1777,
+      "views": 1779,
+      "reach": 1779,
       "likes": 78,
       "saves": 26,
       "shares": 20,
       "follows": 0,
       "save_rate": 1.46,
-      "share_rate": 1.13,
-      "synced_at": "2026-04-23T10:44:35.573026+00:00"
+      "share_rate": 1.12,
+      "synced_at": "2026-04-24T02:33:01.854001+00:00"
     },
     {
       "id": "18572364577056105",
@@ -1127,17 +1145,17 @@
       "permalink": "https://www.instagram.com/reel/DWw4w0PEbq_/",
       "date": "2026-04-05",
       "caption": "We can learn from Jesus",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.82787-15/659729251_18433421245189999_2321637429159556843_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=t-xWXEt1IRsQ7kNvwFXu6K4&_nc_oc=AdqhsWe1GDscSR7kINeXGx3ls1CmJsrwH35dF--_FHerUU0JqEyN326VrM5e9BnNa_w7AvE1AyM5oA4XzmrXTzgK&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQE6iwoTe68sfAw-6jC9w6WMWW96fhsSDCxbFpJcnY1ScEykxF12S4PSprtZXCtNmpx6LX7KZCI5&oh=00_Af1O5l8XzdNhUtnAi95rBQB4Ku5cZx5cELy9ElK3xK5hrg&oe=69EFD8DC",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.82787-15/659729251_18433421245189999_2321637429159556843_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=t-xWXEt1IRsQ7kNvwFicUL8&_nc_oc=AdpvXhjCd9_mGqcWSimG39SSDnRDwv2-hkKQ-LEhKE_lc0ruk_eMG4pMDYKwzLYgQpstOkY3B6afyZqycevmMuBp&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQEjqByIP8XM-F6bs6n2sF2BfAb-UGW-XXFTxjDM8geAws7q5mTOQYyLMD32wst_J4S64OD0XkOs&oh=00_Af1bhxd7tnZd5Oy8v6Xyn9ncu_noj2lwcfdn11zaVFJiFQ&oe=69F0B9DC",
       "format": "Other",
-      "views": 948,
-      "reach": 948,
+      "views": 950,
+      "reach": 950,
       "likes": 60,
       "saves": 3,
       "shares": 1,
       "follows": 0,
       "save_rate": 0.32,
       "share_rate": 0.11,
-      "synced_at": "2026-04-23T10:44:38.180696+00:00"
+      "synced_at": "2026-04-24T02:33:04.770805+00:00"
     },
     {
       "id": "17878941480549427",
@@ -1145,7 +1163,7 @@
       "permalink": "https://www.instagram.com/reel/DWt9gM1ESbW/",
       "date": "2026-04-04",
       "caption": "What were you made for?\n\nFind that purpose and do whatever it takes to fulfill it. \n\nThere’s no “plan B”.",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.82787-15/658595604_18433223827189999_412833918943775766_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=ZNiM0VeQTHEQ7kNvwFvkmxt&_nc_oc=AdqJNuojBten6xmoDCLsnjJJLUOTXGVRpxufev5oNXoQTG3u1sltAbOe8xIS2Dcl-_8SBTzTQjxpw0MtG1ajH3o1&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQENr4GEBxcnxUypYSrJbV87XzRkgkeu1JVwUvq8TN1vAutOg0hdCZABzcKhwW8uYe-vjzE7TrvS&oh=00_Af1N4OodT5z2efi4d_mVQMqBiDfuRoIabKSqIrhPdSWN1g&oe=69EFBC62",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.82787-15/658595604_18433223827189999_412833918943775766_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=ZNiM0VeQTHEQ7kNvwGwihES&_nc_oc=Adp0y_sO3XkLzBpgVr2o0nX2HgQ6Dt_wkpLUD09sShKv90uvjWZhOJtdl9c2wnO4fWFp4pN-fCJ0RqBSXNhvFw44&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQELfRYpaQq9F3qfOvM4YxPYjwLeKqTy4B6L23gTP_1cR9J05gU36sqzv9WtphQLEbwkygmGdWhf&oh=00_Af28kZ0mF0DFd5Gfepen1zFmM8e5hGUG2jYSVQIAPd8OVA&oe=69F09D62",
       "format": "Other",
       "views": 861,
       "reach": 861,
@@ -1155,7 +1173,7 @@
       "follows": 0,
       "save_rate": 0.35,
       "share_rate": 0.46,
-      "synced_at": "2026-04-23T10:44:40.794011+00:00"
+      "synced_at": "2026-04-24T02:33:07.596363+00:00"
     },
     {
       "id": "18059074964443157",
@@ -1163,17 +1181,17 @@
       "permalink": "https://www.instagram.com/reel/DWreM2BkaaE/",
       "date": "2026-04-03",
       "caption": "3 tips to close more high-ticket clients for your agency.\n\nComment “SALES” for a full breakdown.",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/659046711_3162743750594638_6276605324542233703_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=c6YILj4jyBQQ7kNvwHQthQn&_nc_oc=AdogAnei4fw5ajfIBvXnp4KJoga6k7wdjkgzCU1t2jCYncDvXog-_gJXRBIefYi0yK1_UJBOb7ICydAjK5r1fVK1&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQFjsaAytGyFaXKwPYENPApVd-E_BJxB__eDdGEWq_7SH8XsxjEkr7DDaN_sO4CB4s3BDUDwUTkI&oh=00_Af1-2hxPFPTNpuQ9GHy_T4ztL9oD13ABdivrMR4QDyrhgw&oe=69EFB727",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/659046711_3162743750594638_6276605324542233703_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=tOAB_NDVGF0Q7kNvwF93B_4&_nc_oc=AdrTVjgMy4uc2pUkzN0YWL0qvQsQXtzgLnv9NZzxSiH7k3pEM12mfqo5NIPTmgKruLhnjCAlZLgup0BsilQepkm2&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQGvFviHCEsWuk2i03ryu1LNIbpV_x9rATfYD17aNEHPg2P52LTqmKOPIedgg2npNwOSTRaGvx4g&oh=00_Af1tUaiw8G3WFjt6Mr4SfyJ2F0NAWESZtfw3R9rQXC1OHQ&oe=69F09827",
       "format": "Tutorial",
-      "views": 2663,
-      "reach": 2663,
+      "views": 2667,
+      "reach": 2667,
       "likes": 122,
       "saves": 53,
       "shares": 43,
       "follows": 0,
       "save_rate": 1.99,
       "share_rate": 1.61,
-      "synced_at": "2026-04-23T10:44:43.577163+00:00"
+      "synced_at": "2026-04-24T02:33:10.479170+00:00"
     },
     {
       "id": "17955454929095335",
@@ -1181,17 +1199,17 @@
       "permalink": "https://www.instagram.com/reel/DWontdvDWI5/",
       "date": "2026-04-02",
       "caption": "Is it possible to make $10k/mo with a 9-5 job?\n\nYes.\n\nBut you need to have your priorities straight.\n\nAsk yourself:\n\nWhat is most important to me?\n\nThe answer to that question will help you determine ",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/657669005_2474408223015004_9212785312128006184_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=PBTMEDbKJLUQ7kNvwGTZvV7&_nc_oc=AdrfUBKzzjvAKEXNZ-QR6fdZsXHFfJp11Kn9UzqkVMrjsRNQkMDeO9goLrnLXJL2b7ahmQqj3ygBBP86JZ1P4eUX&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQGF5gfnj-_A20FqpzDs3NS_YnWszf2Dsrejum-PAwE2-BNC5rAeUU6MCc5kkcXrUWdXv-jIIeNp&oh=00_Af0HbX4bGqiqUDZXPpw5YO4yWLecJaiVRJcQE8NcHFLyCw&oe=69EFD6BD",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/657669005_2474408223015004_9212785312128006184_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=l7SJFHhFX8wQ7kNvwGowobU&_nc_oc=AdrvVH4nNMD58NK50jlewVoHWbYmORfXuxilNGvVM1-jaOajnc4P1akaeQZ4PxKUg4j3dej_q07iDPCv6eM_WzSk&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQEREW0OCcgFE7tpCWTr0sYrVmeyZSgyzkaJBsEmYQgyRT0bNUgMGs1E3pmbCnlcY-HtanQRunNR&oh=00_Af0gvahOedGpoe3MhGnbkpOk0yYuvA5vfPXx7Rv2f4P6Iw&oe=69F0B7BD",
       "format": "Talking Head",
-      "views": 1064,
-      "reach": 1064,
+      "views": 1068,
+      "reach": 1068,
       "likes": 36,
       "saves": 5,
       "shares": 1,
       "follows": 0,
       "save_rate": 0.47,
       "share_rate": 0.09,
-      "synced_at": "2026-04-23T10:44:46.333553+00:00"
+      "synced_at": "2026-04-24T02:33:14.073275+00:00"
     },
     {
       "id": "17940390189177046",
@@ -1199,17 +1217,17 @@
       "permalink": "https://www.instagram.com/reel/DWmIfipEVLn/",
       "date": "2026-04-01",
       "caption": "This may be a hot take, but closing somebody is the only ethical thing to do if you know you can help them.\n\nSo many people feel pushy on sales call, but the reason for that is because they’re not gen",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/659094233_1277907197634228_2345104293973264428_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=brgTeBDXLSEQ7kNvwGz5-oS&_nc_oc=Adoj7nUrMM8f13nkCgEey-RhiT0RYEl4nM_F9b6DzLqNsfWZyAPMRxYUmftjsp7gBeBXeC2DOhyD1nIZLPvKabSq&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQEjrF4TXfcEX573dzVWO3--9VHi0fnK9pcB1dqKRPxkXjz6NTzL4WWqnhAD00XERHSPi2L_lAyo&oh=00_Af1qoGPXXioA6yPDkW_ZvgfxDQ6puIgLDjqk4pdpZplk-w&oe=69EFBE11",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/659094233_1277907197634228_2345104293973264428_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=fKbw7CxJY_oQ7kNvwGjc0z5&_nc_oc=Adp990qNYD47K-KLWj5TKE-H1f3Ohodf9xITw0xEhdR36_eSObibQlgnTFaoKeUQasU3KhKEzcqAW2DRNS-uKsc1&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQFMVjzdc8dV_sVQj7OZh_obm2-TwFZMH6DJBwR4sIui-cbEltrEhxHwiPGWbhlzGmOb0xJWQqfU&oh=00_Af2dH5QaQJkNDlkkfUnvQA33oWdsPmABBUDoHdzaRQqoXw&oe=69F09F11",
       "format": "Tutorial",
-      "views": 603,
-      "reach": 603,
+      "views": 604,
+      "reach": 604,
       "likes": 35,
       "saves": 5,
       "shares": 2,
       "follows": 0,
       "save_rate": 0.83,
       "share_rate": 0.33,
-      "synced_at": "2026-04-23T10:44:49.363731+00:00"
+      "synced_at": "2026-04-24T02:33:17.193456+00:00"
     },
     {
       "id": "18353796022228622",
@@ -1217,17 +1235,17 @@
       "permalink": "https://www.instagram.com/reel/DWjpAFFkdJC/",
       "date": "2026-03-31",
       "caption": "I was doing 1-2k cold calls per day with my agency a couple months ago.\n\nBut I wasn’t making any calls myself.\n\nI had a commission based cold call team of about 6 callers that were calling for me.\n\nTh",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/658848961_26292067650435328_8963481883243980412_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=gi-PLNadoQIQ7kNvwGJbChY&_nc_oc=AdrZRARHlpeN-lL8cnio2Zpx2yZkvrbgD_K649EjJIAu9gvqkZXkLajX6oqhkPbsCIZg6svUiF2ajYfdj7BLzwqs&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQEz7IKv3G4Bb2rVUc9X46M65YRV5ETAV9t1S3bSoJp1k11TpaJimFda9Esc6Dann-a8wrxgBwJN&oh=00_Af1DgrM4I-l_u1ZVG0fhL_ozQkOclITBXrCfGK9jkPGTwQ&oe=69EFB200",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/658848961_26292067650435328_8963481883243980412_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=gi-PLNadoQIQ7kNvwHVeZ6N&_nc_oc=AdpQT2VdDffljjZKCPXhrDqyem8PZkPooX89hWWTU1rzImeRzZ4H-5cja8Pyw4RULle1_gWDmAxlgf-r69PWp6cf&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQEIqNJiispB3zBCGbsI_Z2PwMNl7mDLHhfTzSwiw24thT3Istoo0MHxukOveIcVWJC3MAQeWFnZ&oh=00_Af2nteIWvVjWVflgylN7Sn5jrHfmm6V2tO2mthDzF8B5DQ&oe=69F09300",
       "format": "Talking Head",
-      "views": 901,
-      "reach": 901,
-      "likes": 48,
+      "views": 904,
+      "reach": 904,
+      "likes": 49,
       "saves": 16,
       "shares": 3,
       "follows": 0,
-      "save_rate": 1.78,
+      "save_rate": 1.77,
       "share_rate": 0.33,
-      "synced_at": "2026-04-23T10:44:52.110890+00:00"
+      "synced_at": "2026-04-24T02:33:20.088442+00:00"
     },
     {
       "id": "18070903385265091",
@@ -1235,7 +1253,7 @@
       "permalink": "https://www.instagram.com/reel/DWg1hGckd5J/",
       "date": "2026-03-30",
       "caption": "",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/658752788_1874521129850227_6935372907041657450_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=0_2H8oAhCxoQ7kNvwF3UzEd&_nc_oc=AdrHmXrvEfny7VbeEyFmq3wGvKbDglicDu6xrnD3s85ipPaEyd1D8BJIAa1M2j2OlSMb0h0ntoteAp3qK9Z2HK2M&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQGGrrZbfxwBvf39VBvbA2SXcJnVJ6LLrT-s4InoaQ6kMIdKGIi9dwPHypzFHKMrLYCkHf5QcxRw&oh=00_Af1iavctIJ9k0CFkamc4OhUp2FFbI5eEvoG8JnXHuas6uQ&oe=69EFCFCE",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/658752788_1874521129850227_6935372907041657450_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=0_2H8oAhCxoQ7kNvwEH0Gk1&_nc_oc=AdpSA-k9Qd2R3pA4dFvfH9IwH_nKGrSqYZ8C7c270TvWm0btJyDacLsdd2UbozeqEsF7p_XvrOGdDAw7yMfu9Opi&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQFf0IiTFft1nnFI7cfv6Cx3F6Er0zRWSCEpBJdGpsXOSmS0fMrOkRum860GF2ICWe7F-ZmbxI-2&oh=00_Af2P7nNGX_3-Gr4Xjgwgn9vlIJpetZaKPB9nAtvj4w2AdA&oe=69F0B0CE",
       "format": "Other",
       "views": 1552,
       "reach": 1552,
@@ -1245,7 +1263,7 @@
       "follows": 0,
       "save_rate": 0.39,
       "share_rate": 0.19,
-      "synced_at": "2026-04-23T10:44:54.920743+00:00"
+      "synced_at": "2026-04-24T02:33:22.953750+00:00"
     },
     {
       "id": "17908987101365840",
@@ -1253,17 +1271,17 @@
       "permalink": "https://www.instagram.com/reel/DWfT6lnjr4Z/",
       "date": "2026-03-30",
       "caption": "which type are you?",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/657422589_1352454639979513_4105239016337107521_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=c-8QlpWNO9MQ7kNvwFTdh6t&_nc_oc=AdqqHyEadsfWPex2SGMjA2nfuq8_RCNuQ9ostsgrz6_OtfYe1pDTQGoOOprCY8KVHNnNqEhtEgPFSlbP-pROmS78&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQEILaVj2-8khyENsX4cxlhCdtIRofiNm-lW8oltqWTnXo-XPOh1R87ums5T5oKyNUN4b7CQzwnk&oh=00_Af0CJTEc58kjriKl1yQvmBaX-RX2wgPVpOG6WGTyCWs6Rw&oe=69EFB9C6",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/657422589_1352454639979513_4105239016337107521_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=c-8QlpWNO9MQ7kNvwG7wyOH&_nc_oc=Adp90kM9WwGtkABpD310LkFMbAIoxssKfsFjL-lcVxID8WyJPiWsWe0EqOpNJTZVvx9KCJA3Q88UfK62rsEmT3zO&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQHpb7tCFjxdSQSjgdiGdTrkYVORuePtWhbZL3vsrqpet5K468dUnBXSy1stDuHoHSFMmNU5ft59&oh=00_Af1xl6BWSvi0DkhTp16pnsq-ytP8a03hchHRdaY1nq4AkA&oe=69F09AC6",
       "format": "Other",
-      "views": 608,
-      "reach": 608,
+      "views": 609,
+      "reach": 609,
       "likes": 30,
       "saves": 3,
       "shares": 1,
       "follows": 0,
       "save_rate": 0.49,
       "share_rate": 0.16,
-      "synced_at": "2026-04-23T10:44:57.656776+00:00"
+      "synced_at": "2026-04-24T02:33:25.839038+00:00"
     },
     {
       "id": "17887036023356283",
@@ -1271,7 +1289,7 @@
       "permalink": "https://www.instagram.com/reel/DWescoFDrcX/",
       "date": "2026-03-29",
       "caption": "Stop comparing yourself to others.",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/662295876_955372527177045_7689810398769763076_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=1U_RVK37elYQ7kNvwGpLdOt&_nc_oc=Adr92u7WvnxV2kuPMbb-0XsJMV1nUeqhSdjFYgiGP6afKx_FyS2DNyOvdS_8erkE9gfIryed6dlJktvLwZ2A7IyM&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQGqDP-Qu1MdGmo9-0sy7S56MMBfy_Uh9r46IzCmh8VYbhnAsHMY8mFP4hmjbXLhZswKDlGQbNX9&oh=00_Af0civfop42VqhYVqvhyfv6kZYX6Q5GUiiA4TA-815QU0g&oe=69EFB14E",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/662295876_955372527177045_7689810398769763076_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=1U_RVK37elYQ7kNvwFDI1SI&_nc_oc=Adp3QviGY1ki3J5ERIxjr4kC_WZBq7ixX7nSu6lljbkLB21a9AfBkEcvK0-43xnH0VgDNk4kBIaAdOTlkVS5mAGt&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQFvzZL5tgp6qlLoEucU6TdMttD3ZHnJEWyGC8oEQD4arBBh4qh42iBYbtRDMPY1gsWGmDukCqnT&oh=00_Af3-NkBlYRwWrW1OffVBJMotsY4opnh9fqLOeh-cQX0zCg&oe=69F0924E",
       "format": "Talking Head",
       "views": 481,
       "reach": 481,
@@ -1281,7 +1299,7 @@
       "follows": 0,
       "save_rate": 0.42,
       "share_rate": 0.0,
-      "synced_at": "2026-04-23T10:45:00.369281+00:00"
+      "synced_at": "2026-04-24T02:33:28.714002+00:00"
     },
     {
       "id": "18080426789096059",
@@ -1289,7 +1307,7 @@
       "permalink": "https://www.instagram.com/reel/DWd-d8ajVfq/",
       "date": "2026-03-29",
       "caption": "This will reach the right audience.",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/657373179_872315902530248_3905417595596912773_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=v4RobpxrWyUQ7kNvwFtiBB8&_nc_oc=AdpwjMdIwDAwr_JEivoO0-PmMfSp_KD5189HTqXjv9tkoD74neESN_wR-TQdL4Vb4EO8h76BkPL-8QIvNw53CGhy&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQF1xly3jF_DCqTo_xasmULlR6SV8J6McoVRu4G5lHKOIzt9Dfj27w8GWKvaKNOj6FN5KgaYvacW&oh=00_Af2xTlsN05LuQTa79yUud8to779zBQb7C3u6UrKqoQNJAg&oe=69EFC63E",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/657373179_872315902530248_3905417595596912773_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=v4RobpxrWyUQ7kNvwGT-gpz&_nc_oc=AdrPCtNfZyeK5Nxku9fxyQ1sTIJD4rfzPWaC6yIXAOa_tQ35jfkTxjNYOI4BfZ1XgcAsPWTICL6natx7li3kMomc&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQHBma0R-1GY4XV0w1qGbQNP8SbUkr3er6lIUUFvRDRLDrNdX8allWG0oHgLaeoOcB-Waa8G1kQ8&oh=00_Af3QvgCZNaXJV8neBkmUYxN0RS-tsq_uZb-JIcM4vza_uw&oe=69F0A73E",
       "format": "Other",
       "views": 1171,
       "reach": 1171,
@@ -1299,7 +1317,7 @@
       "follows": 0,
       "save_rate": 1.54,
       "share_rate": 0.43,
-      "synced_at": "2026-04-23T10:45:03.087358+00:00"
+      "synced_at": "2026-04-24T02:33:31.567739+00:00"
     },
     {
       "id": "18106122169911593",
@@ -1307,17 +1325,17 @@
       "permalink": "https://www.instagram.com/reel/DWcxwPTjQJr/",
       "date": "2026-03-29",
       "caption": "Why your agency is stuck between $10-15k",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/657329973_1467491971598569_2723943869920075016_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=Nt9HuBB8JRkQ7kNvwGE0F1U&_nc_oc=AdpPbJDdmUGsjzY1AYw_KQxUnYvNux9MVw3WtMBVDaw64jkAhsVPothLQQK8IJf3U1F0mgSizABL5nO5mLuwn_lt&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQEOy-62r00nJP5wS6mXGYRrwm9IupHnrAb3fzyaj97wMNgq5wXugX8BD0FeL0Y8wj5fhApXR3og&oh=00_Af3D_C3KWF4OdLG5VnovOnR8jN2S2yVhERv6N068fVmbDQ&oe=69EFCA7D",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/657329973_1467491971598569_2723943869920075016_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=Nt9HuBB8JRkQ7kNvwFfY80j&_nc_oc=AdpOeN6Y2cNGOgXzXUXuIXgpMWiHZwOV-ysywD0Phu8TWWAKxplNH2lEryt9C9aJ-YhVSLwTmy2udOoeck_rQAY1&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQFTTt9xYZBEsJvUg67szfmmoBjCv5QrIcNFGryL0_0ELXT4IV5sX2tx2d23XxZts1xuZkjh2ijR&oh=00_Af0Aq2Nb-lvbFRgnapVzm61wt1bn_IQrV6Q2Iivj7z0PQA&oe=69F0AB7D",
       "format": "Talking Head",
-      "views": 518,
-      "reach": 518,
+      "views": 521,
+      "reach": 521,
       "likes": 21,
       "saves": 4,
       "shares": 0,
       "follows": 0,
       "save_rate": 0.77,
       "share_rate": 0.0,
-      "synced_at": "2026-04-23T10:45:05.816508+00:00"
+      "synced_at": "2026-04-24T02:33:34.498742+00:00"
     },
     {
       "id": "18115942117671782",
@@ -1325,17 +1343,17 @@
       "permalink": "https://www.instagram.com/reel/DWcCBlWEaJo/",
       "date": "2026-03-28",
       "caption": "Getting rich is up to you",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/655386122_951444833942214_880544050083588955_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=kipz_IZDxOYQ7kNvwHlBjOW&_nc_oc=AdpHSp5VqMweA_dDPDVN9D9YWAuqqmXO4tsVwRaRiPKQuSCnEsF4Eiq9BagQR4n8htj-qmALr4NEtVpjzvFEeN5l&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQHU8PTOpvwiBhPbKbR0BxUFHrx-qqA4xS_QxG5cBZxRrMCIAk308eCJ1aB_qI-Gz3mWFFxWDg6G&oh=00_Af0SMhq0fbJFcT4PJr9mQzPnzcAfUU6aMh0lZ4K997hcbA&oe=69EFC597",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/655386122_951444833942214_880544050083588955_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=kipz_IZDxOYQ7kNvwGlO1JF&_nc_oc=AdokYxxRAu3fAaOt6G7P3CxCeeBS6B-CRZTcwXRgrJ7GqUDpfXkqk1AQeJXNFDaY8_mA-3ywHaFfX9tb8WQVpYJu&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQGJc9aNzCtsbbs21cTgctGyznQB6wwOUqU3eWs-_t_qFFZIVO2nSqTaGGubEuogHBfsMY4UsZy5&oh=00_Af1-mF7INI0KAURqraI4V3iQXhS-GMqCkrov5_PKavbMLw&oe=69F0A697",
       "format": "Other",
-      "views": 490,
-      "reach": 490,
+      "views": 492,
+      "reach": 492,
       "likes": 36,
       "saves": 8,
       "shares": 0,
       "follows": 0,
       "save_rate": 1.63,
       "share_rate": 0.0,
-      "synced_at": "2026-04-23T10:45:08.776668+00:00"
+      "synced_at": "2026-04-24T02:33:37.339916+00:00"
     },
     {
       "id": "17985578177966961",
@@ -1343,7 +1361,7 @@
       "permalink": "https://www.instagram.com/reel/DWbsdFlDbYO/",
       "date": "2026-03-28",
       "caption": "The most important thing is action.",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/657555898_1191691629544255_7162135341964742751_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=jRDDjX27GIoQ7kNvwGsumgT&_nc_oc=AdpbRohTmcvrpcJXW8uWVLyFYGu2LhJCkrN2Gn7XxDuAqJYqQFQI_04soWBmCMH_uvkKaqRE42jiVkRui7DZkxw3&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQFqP2hWTjD6wayl49y9F9CuF69FhpsjvqkHubvTYQqHbmENOk37N-maKVeSL8LoB4834moPgqZh&oh=00_Af3I1YXJKbd3mQ7ojoFsP-ltg9BlxWAVVFDJC1VCEuBjGA&oe=69EFD72B",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/657555898_1191691629544255_7162135341964742751_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=jRDDjX27GIoQ7kNvwEDWNMh&_nc_oc=AdpHkH2-BQxdBZ3Lkt6REI9XwasQmm1FZbeHfQkANsl7bBxMH51J6Ew1PwL8zs1rap6-uZuUGNrcgnQprncfe9i0&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQEFn3CGOCuSQmZXcv4FtJITEMLGEeMmQNyhNItBD73RTs0z4SHMKvnhGWy5c3SmD9U30LhXF-1N&oh=00_Af3e-G4udeo3YK1K8OrYtVOyXoS7GUwxFQOW9UTEafdXuA&oe=69F0B82B",
       "format": "Other",
       "views": 620,
       "reach": 620,
@@ -1353,7 +1371,7 @@
       "follows": 0,
       "save_rate": 0.48,
       "share_rate": 0.0,
-      "synced_at": "2026-04-23T10:45:11.412595+00:00"
+      "synced_at": "2026-04-24T02:33:40.191120+00:00"
     },
     {
       "id": "18354432085225017",
@@ -1361,7 +1379,7 @@
       "permalink": "https://www.instagram.com/reel/DWaKaghDeXb/",
       "date": "2026-03-28",
       "caption": "times have changed.",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/658823400_963830352838104_8701426686450750871_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=p0M4nUbLvg8Q7kNvwG6im62&_nc_oc=AdqfgEXuMViQFOJylJ4v-m35jwwdJ1MADVoTafKsQY8J_PmwAsajcJLIoDrQplzeyBD1BiPeFBu2tUDfOOpUJPAA&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQEnOkw0NvfnYXVMlmq14tW9hSwFNvFDAgCrJ6QY1yoLyHcaxqodaS_X2D4C_g6dW1p35H0znDAC&oh=00_Af3nrNqBPqmCmI-s4zvWHRvK7A_Xb76qy4Kc8jNpbyOW3Q&oe=69EFD22E",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/658823400_963830352838104_8701426686450750871_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=p0M4nUbLvg8Q7kNvwHWlSXL&_nc_oc=AdrtG9hKiXckUie0Mj4ImU_I8X7OPzzxLZiIiu6frqvJsmUACJadkYu9fmqDM-ARdY87EfMhjd-ogXvG_mKcRSbD&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQFOWPQBAi9pvqqYjVkNJBm5FjdKhockfNL6P16lWS5XUTzdwlSW8xTOhBOjBBgwnuwJRjsAEu-E&oh=00_Af32z1QoQlkkvKSIx74HGsBdS-WnVi12uZwyNwzBBHXOnw&oe=69F0B32E",
       "format": "Other",
       "views": 1495,
       "reach": 1495,
@@ -1371,7 +1389,7 @@
       "follows": 0,
       "save_rate": 0.13,
       "share_rate": 0.27,
-      "synced_at": "2026-04-23T10:45:14.297202+00:00"
+      "synced_at": "2026-04-24T02:33:43.135887+00:00"
     },
     {
       "id": "18115464970656313",
@@ -1379,17 +1397,17 @@
       "permalink": "https://www.instagram.com/reel/DWZyQ9_kdc7/",
       "date": "2026-03-27",
       "caption": "How to hire better for your agency.",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/657586132_1153802503453868_4150299297566848513_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=cU2rHlJuS44Q7kNvwE5oVUE&_nc_oc=AdosGvXl8f_gEgUyDK3vqqIxyQoau8pstMzHMz4TEGCElq2j76puMkAGJFFSi45SAuM0kXazcR2KUovGCha6iSSU&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQEfCx6N7Z9KSqlO9DcDj8PFth4GD7OGUiQpCtZCpnI8qOWepubm1JRi75lypqoMpo7Sy-RsbjbJ&oh=00_Af17HjSr2L21fMlm5f55M_kvzD-QBm9uoDT3PfJFev0ZGA&oe=69EFBC55",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/657586132_1153802503453868_4150299297566848513_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=cU2rHlJuS44Q7kNvwE7pKZJ&_nc_oc=AdognYGONLa6P8H2S7hqZbS58wzbznVf8CHnKeHzCiHmhYqUmkn7xtk_0LQ2c_c6-HZg_j9cT6sbtCKb6Wf_KZye&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQFSAx-A_w7GW39p-xB7ZruommFrh4nI-JHfzBD_amCyx1eYGWJRSmhVl_rgYKDRfr7y7mFtde6i&oh=00_Af3s1yOYSDEAAB2IDFhRYQVsPTakZbHQh7KhI9Dsta80Ag&oe=69F09D55",
       "format": "Tutorial",
-      "views": 429,
-      "reach": 429,
+      "views": 430,
+      "reach": 430,
       "likes": 14,
       "saves": 0,
       "shares": 0,
       "follows": 0,
       "save_rate": 0.0,
       "share_rate": 0.0,
-      "synced_at": "2026-04-23T10:45:17.172166+00:00"
+      "synced_at": "2026-04-24T02:33:45.993488+00:00"
     },
     {
       "id": "18405571642182573",
@@ -1397,17 +1415,17 @@
       "permalink": "https://www.instagram.com/reel/DWZlPyGESYy/",
       "date": "2026-03-27",
       "caption": "4 new clients in 4 weeks",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/657698032_1458856129228840_5595761543841825947_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=aTEa1AsQMlAQ7kNvwHEirX7&_nc_oc=AdoHpp1fGAnQO6kSKHd4mKmNtp4L_GV8lKZLc0LanvLVVOJTvtSh0zhcNCAX3JunGx4w4dWz3VTqXjc9cfFU4ET8&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQGxOUrMTny3ETClvfGyq_NcGRrK7EO3ocGruaiPGic25ywSHaAWJ6-1__yKcJCJ6dU7oly21JvQ&oh=00_Af29timAA7lWA61xAobCeBpTgnG0Ui2UKGSg-x-r9oD7cw&oe=69EFB298",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/657698032_1458856129228840_5595761543841825947_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=ydhyvSL-D5UQ7kNvwEdg7gz&_nc_oc=AdrSJ-9wXolgFjHznFZm_GZOx9kog_BBf1Lh15wZKdNGfq36GvxywKCh3uVkUV2JII0SNslL8Z3OH2-hTfaqn_vq&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQE7_zX57Gh2u-1ziiz_6Dbjx4n9QvldOBdEPuNegOidIKjwsqfdDahfwi4eqfGHkJtnBwVz-GSU&oh=00_Af3kWvOrrNbAQiAj83xwaoOSwfOiYgbNgNZdmVuOhgvrpA&oe=69F09398",
       "format": "Other",
-      "views": 593,
-      "reach": 593,
+      "views": 596,
+      "reach": 596,
       "likes": 43,
       "saves": 9,
       "shares": 1,
       "follows": 0,
-      "save_rate": 1.52,
+      "save_rate": 1.51,
       "share_rate": 0.17,
-      "synced_at": "2026-04-23T10:45:19.772991+00:00"
+      "synced_at": "2026-04-24T02:33:49.034839+00:00"
     },
     {
       "id": "17893580865430881",
@@ -1415,17 +1433,17 @@
       "permalink": "https://www.instagram.com/reel/DWZRtt8kYHb/",
       "date": "2026-03-27",
       "caption": "Tag your brotha.",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/656472128_2081730245732211_8418896402339160844_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=95LGNaHSFL4Q7kNvwHg6FtA&_nc_oc=AdqlrpXCWd3hAE8iZi33DL2UIkR518f8-Ti9_fpQ5nD_PPKgKjdRYj_CxuLO7BvNmm-dYuxg_obm_-v6VcPWTOYN&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQFFFq_ksYdk1BECB0cIZqzxv3G98PBuxNMt_MjxC9YdhAD-zp9y-iD6eCG_KVEWewoEzas8v2AI&oh=00_Af1jxOODLDvmVknmb3YvBTSTzQ1scs4UFmF92NM2jKUumQ&oe=69EFBDAD",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/656472128_2081730245732211_8418896402339160844_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=gV97HU4MkdMQ7kNvwE1m2K5&_nc_oc=Adq9UkW_hKu_aIanPKa4neS9YmvfyuekvgdHBsWrb1_qQKOLVbEDvEBzvS7AT11hyAOne62UAosQaPPLRQogZO9-&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQELYYke3DcSlwQefwJJHyrRC1tJmftzITkrjYJCpgqucDQbeAY0fPSWTDJ5NJ9dXg0GdGbsSjMU&oh=00_Af1Y2_p596O9HeZwJnJV6jVleI_kYlFN4sSUXkQbaCn04g&oe=69F09EAD",
       "format": "Other",
-      "views": 1828,
-      "reach": 1828,
+      "views": 1830,
+      "reach": 1830,
       "likes": 83,
       "saves": 5,
       "shares": 12,
       "follows": 0,
       "save_rate": 0.27,
       "share_rate": 0.66,
-      "synced_at": "2026-04-23T10:45:22.448779+00:00"
+      "synced_at": "2026-04-24T02:33:51.936719+00:00"
     },
     {
       "id": "18114496414709272",
@@ -1433,17 +1451,17 @@
       "permalink": "https://www.instagram.com/reel/DWXZSEZjfiT/",
       "date": "2026-03-26",
       "caption": "What I learned after traveling to Cape Town as an entrepreneur",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/656825353_911829618394628_7338865041500655597_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=_7msdkJpFIAQ7kNvwH0e728&_nc_oc=AdpQTBlG0op0fZFBN_bGDng6Tfh0mkaEud5zIPuGMSL_lItVIwDWnPjdsT9KxEbtpXDGFPuMbgueFwYEqgomDqL5&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQG2rgK-x6gmwKVzzLm9kR1v4xos8IdXNBoJAsM1SYYKaP2rV4ZROA93CGhuSto3XvSQeJAVQjYc&oh=00_Af2vyI3ISRF5IUB5YjaHKN2zlF2S6a1NB4DKlez4uhHcKg&oe=69EFC126",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/656825353_911829618394628_7338865041500655597_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=_7msdkJpFIAQ7kNvwFV8eb5&_nc_oc=AdrNyP5dCrfuMBYdk5WOX5TbQn2c1Y5ZzHodNvuhIcibZ28lE_e_aVa4ziCjNPm0rOByi72nnNrEWPOUAuzoOFgH&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQFzt36k5UGrVRe6w7apAkrNgNQRAs0_QoiInsBigUJ-XsDTAgUkgXEcEZFe92ldb6ofEqxhEFXi&oh=00_Af1i8IhpJ6prmkBRFZjwWpRUGZXPngnP4ETBW9IAL4ILzw&oe=69F0A226",
       "format": "Other",
-      "views": 1322,
-      "reach": 1322,
+      "views": 1326,
+      "reach": 1326,
       "likes": 64,
       "saves": 9,
       "shares": 2,
       "follows": 0,
       "save_rate": 0.68,
       "share_rate": 0.15,
-      "synced_at": "2026-04-23T10:45:25.168062+00:00"
+      "synced_at": "2026-04-24T02:33:55.756869+00:00"
     },
     {
       "id": "18107236177893118",
@@ -1451,7 +1469,7 @@
       "permalink": "https://www.instagram.com/reel/DWXATgWkXbs/",
       "date": "2026-03-26",
       "caption": "how to win",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/658071787_1495941512234574_3457313612511258636_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=FmPDeae6Z1sQ7kNvwGjtvWv&_nc_oc=AdoucUrZPkmz5uIsEJBTTvTsSSqFrCaImByw-VIZYw8dUhfjqQ7hsEiCTXLL0zM26jagb6QPv9EHp-_VE0BmL-VS&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQEIkCXkorLL-8dZKbxBVpgoP43G7s49DJ95vv2qscdSTdc6IW9_wT0xzRDCYrsa7XHQ2g5R2SXB&oh=00_Af1PAlNkRXolP8xv4RABNKO41H9iAwjeFOelyaIBmO83eQ&oe=69EFBFBE",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/658071787_1495941512234574_3457313612511258636_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=FmPDeae6Z1sQ7kNvwGNrkAT&_nc_oc=AdrPcIqflFOO4QsZm46fy2aF1xCr9IDaEzm4_uJwac8ztJDRYPm1tsoAWkXyaqGzo9jTkTARFRHKvwrby5wzFiAW&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQE3FVp4l-VCKOu6WlT3DlpHndKwcaoaEILB7IT4UNLBapHIN4ZeM__a0YrzGNGhJma0Lx7i9_SC&oh=00_Af2QqacE9gve907SUR6A3UmUznVFXkDLfM9Fbtd1a6gGww&oe=69F0A0BE",
       "format": "Tutorial",
       "views": 728,
       "reach": 728,
@@ -1461,7 +1479,7 @@
       "follows": 0,
       "save_rate": 0.55,
       "share_rate": 0.0,
-      "synced_at": "2026-04-23T10:45:28.052031+00:00"
+      "synced_at": "2026-04-24T02:33:58.574788+00:00"
     },
     {
       "id": "17964253176025211",
@@ -1469,7 +1487,7 @@
       "permalink": "https://www.instagram.com/reel/DWWhCImjaxn/",
       "date": "2026-03-26",
       "caption": "cafemaxxing >> ☕️",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/654951027_2349423345527222_1771815033512880784_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=IuNkDI_URPgQ7kNvwFT_WH7&_nc_oc=AdquDsabiHSzMGdVrCWVM59kd5yk7ZcxCWiPQMkCzPx5c-7NlpDDd0ig20KFZCUy9353MihcMu90kgcmZgekr9x7&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQHQ4H3mQLzp-bTeUVUJlbjgQb4kLBRbomjPg7eOxwKnE3SQ6df6ji51vbmzqHBsM_6nvCevrURI&oh=00_Af3nd2C0C5CS5kernR2u22knsleA6a8f3ABS9wWur8DlVg&oe=69EFC970",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/654951027_2349423345527222_1771815033512880784_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=IuNkDI_URPgQ7kNvwHqVRiA&_nc_oc=Ado_t6SV2RQDNuvl6PUaGA_HEWyAv9UAU5ETcw9LzWTS-3ewoTGAwP1wnHt_VT3OY88jrBAYYR87TP0WqkKIgwiI&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQFbTo7TrnJ5AdW9D_sHYrusGq9VSaguA4_tKcMqs9cDWuitI5NXyGfMFBgE8KAtW11Y9WP2Vc7t&oh=00_Af2ykoCBBm3jKRefQSNbc6SqhfoyNeOZIo63V-ajpDj50Q&oe=69F0AA70",
       "format": "Other",
       "views": 716,
       "reach": 716,
@@ -1479,7 +1497,7 @@
       "follows": 0,
       "save_rate": 0.14,
       "share_rate": 0.14,
-      "synced_at": "2026-04-23T10:45:31.198104+00:00"
+      "synced_at": "2026-04-24T02:34:01.361121+00:00"
     },
     {
       "id": "18077046086435987",
@@ -1487,7 +1505,7 @@
       "permalink": "https://www.instagram.com/reel/DWUxeUJjXdb/",
       "date": "2026-03-25",
       "caption": "freedom >>",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/657134701_1290605216368455_7425629404698391817_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=dnZZyAddSbkQ7kNvwE0c2n5&_nc_oc=Adpy3J38_AM90dLu4JYSMB8fMJmD0_Qf0NUv1CliRug8pHb5E-eFrN1zYbStmHE8YR_73zJ1uoHbcUuxDO3RXoVi&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQEszEAaA7141CbsrdHd68VcVrdgi189Nz_cFdOJqzgomdtDptLWKa8QZVLgIOk5GntCelrOaxx2&oh=00_Af3b93OimNDxqxXv_zUeVi2gHRDfYvbLjgBK7M1YK2osfA&oe=69EFC1C8",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/657134701_1290605216368455_7425629404698391817_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=dnZZyAddSbkQ7kNvwFUOG7N&_nc_oc=AdoTyrx3Ltp_vTptRKdbUCj64f1BNkfegnx1YZurGJ8kjDABHTeuZlYTUfghWhPkVQw_q0-wLG596Rwlqa0pB7Rf&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQGBO9YtgWr0CM1RN3eJLgR4yd_By7mHA_IAVahY7J1MXOuWBDFLAsmqOmbm4rlJkRRoXsBVrfrv&oh=00_Af37zZsCq-blUaytyf4REQHa_AiZ-zaW7ddykU2sAaEGfw&oe=69F0A2C8",
       "format": "Other",
       "views": 1842,
       "reach": 1842,
@@ -1497,7 +1515,7 @@
       "follows": 0,
       "save_rate": 0.33,
       "share_rate": 0.22,
-      "synced_at": "2026-04-23T10:45:33.966954+00:00"
+      "synced_at": "2026-04-24T02:34:04.197892+00:00"
     },
     {
       "id": "18104671855809875",
@@ -1505,7 +1523,7 @@
       "permalink": "https://www.instagram.com/reel/DWUdb-sEbts/",
       "date": "2026-03-25",
       "caption": "be grateful.",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/657804449_936872922257998_3415265368836768310_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=KmX_Swidyi4Q7kNvwEbTL5U&_nc_oc=AdqM78np6vwHnefkD-mS4gRtaHQk32ojxYWfd2llFZPs4wtG8i-MOMYC0g21G9B2GIJxtaLy-3hIdaiV995MIQ-r&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQFxMLAQwDwxwdfgrrJ_AYDVlsb0wAGZAnK2dqQaoJNh05xZg8U9-4EfaYhfBhDNIXL2BiTZmTKO&oh=00_Af3VmH2qKNaeD8QJGm9x3UB2Hn28mp6229ija5HZFDl43A&oe=69EFAF63",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/657804449_936872922257998_3415265368836768310_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=KmX_Swidyi4Q7kNvwGg_bVu&_nc_oc=AdotW06t9rnSAgCBiHQpxE-e13rx5XAO1yF7ULt1-g_jJTqrcUfb9yxzGApvIouZmxr8aJixxNTRDHqPIGvJ1L08&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQGWjm6fFNWXw5Ba2Ho_AAfPOxqCAaM_hJP4sPxnyhdMLifuvPzsqlxcbdFh5oLWZn7NMkFqsJwR&oh=00_Af1x2AglaF8VtZkt8ngpK6H0YFpQbSMJpL6KwlDQ5JXZ_w&oe=69F09063",
       "format": "Other",
       "views": 829,
       "reach": 829,
@@ -1515,7 +1533,7 @@
       "follows": 0,
       "save_rate": 0.0,
       "share_rate": 0.97,
-      "synced_at": "2026-04-23T10:45:36.561492+00:00"
+      "synced_at": "2026-04-24T02:34:07.589914+00:00"
     },
     {
       "id": "18149218339463854",
@@ -1523,7 +1541,7 @@
       "permalink": "https://www.instagram.com/reel/DWShq1JjR7A/",
       "date": "2026-03-25",
       "caption": "pov: you locked in",
-      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/655830827_981515747873799_443809521675065779_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=6Ksh6kQgx00Q7kNvwHEcyW0&_nc_oc=AdoKqCsnB8ccXDb9qVjtjNTv3dmFoNDseGFdJ6oKf1ZbB52bcfadlI7Gz6gCu3lIqxy7pdDE767qxrAQJ4fkkFNt&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=0_vKRd2S7lUEfhJvo4Qv0g&_nc_tpa=Q5bMBQG_AV33PwDc-ZptzmzbeEAdcjLikqRq1wDCgYG1Eibd-xnbR12coII_1OeGiarFxijGyOW_H-Qf&oh=00_Af30tydYJREmOj4_SARflqli1uW6nfpnz4TnE2-vKTM4kQ&oe=69EFDC22",
+      "thumbnail": "https://scontent.cdninstagram.com/v/t51.71878-15/655830827_981515747873799_443809521675065779_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=6Ksh6kQgx00Q7kNvwFBUYCF&_nc_oc=AdpbkRaqdclb-Xo5VOd0tdWsYfFeyUG1upkjgVBDCs7xJr6jb9E6fC1iCEzOeoLv4Gf_MZaw_GHBZhw16rBgucVb&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=rMJkTtZCcfJyLn1ii_tu7Q&_nc_tpa=Q5bMBQHYpX-alSYpEDAGoK2n0Hpxo2y6qaYGHWbB_DqJ4vstemceCbekyp_KjkYS1ud9kJ_IEUiTFOnx&oh=00_Af03CNpSFuOW0V7GCenhZdFx8yE_sg7Lz4thIEryc81-LA&oe=69F0BD22",
       "format": "Other",
       "views": 1595,
       "reach": 1595,
@@ -1533,7 +1551,7 @@
       "follows": 0,
       "save_rate": 0.5,
       "share_rate": 0.13,
-      "synced_at": "2026-04-23T10:45:39.192200+00:00"
+      "synced_at": "2026-04-24T02:34:10.638373+00:00"
     },
     {
       "id": "18309099352272012",
