@@ -208,8 +208,10 @@ button, input, textarea, select, span, div, p, h1, h2, h3, h4, h5, h6, td, th, a
 .nh-tbl tbody td {
     padding: 11px 14px; color: #aaa8c0; font-weight: 500;
     vertical-align: middle;
-    border-bottom: none;
+    border: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.025) !important;
 }
+.nh-tbl tbody tr:last-child td { border-bottom: none !important; }
 .nh-tbl tbody tr:hover td { background: rgba(255,255,255,0.022); }
 .nh-tbl td.num { text-align: right; font-variant-numeric: tabular-nums; color: #d8d8e6; font-weight: 600; }
 .nh-tbl td.dt  { color: #6e6e88; font-variant-numeric: tabular-nums; white-space: nowrap; }
@@ -460,22 +462,18 @@ by_share = sorted(reels, key=lambda r: r["shares"],    reverse=True)
 # Header
 hc1, hc2 = st.columns([3, 1])
 with hc1:
-    st.markdown(f"""
-    <div style="display:flex;align-items:flex-end;gap:18px;margin-bottom:4px">
-      <span style="font-size:24px;font-weight:900;letter-spacing:-0.8px;color:#f2f2fa;line-height:1">@noah.haupt</span>
-      <span style="font-size:13px;color:#7a7a95;font-weight:500;line-height:1;padding-bottom:3px">Instagram Performance Overview</span>
-    </div>
-    <div style="display:flex;align-items:baseline;gap:10px;margin-top:8px">
-      <span style="font-size:36px;font-weight:800;letter-spacing:-1.5px;color:#f2f2fa;line-height:1">{followers:,}</span>
-      <span style="font-size:13px;color:#7a7a95;font-weight:500;letter-spacing:0.4px">Followers</span>
-      <span style="font-size:11px;color:#3a3a52;font-weight:500;margin-left:6px">· {total_reels} reels</span>
+    st.markdown("""
+    <div style="padding-top:2px">
+      <div style="font-size:22px;font-weight:900;letter-spacing:-0.8px;color:#f2f2fa;line-height:1.1">@noah.haupt</div>
+      <div style="font-size:13px;color:#555568;font-weight:500;margin-top:4px">Instagram Performance Overview</div>
     </div>
     """, unsafe_allow_html=True)
 with hc2:
     st.markdown(f"""
-    <div style="text-align:right;padding-top:8px">
-      <span style="font-size:11px;color:#7a7a95;font-weight:500;text-transform:uppercase;letter-spacing:1.2px">Last Sync</span><br>
-      <span style="font-size:13px;color:#4ade80;font-weight:700">{synced}</span>
+    <div style="text-align:right;padding-top:6px">
+      <span style="display:inline-block;background:#0d0d14;border:1px solid rgba(255,255,255,0.075);border-radius:10px;padding:9px 18px;font-size:12px;color:#555568;font-weight:500">
+        Last sync &nbsp;<b style="color:#4ade80;font-weight:700">{synced}</b>
+      </span>
     </div>
     """, unsafe_allow_html=True)
 
@@ -524,25 +522,52 @@ with h4:
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-# ── Section 2: All-Time Context ───────────────────────────────────────────────
-st.markdown('<div class="nh-sec">All-Time Context</div>', unsafe_allow_html=True)
+# ── Section 2: Account Overview ───────────────────────────────────────────────
+st.markdown('<div class="nh-sec">Account Overview</div>', unsafe_allow_html=True)
 
-a1, a2, a3, a4 = st.columns(4)
+reels_30d = sum(1 for r in reels if reel_date(r) >= d30_ago)
 
-ctx_cards = [
-    (a1, "Total Reels",    str(total_reels),        "All time"),
-    (a2, "5K+ Views",      str(viral_reels),        "Reels that broke through"),
-    (a3, "Avg Views/Reel", fmt(all_["avg_views"]),  "All reels"),
-    (a4, "Avg Save Rate",  f"{avg_save_r}%",        "All reels"),
+ao1, ao2, ao3, ao4 = st.columns(4)
+account_cards = [
+    (ao1, "Followers",       f"{followers:,}",                     "Total audience",          True,  ""),
+    (ao2, "Account Reach",   fmt(account_reach_30d) if account_reach_30d else "—", "Last 30 days", False, ""),
+    (ao3, "Reels Posted",    str(reels_30d),                       "Last 30 days",            False, ""),
+    (ao4, "Total Reels",     str(total_reels),                     "All time",                False, ""),
 ]
-
-for col, lbl, val, sub in ctx_cards:
+for col, lbl, val, sub, hl, val_cls in account_cards:
     with col:
+        klass = "hero-card hl" if hl else "hero-card"
+        vcls  = f"hero-val {val_cls}" if val_cls else "hero-val"
+        if hl: vcls += " bl"
         st.markdown(f"""
-        <div class="ctx-card">
-          <div class="ctx-lbl">{lbl}</div>
-          <div class="ctx-val">{val}</div>
-          <div class="ctx-sub">{sub}</div>
+        <div class="{klass}" style="min-height:108px">
+          <div class="hero-lbl">{lbl}</div>
+          <div class="{vcls}" style="font-size:32px">{val}</div>
+          <div class="hero-delta">{sub}</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+st.markdown("<br>", unsafe_allow_html=True)
+
+# ── Section 3: Content Performance ────────────────────────────────────────────
+st.markdown('<div class="nh-sec">Content Performance</div>', unsafe_allow_html=True)
+
+cp1, cp2, cp3, cp4, cp5 = st.columns(5)
+content_cards = [
+    (cp1, "Total Views",     fmt(all_["views"]),        "All time",                 ""),
+    (cp2, "Avg Views/Reel",  fmt(all_["avg_views"]),    "All reels",                ""),
+    (cp3, "Total Saves",     fmt(all_["saves"]),        "All time",                 "gr"),
+    (cp4, "Avg Save Rate",   f"{avg_save_r}%",          "All reels",                "am"),
+    (cp5, "5K+ Reels",       str(viral_reels),          "Reels that broke through", "pu"),
+]
+for col, lbl, val, sub, val_cls in content_cards:
+    with col:
+        vcls = f"hero-val {val_cls}" if val_cls else "hero-val"
+        st.markdown(f"""
+        <div class="hero-card" style="min-height:108px">
+          <div class="hero-lbl">{lbl}</div>
+          <div class="{vcls}" style="font-size:32px">{val}</div>
+          <div class="hero-delta">{sub}</div>
         </div>
         """, unsafe_allow_html=True)
 
