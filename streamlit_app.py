@@ -295,10 +295,10 @@ def load_data():
 
 def apply_style(fig, height=220, show_legend=True, legend_right=False):
     lp = dict(orientation="h", font=dict(color="#6b6b85", size=11),
-              bgcolor="rgba(0,0,0,0)", x=0.5, xanchor="center", y=-0.28, yanchor="top")
+              bgcolor="rgba(0,0,0,0)", x=0.5, xanchor="center", y=-0.22, yanchor="top")
     if legend_right:
         lp.update(orientation="v", x=1.02, y=0.5, xanchor="left", yanchor="middle")
-    bottom_margin = 24 if (not show_legend or legend_right) else 75
+    bottom_margin = 30 if (not show_legend or legend_right) else 90
     fig.update_layout(
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
@@ -566,7 +566,7 @@ with cc1:
         fill="tozeroy", fillcolor="rgba(251,191,36,0.05)",
         mode="lines+markers", marker=dict(size=4),
     ))
-    apply_style(fig, height=290)
+    apply_style(fig, height=340)
     st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
 
 with cc2:
@@ -576,7 +576,7 @@ with cc2:
         marker=dict(color="rgba(74,222,128,0.5)", line=dict(color="#4ade80", width=0)),
         hovertemplate="%{x}: +%{y}<extra></extra>",
     ))
-    apply_style(fig2, height=290, show_legend=False)
+    apply_style(fig2, height=340, show_legend=False)
     fig2.update_layout(xaxis=dict(
         type="category", tickfont=dict(color="#505068", size=9), nticks=10,
     ))
