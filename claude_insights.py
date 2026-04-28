@@ -167,9 +167,14 @@ def composite_score(reel: dict, cohort_max: dict) -> float:
 
 
 def cohort_max(reels: list) -> dict:
-    """Return per-metric max across cohort, used to normalize composite score."""
+    """Return per-metric max across cohort, used to normalize composite score.
+
+    `r.get(k, 0)` returns None when the key exists but the value is None
+    (Notion writes None for empty number fields). max() can't compare None to
+    ints in Py3, so coerce with `or 0` per item before maxing.
+    """
     return {
-        "saves":           max((r.get("saves", 0)           for r in reels), default=1) or 1,
-        "shares":          max((r.get("shares", 0)          for r in reels), default=1) or 1,
-        "completion_rate": max((r.get("completion_rate", 0) for r in reels), default=1) or 1,
+        "saves":           max(((r.get("saves") or 0)           for r in reels), default=1) or 1,
+        "shares":          max(((r.get("shares") or 0)          for r in reels), default=1) or 1,
+        "completion_rate": max(((r.get("completion_rate") or 0) for r in reels), default=1) or 1,
     }
