@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Noah IG Weekly - May 02</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f1e8;
+    --surface: #fbf8f2;
+    --ink: #1a1a1a;
+    --ink-muted: #5c5c5c;
+    --line: #e3ddd0;
+    --line-strong: #1a1a1a;
+
+    --green-fill: #ecf7ee;
+    --green-edge: #2e8b3a;
+    --green-ink: #1f5f27;
+
+    --yellow-fill: #fff7d1;
+    --yellow-edge: #b58105;
+    --yellow-ink: #6b4d00;
+
+    --red-fill: #ffe1e1;
+    --red-edge: #c0392b;
+    --red-ink: #7a1f15;
+
+    --blue-fill: #e3edfa;
+    --blue-edge: #305bab;
+    --blue-ink: #1f3d75;
+
+    --gray-fill: var(--surface);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    font-feature-settings: "cv11", "ss01", "ss03";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 64px 32px 96px;
+  }
+
+  /* header */
+  header { margin-bottom: 56px; }
+  .eyebrow {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-muted);
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: 44px;
+    line-height: 1.1;
+    font-weight: 700;
+    margin: 0 0 16px;
+    letter-spacing: -0.02em;
+  }
+  .subtitle {
+    font-size: 19px;
+    color: var(--ink-muted);
+    margin: 0 0 28px;
+    max-width: 720px;
+    line-height: 1.5;
+  }
+
+  /* section */
+  section { margin-top: 56px; }
+  h2 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-muted);
+    font-weight: 600;
+    margin: 0 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  /* breakout card */
+  .breakout {
+    padding: 32px;
+    background: var(--green-fill);
+    border: 1.5px solid var(--green-edge);
+    border-radius: 12px;
+  }
+  .breakout-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--green-ink);
+    margin: 0 0 8px;
+  }
+  .breakout-title {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 16px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .breakout-stats {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+    font-size: 14px;
+    color: var(--green-ink);
+  }
+  .breakout-stats strong { color: var(--ink); font-size: 18px; }
+  .breakout-body {
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .breakout-body strong { color: var(--green-ink); }
+
+  /* actions */
+  .actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .action {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 20px;
+    padding: 20px 22px;
+    background: var(--gray-fill);
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+  }
+  .action.tinted-green  { background: var(--green-fill);  border-color: var(--green-edge);  }
+  .action.tinted-yellow { background: var(--yellow-fill); border-color: var(--yellow-edge); }
+  .action.tinted-blue   { background: var(--blue-fill);   border-color: var(--blue-edge);   }
+
+  .action-num {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+    padding-top: 2px;
+  }
+  .action-num.green  { color: var(--green-ink); }
+  .action-num.yellow { color: var(--yellow-ink); }
+  .action-num.blue   { color: var(--blue-ink); }
+
+  .action-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+  .action-body {
+    font-size: 15px;
+    color: var(--ink-muted);
+    margin: 0;
+    line-height: 1.55;
+  }
+  .action-body strong { color: var(--ink); }
+
+  /* misses callout */
+  .misses {
+    padding: 24px 28px;
+    background: var(--red-fill);
+    border-left: 4px solid var(--red-edge);
+    border-radius: 6px;
+  }
+  .misses-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--red-ink);
+    margin: 0 0 12px;
+  }
+  .misses-list { margin: 0; padding: 0; list-style: none; }
+  .misses-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(192,57,43,0.2);
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .misses-list li:last-child { border-bottom: none; }
+  .misses-list .hook { font-weight: 600; }
+  .misses-list .why { color: var(--red-ink); font-size: 14px; }
+
+  /* week-over-week grid */
+  .delta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .delta-card {
+    padding: 18px 20px;
+    background: var(--blue-fill);
+    border: 1.5px solid var(--blue-edge);
+    border-radius: 10px;
+  }
+  .delta-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--blue-ink);
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+  .delta-value {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 4px;
+    color: var(--ink);
+  }
+  .delta-arrow { font-size: 18px; }
+  .delta-arrow.up   { color: var(--green-ink); }
+  .delta-arrow.down { color: var(--red-ink); }
+  .delta-arrow.flat { color: var(--ink-muted); }
+  .delta-was {
+    font-size: 12px;
+    color: var(--ink-muted);
+  }
+
+  /* this week's reels */
+  .reel-card {
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 12px;
+    background: var(--surface);
+  }
+  .reel-card.hit    { background: var(--green-fill);  border-color: var(--green-edge); }
+  .reel-card.miss   { background: var(--red-fill);    border-color: var(--red-edge); }
+  .reel-card.middle { background: var(--surface); }
+
+  .reel-row1 {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .pill {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: #f0f0ee;
+    border: 1px solid #ddd;
+    color: #555;
+  }
+  .pill.hit    { background: var(--green-fill); color: var(--green-ink); border-color: var(--green-edge); }
+  .pill.miss   { background: var(--red-fill);   color: var(--red-ink);   border-color: var(--red-edge); }
+  .pill.middle { background: var(--surface); color: #555; border-color: #ccc; }
+  .pill.format { background: var(--surface); color: #555; border-color: #ccc; font-weight: 500; }
+
+  .reel-hook {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0 0 10px;
+    color: var(--ink);
+  }
+  .reel-hook a { color: inherit; text-decoration: none; border-bottom: 1px dotted #aaa; }
+  .reel-stats {
+    display: flex;
+    gap: 18px;
+    font-size: 13px;
+    color: var(--ink-muted);
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .reel-stats strong { color: var(--ink); }
+  .reel-read {
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* numbers tables */
+  details.numbers {
+    margin-top: 12px;
+    padding: 18px 22px;
+    background: var(--surface);
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+  }
+  details.numbers summary {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+    list-style: none;
+    user-select: none;
+  }
+  details.numbers summary::-webkit-details-marker { display: none; }
+  details.numbers summary::before {
+    content: "▸ ";
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-right: 4px;
+  }
+  details.numbers[open] summary::before { content: "▾ "; }
+  details.numbers > .num-block { margin-top: 18px; }
+
+  table.num {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 22px;
+  }
+  table.num thead tr { border-bottom: 2px solid var(--line-strong); }
+  table.num th {
+    text-align: left;
+    padding: 8px 10px;
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-muted);
+  }
+  table.num tbody tr { border-bottom: 1px solid var(--line); }
+  table.num td { padding: 8px 10px; vertical-align: top; }
+  table.num tr.top-row { background: var(--green-fill); }
+  table.num tr.bot-row { background: var(--red-fill); }
+  .num-h3 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ink-muted); margin: 0 0 10px; font-weight: 700; }
+
+  /* glossary */
+  .glossary-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 28px;
+  }
+  .glossary-list li {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink-muted);
+  }
+  .glossary-list strong {
+    color: var(--ink);
+    display: block;
+    font-size: 13px;
+    margin-bottom: 2px;
+  }
+
+  footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--ink-muted);
+  }
+
+  @media (max-width: 720px) {
+    .wrap { padding: 40px 20px 64px; }
+    h1 { font-size: 32px; }
+    .breakout { padding: 24px; }
+    .breakout-title { font-size: 22px; }
+    .delta-grid { grid-template-columns: 1fr 1fr; }
+    .glossary-list { grid-template-columns: 1fr; }
+    .action { grid-template-columns: 44px 1fr; gap: 14px; padding: 16px 18px; }
+    .action-num { font-size: 20px; }
+    table.num { display: block; overflow-x: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">weekly report · may 02</div>
+    <h1>The paid-ads pivot landed. "You need to do X if you want Y" is the working hook this week.</h1>
+    <p class="subtitle">14 reels. Six saved at or above 1.45%, all built off the same imperative-tactical structure. The breakout (3.59% save, 5.5x baseline) was a 67-second talking-head on show rate. Reach is down by half from last week, but the audience that did see the content saved harder than they have in any prior week.</p>
+
+    <div class="breakout">
+      <p class="breakout-eyebrow">★ The breakout · #1 this week, #1 rolling all-time</p>
+      <p class="breakout-title"><a href="https://www.instagram.com/reel/DXxmuvVrwnF/" style="color:inherit;text-decoration:none;border-bottom:1px dotted #999;">"you need to do these three things if you want to double your show rate"</a></p>
+      <div class="breakout-stats">
+        <span><strong>674</strong><br/>people saw it</span>
+        <span><strong>3.59%</strong><br/>saved it</span>
+        <span><strong>17.6%</strong><br/>watched-thru</span>
+        <span><strong>67s</strong><br/>length</span>
+        <span><strong>Talking-Head</strong><br/>format</span>
+      </div>
+      <p class="breakout-body">Three things this hook does: <strong>imperative second-person</strong> ("you need to"), <strong>specific tactical promise</strong> ("three things"), <strong>named agency-owner pain</strong> ("double your show rate"). Reach was modest, save rate was record. The signal: when the audience that gets served the reel is the right one, the tactical-promise structure converts harder than any other format you've tried. Worth re-cutting as a Green-Screen with the show-rate dashboard pulled up to push reach.</p>
+    </div>
+  </header>
+
+  <section>
+    <h2>Make next week</h2>
+    <div class="actions">
+
+      <div class="action tinted-green">
+        <div class="action-num green">1</div>
+        <div>
+          <p class="action-title">Make 3 more "you need to do X if you want Y" hooks.</p>
+          <p class="action-body">This structure carried half the week. The breakout (<strong>3.59%</strong>), the #2 (<strong>2.75% on "5 appointments a day with paid ads"</strong>), and the #4 (<strong>2.20% on "scale your agency to $50k/mo"</strong>) all open identically: imperative + named outcome + agency context. The misses skipped the imperative and led with vague tease ("your ads are trash…", "Ifykyk with Facebook ads"). Plan three more this week using the exact template: <strong>"you need to do [X tactic] if you want [Y outcome] for your agency"</strong>.</p>
+        </div>
+      </div>
+
+      <div class="action tinted-yellow">
+        <div class="action-num yellow">2</div>
+        <div>
+          <p class="action-title">Re-cut the show-rate breakout as a Green-Screen.</p>
+          <p class="action-body">3.59% save rate on 674 reach is a rate-not-reach hit. The hook works, the audience that saw it converted, but the algorithm did not push it. Rebuild it as a Green-Screen with a show-rate dashboard or calendar shot pulled up while Noah delivers the same three tactics. Green-Screen still leads the rolling pillar leaderboard at <strong>1.62% median</strong> vs Talking-Head at <strong>1.09%</strong>. Visual proof on a tactical hook is the highest-floor combination available.</p>
+        </div>
+      </div>
+
+      <div class="action tinted-blue">
+        <div class="action-num blue">3</div>
+        <div>
+          <p class="action-title">Test more retention and results hooks.</p>
+          <p class="action-body">"a few of my clients have been paying me for over a year" hit <strong>2.46% on 1,725 reach</strong>: highest reach of any reel posted this week. Retention/results angles tap a different anxiety than acquisition (most reels target). Plan one more in this lane: client retention numbers, churn data, lifetime client revenue. Pair with a Stripe or invoice screenshot for the GS treatment.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Stop making</h2>
+    <div class="misses">
+      <p class="misses-label">✕ 4 patterns that bled save rate this week. Don't repeat them next week.</p>
+      <ul class="misses-list">
+        <li>
+          <div class="hook">Vague-tease openers like "your ads are trash…" and "Can't just be me 😂".</div>
+          <div class="why">Saved at <strong>0.70%</strong> and <strong>0.00%</strong> respectively. Tease without a stated outcome forces the viewer to hope you'll deliver. With a tactical hook they already know what they're getting if they save.</div>
+        </li>
+        <li>
+          <div class="hook">Insider-meme openers like "Ifykyk with Facebook ads".</div>
+          <div class="why">Saved at <strong>0.62% on 160 reach</strong>. Closes the door on anyone not already in the niche. Even Noah's actual audience saw no reason to save.</div>
+        </li>
+        <li>
+          <div class="hook">Question-as-hook openers like "CBO vs ABO… which is better?".</div>
+          <div class="why">Saved at <strong>0.00% on 130 reach</strong>. A question without a stated answer in the hook gives the viewer no reason to save: there is no implied takeaway to hold for later.</div>
+        </li>
+        <li>
+          <div class="hook">Reels under 30 seconds.</div>
+          <div class="why">The 0-30s band saves at <strong>0.26% median</strong> rolling: still the worst length by a wide margin. Default new scripts to <strong>61-90s</strong>: that band is now the rolling top performer at <strong>1.18% median</strong>.</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>The week in numbers</h2>
+    <div class="delta-grid">
+      <div class="delta-card">
+        <div class="delta-label">Reels posted</div>
+        <div class="delta-value">14 <span class="delta-arrow up">↑ 56%</span></div>
+        <div class="delta-was">Last week: 9</div>
+      </div>
+      <div class="delta-card">
+        <div class="delta-label">Median reach</div>
+        <div class="delta-value">415 <span class="delta-arrow down">↓ 59%</span></div>
+        <div class="delta-was">Last week: 1,010</div>
+      </div>
+      <div class="delta-card">
+        <div class="delta-label">Median save rate</div>
+        <div class="delta-value">1.07% <span class="delta-arrow flat">→</span></div>
+        <div class="delta-was">Last week: 1.12%</div>
+      </div>
+    </div>
+    <p style="font-size:14px;color:var(--ink-muted);margin-top:14px;line-height:1.55;">The reach drop is real, not a single-outlier artifact: last week had a 6,569-reach reel inflating the picture, but even excluding both weeks' top reel, this week's median reach is 400 vs last week's 727. The volume spike (14 vs 9 reels) is partly responsible: the four reels posted May 1-2 are too fresh to have had a fair shot at distribution and pull the median down. Save rate held flat: the audience reached engaged at the same level.</p>
+  </section>
+
+  <section>
+    <h2>This week's reels</h2>
+
+    <div class="reel-card hit">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill hit">Hit</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DXxmuvVrwnF/">you need to do these three things if you want to double your show rate</a></p>
+      <div class="reel-stats">
+        <span>Apr 30</span>
+        <span>Reach: <strong>674</strong></span>
+        <span>Saved: <strong>3.59%</strong></span>
+        <span>Watched: <strong>17.64%</strong></span>
+        <span>Length: <strong>67s</strong></span>
+      </div>
+      <p class="reel-read">5.5x rolling baseline. The breakout: see top of report.</p>
+    </div>
+
+    <div class="reel-card hit">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill hit">Hit</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DXSuhrqDbns/">you need to see this if you're not booking at least 5 appointments a day with paid ads</a></p>
+      <div class="reel-stats">
+        <span>Apr 28</span>
+        <span>Reach: <strong>553</strong></span>
+        <span>Saved: <strong>2.75%</strong></span>
+        <span>Watched: <strong>19.34%</strong></span>
+        <span>Length: <strong>50s</strong></span>
+      </div>
+      <p class="reel-read">Same imperative + outcome + paid-ads frame as the breakout. 4.2x baseline. This pattern is now confirmed across multiple reels.</p>
+    </div>
+
+    <div class="reel-card hit">
+      <div class="reel-row1">
+        <span class="pill format">Green-Screen-Type</span>
+        <span class="pill hit">Hit</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DXmxgwAkSlF/">a few of my clients have been paying me for over a year</a></p>
+      <div class="reel-stats">
+        <span>Apr 26</span>
+        <span>Reach: <strong>1,725</strong></span>
+        <span>Saved: <strong>2.46%</strong></span>
+        <span>Watched: <strong>19.98%</strong></span>
+        <span>Length: <strong>79s</strong></span>
+      </div>
+      <p class="reel-read">Highest reach of the week. Retention angle (vs the usual acquisition focus) hit a different audience anxiety. Worth more in this lane.</p>
+    </div>
+
+    <div class="reel-card hit">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill hit">Hit</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DXtuNNoJBLY/">you need to do this ASAP if you want to scale your agency to $50k/mo</a></p>
+      <div class="reel-stats">
+        <span>Apr 29</span>
+        <span>Reach: <strong>813</strong></span>
+        <span>Saved: <strong>2.20%</strong></span>
+        <span>Watched: <strong>19.71%</strong></span>
+        <span>Length: <strong>60s</strong></span>
+      </div>
+      <p class="reel-read">Same template again: imperative + outcome + dollar-figure for agency owners. 3.4x baseline.</p>
+    </div>
+
+    <div class="reel-card hit">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill hit">Hit</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DXrLrAwDcEl/">Here's how to get a &lt;$5 cost per lead for your clients</a></p>
+      <div class="reel-stats">
+        <span>Apr 28</span>
+        <span>Reach: <strong>436</strong></span>
+        <span>Saved: <strong>1.69%</strong></span>
+        <span>Watched: <strong>16.90%</strong></span>
+        <span>Length: <strong>58s</strong></span>
+      </div>
+      <p class="reel-read">Specific dollar-figure outcome on a paid-ads tactic. Reach was modest, save rate held above 1.5x weekly median. Re-cut as Green-Screen with an ads-manager screenshot.</p>
+    </div>
+
+    <div class="reel-card hit">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill hit">Hit</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DXt3NXrk9_C/">Simplicity is the ultimate sophistication.</a></p>
+      <div class="reel-stats">
+        <span>Apr 29</span>
+        <span>Reach: <strong>1,091</strong></span>
+        <span>Saved: <strong>1.45%</strong></span>
+        <span>Watched: <strong>16.28%</strong></span>
+        <span>Length: <strong>81s</strong></span>
+      </div>
+      <p class="reel-read">Quote-as-hook is risky territory but the reach and save rate held. The Da Vinci framing pulled a different segment than the tactical hooks. Don't lean on this often, but the lane works occasionally.</p>
+    </div>
+
+    <div class="reel-card middle">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill middle">Middle</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DXphGfIeZt1/">this is exactly how you handle the "I need to think about it" objection</a></p>
+      <div class="reel-stats">
+        <span>Apr 27</span>
+        <span>Reach: <strong>431</strong></span>
+        <span>Saved: <strong>1.50%</strong></span>
+        <span>Watched: <strong>19.02%</strong></span>
+        <span>Length: <strong>55s</strong></span>
+      </div>
+      <p class="reel-read">Specific objection-handling promise, solid save rate, but reach barely cracked weekly median. Worth re-running with a sharper opening edit.</p>
+    </div>
+
+    <div class="reel-card middle">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill middle">Middle</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DXsB40DEZ00/">your ads are trash…</a></p>
+      <div class="reel-stats">
+        <span>Apr 28</span>
+        <span>Reach: <strong>400</strong></span>
+        <span>Saved: <strong>0.70%</strong></span>
+        <span>Watched: <strong>17.65%</strong></span>
+        <span>Length: <strong>57s</strong></span>
+      </div>
+      <p class="reel-read">Tease without a stated outcome. The audience that saw it didn't save, because the hook never tells them what they get for staying.</p>
+    </div>
+
+    <div class="reel-card middle">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill middle">Middle</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DXuz2R2eBLo/">Ifykyk with Facebook ads</a></p>
+      <div class="reel-stats">
+        <span>Apr 29</span>
+        <span>Reach: <strong>160</strong></span>
+        <span>Saved: <strong>0.62%</strong></span>
+        <span>Watched: <strong>49.32%</strong></span>
+        <span>Length: <strong>11s</strong></span>
+      </div>
+      <p class="reel-read">11s insider-meme reel. Completion rate is high because it's short, but the algorithm didn't push it and the few who saw it didn't save. Skip this format.</p>
+    </div>
+
+    <div class="reel-card middle">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill middle">Middle</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DXx0DJDnP1n/">how to scale your agency to $50k/mo</a></p>
+      <div class="reel-stats">
+        <span>May 01</span>
+        <span>Reach: <strong>160</strong></span>
+        <span>Saved: <strong>0.61%</strong></span>
+        <span>Watched: <strong>13.10%</strong></span>
+        <span>Length: <strong>39s</strong></span>
+      </div>
+      <p class="reel-read">2 days old, reach still climbing. Hook is generic compared to the "you need to do X if you want Y" template that worked all week.</p>
+    </div>
+
+    <div class="reel-card miss">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill miss">Miss</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DXwby9VnCf7/">Can't just be me 😂</a></p>
+      <div class="reel-stats">
+        <span>Apr 30</span>
+        <span>Reach: <strong>218</strong></span>
+        <span>Saved: <strong>0.00%</strong></span>
+        <span>Watched: <strong>27.36%</strong></span>
+        <span>Length: <strong>40s</strong></span>
+      </div>
+      <p class="reel-read">No outcome promise, no agency context, no tactic. Pure relatability bait. Zero saves on 218 reach.</p>
+    </div>
+
+    <div class="reel-card miss">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill miss">Miss</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DXY8XQwxhAp/">A lot of people cut ads way too early</a></p>
+      <div class="reel-stats">
+        <span>May 01</span>
+        <span>Reach: <strong>168</strong></span>
+        <span>Saved: <strong>0.00%</strong></span>
+        <span>Watched: <strong>15.32%</strong></span>
+        <span>Length: <strong>38s</strong></span>
+      </div>
+      <p class="reel-read">2 days old, reach still climbing. Hook commands a behavior change without naming what the viewer gets for staying.</p>
+    </div>
+
+    <div class="reel-card miss">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill miss">Miss</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DXZK4X1RjkU/">CBO vs ABO… which is better?</a></p>
+      <div class="reel-stats">
+        <span>May 01</span>
+        <span>Reach: <strong>130</strong></span>
+        <span>Saved: <strong>0.00%</strong></span>
+        <span>Watched: <strong>7.88%</strong></span>
+        <span>Length: <strong>51s</strong></span>
+      </div>
+      <p class="reel-read">2 days old. Question-as-hook with no implied takeaway. Watch-thru collapsed at 7.88%, the lowest of the week: viewers bailed because the hook never promised an answer.</p>
+    </div>
+
+    <div class="reel-card miss">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill miss">Miss</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DX0L0DhHib8/">once you have between 5 to 10 clients, getting a media buyer becomes necessary</a></p>
+      <div class="reel-stats">
+        <span>May 02</span>
+        <span>Reach: <strong>4</strong></span>
+        <span>Saved: <strong>0.00%</strong></span>
+        <span>Watched: <strong>10.17%</strong></span>
+        <span>Length: <strong>48s</strong></span>
+      </div>
+      <p class="reel-read">Posted yesterday. 4 reach is too small to read either way: this is a placeholder card, not a real signal.</p>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>The numbers</h2>
+
+    <details class="numbers">
+      <summary>Top 10 rolling (all reels, reach ≥ 500)</summary>
+      <div class="num-block">
+        <table class="num">
+          <thead>
+            <tr><th>#</th><th>Save</th><th>Reach</th><th>Length</th><th>Format</th><th>Hook</th></tr>
+          </thead>
+          <tbody>
+            <tr class="top-row"><td>1</td><td>3.59%</td><td>674</td><td>67s</td><td>Talking-Head</td><td>you need to do these three things if you want to double your show rate</td></tr>
+            <tr class="top-row"><td>2</td><td>2.97%</td><td>6,569</td><td>38s</td><td>Talking-Head</td><td>this is the easiest way to book 10 appointments today for your agency</td></tr>
+            <tr class="top-row"><td>3</td><td>2.75%</td><td>553</td><td>50s</td><td>Talking-Head</td><td>you need to see this if you're not booking at least 5 appointments a day with paid ads</td></tr>
+            <tr class="top-row"><td>4</td><td>2.63%</td><td>571</td><td>n/a</td><td>(legacy)</td><td>I just broke the matrix.</td></tr>
+            <tr class="top-row"><td>5</td><td>2.60%</td><td>1,794</td><td>77s</td><td>Talking-Head</td><td>What are the highest leverage things to work on in your agency?</td></tr>
+            <tr class="top-row"><td>6</td><td>2.46%</td><td>1,725</td><td>79s</td><td>Green-Screen-Type</td><td>a few of my clients have been paying me for over a year</td></tr>
+            <tr class="top-row"><td>7</td><td>2.36%</td><td>593</td><td>n/a</td><td>(legacy)</td><td>Avoid these 3 mistakes when trying to sign your first SMMA client</td></tr>
+            <tr class="top-row"><td>8</td><td>2.29%</td><td>783</td><td>57s</td><td>Green-Screen-Type</td><td>i haven't explained my deliverables on a sales call in months.</td></tr>
+            <tr class="top-row"><td>9</td><td>2.20%</td><td>813</td><td>60s</td><td>Talking-Head</td><td>you need to do this ASAP if you want to scale your agency to $50k/mo</td></tr>
+            <tr class="top-row"><td>10</td><td>2.13%</td><td>563</td><td>n/a</td><td>(legacy)</td><td>The #1 reason your SMMA is stuck under $10k/m</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <details class="numbers">
+      <summary>Bottom 10 rolling</summary>
+      <div class="num-block">
+        <table class="num">
+          <thead>
+            <tr><th>#</th><th>Save</th><th>Reach</th><th>Length</th><th>Hook</th></tr>
+          </thead>
+          <tbody>
+            <tr class="bot-row"><td>1</td><td>0.00%</td><td>829</td><td>44s</td><td>be grateful.</td></tr>
+            <tr class="bot-row"><td>2</td><td>0.00%</td><td>553</td><td>n/a</td><td>pov: you're about to have the craziest comeback in 2026</td></tr>
+            <tr class="bot-row"><td>3</td><td>0.00%</td><td>572</td><td>n/a</td><td>We all have the same tools, what matters is how you use them.</td></tr>
+            <tr class="bot-row"><td>4</td><td>0.00%</td><td>636</td><td>n/a</td><td>Get back to work bro.</td></tr>
+            <tr class="bot-row"><td>5</td><td>0.12%</td><td>1,495</td><td>14s</td><td>times have changed.</td></tr>
+            <tr class="bot-row"><td>6</td><td>0.12%</td><td>716</td><td>6s</td><td>cafemaxxing &gt;&gt; ☕</td></tr>
+            <tr class="bot-row"><td>7</td><td>0.15%</td><td>679</td><td>n/a</td><td>#smma #aiagency</td></tr>
+            <tr class="bot-row"><td>8</td><td>0.16%</td><td>1,880</td><td>n/a</td><td>just keep pushing bro, your time will come.</td></tr>
+            <tr class="bot-row"><td>9</td><td>0.17%</td><td>585</td><td>n/a</td><td>Spamming cafe method</td></tr>
+            <tr class="bot-row"><td>10</td><td>0.17%</td><td>587</td><td>n/a</td><td>The only way to $30k months.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <details class="numbers">
+      <summary>Best length band + format leaderboard</summary>
+      <div class="num-block">
+        <p class="num-h3">Save rate by length</p>
+        <table class="num">
+          <thead><tr><th>Length</th><th>Reels</th><th>Median save</th></tr></thead>
+          <tbody>
+            <tr><td>0-30s</td><td>5</td><td>0.26%</td></tr>
+            <tr><td>31-45s</td><td>11</td><td>0.73%</td></tr>
+            <tr><td>46-60s</td><td>10</td><td>0.92%</td></tr>
+            <tr style="background:var(--green-fill)"><td><strong>61-90s</strong></td><td>15</td><td><strong>1.18%</strong></td></tr>
+            <tr><td>90s+</td><td>6</td><td>1.17%</td></tr>
+          </tbody>
+        </table>
+
+        <p class="num-h3">Save rate by format</p>
+        <table class="num">
+          <thead><tr><th>Format</th><th>Reels</th><th>Median save</th></tr></thead>
+          <tbody>
+            <tr style="background:var(--green-fill)"><td><strong>Green-Screen-Type</strong></td><td>8</td><td><strong>1.62%</strong></td></tr>
+            <tr><td>Talking-Head</td><td>19</td><td>1.09%</td></tr>
+            <tr><td>Podcast-Type</td><td>2</td><td>0.74%</td></tr>
+            <tr><td>Coaching-Call-Type</td><td>2</td><td>0.52%</td></tr>
+            <tr><td>Long-Form-Clip-Type</td><td>1</td><td>0.30%</td></tr>
+            <tr><td>Discord-QA</td><td>0</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+  </section>
+
+  <section>
+    <details class="numbers">
+      <summary>What the words mean</summary>
+      <div class="num-block">
+        <ul class="glossary-list">
+          <li><strong>Reach.</strong> Number of people who saw the reel at all. Bigger reach means IG pushed it.</li>
+          <li><strong>Save rate.</strong> % of people who hit Save. The strongest signal a reel actually resonated: way more meaningful than likes.</li>
+          <li><strong>Completion rate.</strong> Average % of the reel watched. Not "watched to the end": average across all viewers.</li>
+          <li><strong>Median (vs average).</strong> The middle reel: half scored higher, half lower. Used instead of average so one breakout doesn't distort the picture.</li>
+          <li><strong>Rolling baseline.</strong> The median across every reel ever, qualified at 500+ reach. Anything 2x baseline is a hit.</li>
+          <li><strong>Format / Pillar.</strong> What kind of reel it is: Green-Screen, Talking-Head, Podcast clip, etc. Set in the Notion tracker.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <footer>
+    Generated 2026-05-03 · auto-posted to #ig-weekly-content-report. Next report: 2026-05-10.
+  </footer>
+
+</div>
+</body>
+</html>
