@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Noah IG Weekly - May 9</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f1e8;
+    --surface: #fbf8f2;
+    --ink: #1a1a1a;
+    --ink-muted: #5c5c5c;
+    --line: #e3ddd0;
+    --line-strong: #1a1a1a;
+
+    --green-fill: #ecf7ee;
+    --green-edge: #2e8b3a;
+    --green-ink: #1f5f27;
+
+    --yellow-fill: #fff7d1;
+    --yellow-edge: #b58105;
+    --yellow-ink: #6b4d00;
+
+    --red-fill: #ffe1e1;
+    --red-edge: #c0392b;
+    --red-ink: #7a1f15;
+
+    --blue-fill: #e3edfa;
+    --blue-edge: #305bab;
+    --blue-ink: #1f3d75;
+
+    --gray-fill: var(--surface);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    font-feature-settings: "cv11", "ss01", "ss03";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 64px 32px 96px;
+  }
+
+  /* header */
+  header { margin-bottom: 56px; }
+  .eyebrow {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-muted);
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: 44px;
+    line-height: 1.1;
+    font-weight: 700;
+    margin: 0 0 16px;
+    letter-spacing: -0.02em;
+  }
+  .subtitle {
+    font-size: 19px;
+    color: var(--ink-muted);
+    margin: 0;
+    max-width: 720px;
+    line-height: 1.5;
+  }
+
+  /* section */
+  section { margin-top: 56px; }
+  h2 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-muted);
+    font-weight: 600;
+    margin: 0 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  /* breakout card */
+  .breakout {
+    padding: 32px;
+    background: var(--green-fill);
+    border: 1.5px solid var(--green-edge);
+    border-radius: 12px;
+    margin-top: 32px;
+  }
+  .breakout-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--green-ink);
+    margin: 0 0 8px;
+  }
+  .breakout-title {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 16px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .breakout-stats {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+    font-size: 14px;
+    color: var(--green-ink);
+  }
+  .breakout-stats strong { color: var(--ink); font-size: 18px; }
+  .breakout-body {
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .breakout-body strong { color: var(--green-ink); }
+
+  /* actions */
+  .actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .action {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 20px;
+    padding: 20px 22px;
+    background: var(--gray-fill);
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+  }
+  .action.tinted-green  { background: var(--green-fill);  border-color: var(--green-edge);  }
+  .action.tinted-yellow { background: var(--yellow-fill); border-color: var(--yellow-edge); }
+  .action.tinted-blue   { background: var(--blue-fill);   border-color: var(--blue-edge);   }
+
+  .action-num {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+    padding-top: 2px;
+  }
+  .action-num.green  { color: var(--green-ink); }
+  .action-num.yellow { color: var(--yellow-ink); }
+  .action-num.blue   { color: var(--blue-ink); }
+
+  .action-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+  .action-body {
+    font-size: 15px;
+    color: var(--ink-muted);
+    margin: 0;
+    line-height: 1.55;
+  }
+  .action-body strong { color: var(--ink); }
+
+  /* misses callout */
+  .misses {
+    padding: 24px 28px;
+    background: var(--red-fill);
+    border-left: 4px solid var(--red-edge);
+    border-radius: 6px;
+  }
+  .misses-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--red-ink);
+    margin: 0 0 12px;
+  }
+  .misses-list { margin: 0; padding: 0; list-style: none; }
+  .misses-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(192,57,43,0.2);
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .misses-list li:last-child { border-bottom: none; }
+  .misses-list .hook { font-weight: 600; }
+  .misses-list .why { color: var(--red-ink); font-size: 14px; }
+
+  /* delta grid */
+  .delta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .delta-card {
+    padding: 18px 20px;
+    background: var(--blue-fill);
+    border: 1.5px solid var(--blue-edge);
+    border-radius: 10px;
+  }
+  .delta-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--blue-ink);
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+  .delta-value {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 4px;
+    color: var(--ink);
+  }
+  .delta-arrow { font-size: 18px; }
+  .delta-arrow.up   { color: var(--green-ink); }
+  .delta-arrow.down { color: var(--red-ink); }
+  .delta-arrow.flat { color: var(--ink-muted); }
+  .delta-was {
+    font-size: 12px;
+    color: var(--ink-muted);
+  }
+
+  /* reel cards */
+  .reel-card {
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 12px;
+    background: var(--surface);
+  }
+  .reel-card.hit    { background: var(--green-fill);  border-color: var(--green-edge); }
+  .reel-card.miss   { background: var(--red-fill);    border-color: var(--red-edge); }
+  .reel-card.middle { background: var(--surface); }
+
+  .reel-row1 {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .pill {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: #f0f0ee;
+    border: 1px solid #ddd;
+    color: #555;
+  }
+  .pill.hit    { background: var(--green-fill); color: var(--green-ink); border-color: var(--green-edge); }
+  .pill.miss   { background: var(--red-fill);   color: var(--red-ink);   border-color: var(--red-edge); }
+  .pill.middle { background: var(--surface); color: #555; border-color: #ccc; }
+  .pill.format { background: var(--surface); color: #555; border-color: #ccc; font-weight: 500; }
+
+  .reel-hook {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0 0 10px;
+    color: var(--ink);
+  }
+  .reel-hook a { color: inherit; text-decoration: none; border-bottom: 1px dotted #aaa; }
+  .reel-stats {
+    display: flex;
+    gap: 18px;
+    font-size: 13px;
+    color: var(--ink-muted);
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .reel-stats strong { color: var(--ink); }
+  .reel-read {
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* numbers (tables) */
+  details.numbers {
+    margin-top: 12px;
+    padding: 18px 22px;
+    background: var(--surface);
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+  }
+  details.numbers summary {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+    list-style: none;
+    user-select: none;
+  }
+  details.numbers summary::-webkit-details-marker { display: none; }
+  details.numbers summary::before {
+    content: "▸ ";
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-right: 4px;
+  }
+  details.numbers[open] summary::before { content: "▾ "; }
+  details.numbers > .num-block { margin-top: 18px; }
+
+  table.num {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 22px;
+  }
+  table.num thead tr { border-bottom: 2px solid var(--line-strong); }
+  table.num th {
+    text-align: left;
+    padding: 8px 10px;
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-muted);
+  }
+  table.num tbody tr { border-bottom: 1px solid var(--line); }
+  table.num td { padding: 8px 10px; vertical-align: top; }
+  table.num tr.top-row { background: var(--green-fill); }
+  table.num tr.bot-row { background: var(--red-fill); }
+  .num-h3 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ink-muted); margin: 0 0 10px; font-weight: 700; }
+
+  /* glossary */
+  .glossary {
+    padding: 22px 24px;
+    background: var(--surface);
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+  }
+  .glossary-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+    color: var(--ink-muted);
+    margin: 0 0 14px;
+  }
+  .glossary-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 28px;
+  }
+  .glossary-list li {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink-muted);
+  }
+  .glossary-list strong {
+    color: var(--ink);
+    display: block;
+    font-size: 13px;
+    margin-bottom: 2px;
+  }
+
+  footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--ink-muted);
+  }
+
+  @media (max-width: 720px) {
+    .wrap { padding: 40px 20px 64px; }
+    h1 { font-size: 32px; }
+    .breakout { padding: 24px; }
+    .breakout-title { font-size: 22px; }
+    .delta-grid { grid-template-columns: 1fr 1fr; }
+    .glossary-list { grid-template-columns: 1fr; }
+    .action { grid-template-columns: 44px 1fr; gap: 14px; padding: 16px 18px; }
+    .action-num { font-size: 20px; }
+    table.num { display: block; overflow-x: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">weekly report · may 9</div>
+    <h1>Disqualifier hooks broke through. The "you're cooked if you're not" frame is the new top template.</h1>
+    <p class="subtitle">19 reels, all Talking-Head. Three of the top four opened with "if you're [doing the wrong thing], you need to" and saved at 3.04% or higher. Median save rate held at 1.70% across the week.</p>
+
+    <div class="breakout">
+      <p class="breakout-eyebrow">★ The breakout · #1 this week, #2 rolling all-time</p>
+      <p class="breakout-title"><a href="https://www.instagram.com/reel/DYBF2VLN6kL/" style="color:inherit;text-decoration:none;border-bottom:1px dotted #999;">"you're cooked if you're not booking 5-10 appointments per day for your agency"</a></p>
+      <div class="breakout-stats">
+        <span><strong>3,304</strong><br/>people saw it</span>
+        <span><strong>3.79%</strong><br/>saved it</span>
+        <span><strong>25.2%</strong><br/>watched-thru</span>
+        <span><strong>57s</strong><br/>length</span>
+        <span><strong>Talking-Head</strong><br/>format</span>
+      </div>
+      <p class="breakout-body">The hook stacks three things every winning Noah opener does: <strong>disqualifier framing</strong> ("you're cooked if you're not"), <strong>specific number</strong> ("5-10 appointments per day"), <strong>identity callout</strong> ("for your agency"). The transcript opens with Noah's actual signature line: "I low-key don't understand what you're doing, but I'm also gonna show you how you can start printing appointments within the next five to 10 minutes." Highest reach + save combo of any reel posted this quarter. The disqualifier-plus-promise structure is now the template.</p>
+    </div>
+  </header>
+
+  <section>
+    <h2>Make next week</h2>
+    <div class="actions">
+
+      <div class="action tinted-green">
+        <div class="action-num green">1</div>
+        <div>
+          <p class="action-title">Make 3 more disqualifier hooks.</p>
+          <p class="action-body">The pattern is now confirmed across multiple reels: <strong>"you're cooked if you're not booking 5-10 appointments"</strong> (3.79%), <strong>"if you're charging under $5000 per client, you need to see this"</strong> (2.71%), <strong>"if you wanna triple your prices, you need to master these three things"</strong> (1.70%). The structure: name a common bad outcome the viewer is living right now, then promise the fix in the next sentence. Plan three more this week using the exact template: <strong>"if you're [common bad agency state], [imperative + specific outcome]"</strong>. This is the template that's beating every other format.</p>
+        </div>
+      </div>
+
+      <div class="action tinted-yellow">
+        <div class="action-num yellow">2</div>
+        <div>
+          <p class="action-title">Make 2 Green-Screen reels.</p>
+          <p class="action-body">Zero Green-Screen reels were posted this week. All 19 were Talking-Head. Green-Screen still leads the rolling pillar leaderboard at <strong>1.63% median</strong> vs Talking-Head at <strong>1.18%</strong>. The "i haven't shared my screen on a sales call in months" reel hit <strong>2.86% on 3,304 reach</strong>. That format is open territory and Noah is leaving floor space. Pair the disqualifier hook structure with a visual proof shot: pull up Stripe, the calendar, the GHL pipeline, the ad-manager dashboard.</p>
+        </div>
+      </div>
+
+      <div class="action tinted-blue">
+        <div class="action-num blue">3</div>
+        <div>
+          <p class="action-title">Re-cut the breakout as a Green-Screen.</p>
+          <p class="action-body">"you're cooked if you're not booking 5-10 appointments per day" hit <strong>3.79% on 3,304 reach</strong> as a Talking-Head. The hook works, the algorithm pushed it, the audience saved it. Re-cut as Green-Screen with the GHL pipeline pulled up showing the exact cold SMS workflow Noah describes: 500-1000 leads/day, four split-test openers, three-step follow-up. Visual proof on a confirmed-winning hook is the highest-floor combination available.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Stop making</h2>
+    <div class="misses">
+      <p class="misses-label">✕ 4 patterns that bled save rate this week. Don't repeat them next week.</p>
+      <ul class="misses-list">
+        <li>
+          <div class="hook">Question-as-hook openers like "why is it that you can get a three dollar cost per lead for clients and they still churn?"</div>
+          <div class="why">Saved at <strong>0.48% on 381 reach</strong>. Same death pattern as last week's "CBO vs ABO… which is better?" (0.00%). A question without an implied answer in the hook gives the viewer no reason to save: there is no takeaway to hold for later. If you ask a question, the next half of the sentence has to give the answer.</div>
+        </li>
+        <li>
+          <div class="hook">First-person reflective hooks like "I doubled my show rate when I implemented these three things…" and "When I started working less on my agency, I scaled quicker than ever before"</div>
+          <div class="why">Saved at <strong>0.33%</strong> and <strong>0.00%</strong>. The first-person opener flips the frame from "this is for you" to "this is about me." It worked when paired with a specific dollar number ("My agency does $75,000 a month") but dies when it's a vague growth claim. Open with the viewer's situation, not Noah's.</div>
+        </li>
+        <li>
+          <div class="hook">Generic principle hooks like "your agency can't scale if you're the bottleneck" and "If your agency is stuck at the same revenue amount for more than a month, something needs to change"</div>
+          <div class="why">Saved at <strong>0.00%</strong> and <strong>0.76%</strong>. Both name a problem but never promise what changes. The disqualifier structure ("you're cooked if you're not booking X") works because the next half is implicit: "I'm gonna show you." The bare principle hook stops at the diagnosis.</div>
+        </li>
+        <li>
+          <div class="hook">Reels under 30 seconds.</div>
+          <div class="why">The 0-30s band saves at <strong>0.26% median</strong> rolling: still the worst length by a wide margin. The 46-60s band has now overtaken 61-90s as the rolling top performer at <strong>1.34% median</strong>. Default new scripts to <strong>46-90s</strong>: that range covers everything that worked this week.</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>The week in numbers</h2>
+    <div class="delta-grid">
+      <div class="delta-card">
+        <div class="delta-label">Reels posted</div>
+        <div class="delta-value">19 <span class="delta-arrow up">↑ 73%</span></div>
+        <div class="delta-was">Last week: 11</div>
+      </div>
+      <div class="delta-card">
+        <div class="delta-label">Median reach</div>
+        <div class="delta-value">381 <span class="delta-arrow down">↓ 60%</span></div>
+        <div class="delta-was">Last week: 955</div>
+      </div>
+      <div class="delta-card">
+        <div class="delta-label">Median save rate</div>
+        <div class="delta-value">1.70% <span class="delta-arrow up">↑ 33%</span></div>
+        <div class="delta-was">Last week: 1.28%</div>
+      </div>
+    </div>
+    <p style="font-size:14px;color:var(--ink-muted);margin-top:14px;line-height:1.55;">The reach drop reads worse than it is. Nine of the 19 reels were posted in the last 4 days and have not had a fair shot at distribution: their reach is still climbing. Strip them out and the median reach for the older 10 is 813. The save rate jump is the real story: median moved from 1.28% to 1.70% week over week, a 33% lift, while volume nearly doubled. The audience that saw the content engaged at the highest rate of any week tracked.</p>
+  </section>
+
+  <section>
+    <h2>This week's reels</h2>
+
+    <div class="reel-card hit">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill hit">Hit</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DYBF2VLN6kL/">you're cooked if you're not booking 5-10 appointments per day for your agency</a></p>
+      <div class="reel-stats">
+        <span>May 07</span>
+        <span>Reach: <strong>3,304</strong></span>
+        <span>Saved: <strong>3.79%</strong></span>
+        <span>Watched: <strong>25.24%</strong></span>
+        <span>Length: <strong>57s</strong></span>
+      </div>
+      <p class="reel-read">2.2x weekly median save rate, 8.7x weekly median reach. The breakout: see top of report.</p>
+    </div>
+
+    <div class="reel-card hit">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill hit">Hit</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DYDs6SZN0Xh/">How do I print 4-6 appts/day with paid ads</a></p>
+      <div class="reel-stats">
+        <span>May 08</span>
+        <span>Reach: <strong>1,358</strong></span>
+        <span>Saved: <strong>3.75%</strong></span>
+        <span>Watched: <strong>20.99%</strong></span>
+        <span>Length: <strong>58s</strong></span>
+      </div>
+      <p class="reel-read">Question hook with the answer in the next sentence ("I've made $18,000 this week with my agency and it's all from paid ads"). Not the death-pattern question hook. The hook implies the answer; the body delivers it. 3-step structure (competition audit, ICP clarity, image ads) is the dense tactical content the audience is saving.</p>
+    </div>
+
+    <div class="reel-card hit">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill hit">Hit</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DYCYqz9RTqM/">You need to do these three things if you wanna start charging more for your agency</a></p>
+      <div class="reel-stats">
+        <span>May 07</span>
+        <span>Reach: <strong>884</strong></span>
+        <span>Saved: <strong>3.04%</strong></span>
+        <span>Watched: <strong>31.62%</strong></span>
+        <span>Length: <strong>58s</strong></span>
+      </div>
+      <p class="reel-read">Pure template execution: imperative + specific count + agency identity. 31.6% watched-thru is the week's highest. Opens with "I just closed the client for $6,500 upfront after one single call" — proof first, principle second.</p>
+    </div>
+
+    <div class="reel-card hit">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill hit">Hit</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DX-jOmmNUDR/">these are 10 mistakes I made when scaling my agency to $78k/mo</a></p>
+      <div class="reel-stats">
+        <span>May 06</span>
+        <span>Reach: <strong>243</strong></span>
+        <span>Saved: <strong>2.79%</strong></span>
+        <span>Watched: <strong>17.43%</strong></span>
+        <span>Length: <strong>54s</strong></span>
+      </div>
+      <p class="reel-read">High save rate on low reach: viewers who saw it converted hard. The numbered-list hook ("10 mistakes") promises density, and the proof number ($78k/mo) anchors the credibility. Worth re-running with a sharper opening edit to push reach.</p>
+    </div>
+
+    <div class="reel-card hit">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill hit">Hit</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DX9NF7uR-YC/">if you're charging under $5000 per client, you need to see this</a></p>
+      <div class="reel-stats">
+        <span>May 05</span>
+        <span>Reach: <strong>813</strong></span>
+        <span>Saved: <strong>2.71%</strong></span>
+        <span>Watched: <strong>21.37%</strong></span>
+        <span>Length: <strong>56s</strong></span>
+      </div>
+      <p class="reel-read">Disqualifier template again. Opens with "I went from charging $500 a month to over $10,000 per client" — the before/after dollar contrast is the proof Noah keeps returning to in pricing reels.</p>
+    </div>
+
+    <div class="reel-card hit">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill hit">Hit</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DX9x1hBziSI/">So many agency owners make this mistake and don't know what to do when they get a no-show</a></p>
+      <div class="reel-stats">
+        <span>May 05</span>
+        <span>Reach: <strong>411</strong></span>
+        <span>Saved: <strong>2.67%</strong></span>
+        <span>Watched: <strong>24.18%</strong></span>
+        <span>Length: <strong>52s</strong></span>
+      </div>
+      <p class="reel-read">"Most agency owners" framing usually weakens the hook (creates distance), but here it works because the very next line is a sharp tactical pivot ("if you're spamming a no-show with five calls in a row, you're just burning the lead"). Strong save rate, modest reach.</p>
+    </div>
+
+    <div class="reel-card hit">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill hit">Hit</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DX7L28pxnL-/">I started closing more deals when I doubled my prices</a></p>
+      <div class="reel-stats">
+        <span>May 04</span>
+        <span>Reach: <strong>1,472</strong></span>
+        <span>Saved: <strong>1.82%</strong></span>
+        <span>Watched: <strong>24.54%</strong></span>
+        <span>Length: <strong>54s</strong></span>
+      </div>
+      <p class="reel-read">Counterintuitive claim hook + a specific behavior change. Reach pushed past 1,400 because the algorithm read the high watch-thru. First-person works here because the claim itself is the curiosity gap.</p>
+    </div>
+
+    <div class="reel-card hit">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill hit">Hit</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DX40cK_xM7I/">so many agency owners rush into building a call center when they don't even need one</a></p>
+      <div class="reel-stats">
+        <span>May 03</span>
+        <span>Reach: <strong>892</strong></span>
+        <span>Saved: <strong>1.26%</strong></span>
+        <span>Watched: <strong>31.67%</strong></span>
+        <span>Length: <strong>39s</strong></span>
+      </div>
+      <p class="reel-read">Reach hit (892 vs 381 weekly median) on a soft save rate. 39s, the shortest reel of the week. Watch-thru tied for highest of the week (31.67%). The hook names a specific bad behavior the audience is doing — same disqualifier energy, lighter delivery.</p>
+    </div>
+
+    <div class="reel-card hit">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill hit">Hit</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DX4hnftTsG9/">🤷🏾</a></p>
+      <div class="reel-stats">
+        <span>May 03</span>
+        <span>Reach: <strong>1,229</strong></span>
+        <span>Saved: <strong>1.19%</strong></span>
+        <span>Watched: <strong>20.85%</strong></span>
+        <span>Length: <strong>61s</strong></span>
+      </div>
+      <p class="reel-read">Reach hit only. Caption was a single emoji and "follow @noah.haupt": no readable hook to evaluate. The 1,229 reach is algorithmically interesting but the format is not repeatable. Skip categorizing this one for the playbook.</p>
+    </div>
+
+    <div class="reel-card middle">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill middle">Middle</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DX7wbGhNdNh/">if you're getting low quality leads from your paid ads, you need to do these three things</a></p>
+      <div class="reel-stats">
+        <span>May 04</span>
+        <span>Reach: <strong>184</strong></span>
+        <span>Saved: <strong>2.16%</strong></span>
+        <span>Watched: <strong>12.92%</strong></span>
+        <span>Length: <strong>56s</strong></span>
+      </div>
+      <p class="reel-read">Disqualifier template, but the algorithm did not push it. Save rate held above weekly median. The 12.9% completion rate is the read: viewers tapped away early, which throttled distribution. Worth a sharper visual opener.</p>
+    </div>
+
+    <div class="reel-card middle">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill middle">Middle</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DYAjwVPxZRP/">I stopped doing cold outreach for my agency… and you probably should too</a></p>
+      <div class="reel-stats">
+        <span>May 06</span>
+        <span>Reach: <strong>327</strong></span>
+        <span>Saved: <strong>2.07%</strong></span>
+        <span>Watched: <strong>18.36%</strong></span>
+        <span>Length: <strong>64s</strong></span>
+      </div>
+      <p class="reel-read">First-person + "you should too" peer redirect. Save rate above weekly median, reach below. The "and you probably should too" half-sentence rescues the first-person frame by pulling the viewer in.</p>
+    </div>
+
+    <div class="reel-card middle">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill middle">Middle</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DYE6mS8xDgI/">if you wanna triple your prices for your agency, you need to master these three things</a></p>
+      <div class="reel-stats">
+        <span>May 08</span>
+        <span>Reach: <strong>408</strong></span>
+        <span>Saved: <strong>1.70%</strong></span>
+        <span>Watched: <strong>22.03%</strong></span>
+        <span>Length: <strong>53s</strong></span>
+      </div>
+      <p class="reel-read">Posted yesterday, reach still climbing. Sits exactly at weekly median save rate. Disqualifier template again. Will likely promote to hit category as distribution catches up.</p>
+    </div>
+
+    <div class="reel-card middle">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill middle">Middle</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DX5MYsftqxN/">the most underrated thing you can do to scale your agency is not what you think…</a></p>
+      <div class="reel-stats">
+        <span>May 03</span>
+        <span>Reach: <strong>252</strong></span>
+        <span>Saved: <strong>1.17%</strong></span>
+        <span>Watched: <strong>13.42%</strong></span>
+        <span>Length: <strong>58s</strong></span>
+      </div>
+      <p class="reel-read">Tease hook with ellipsis. The "is not what you think" gap forces the viewer to hope the answer is good. Worked against the audience this time: only 13.4% completion. Same structural risk as the question-as-hook misses below — the answer needs to be in the hook itself, not behind a curtain.</p>
+    </div>
+
+    <div class="reel-card middle">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill middle">Middle</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DX6nVrbxGrN/">this is probably one of the biggest unlocks you can have as an agency owner</a></p>
+      <div class="reel-stats">
+        <span>May 04</span>
+        <span>Reach: <strong>199</strong></span>
+        <span>Saved: <strong>1.01%</strong></span>
+        <span>Watched: <strong>12.44%</strong></span>
+        <span>Length: <strong>60s</strong></span>
+      </div>
+      <p class="reel-read">"Probably" is a hedge. "One of the biggest unlocks" is generic. The hook commits to nothing specific, so the viewer doesn't know what they're getting. Replace with the actual unlock in the hook: "look at your business from a third person perspective" is what the body delivers — that should be the opener.</p>
+    </div>
+
+    <div class="reel-card miss">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill miss">Miss</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DYGPqYYtfti/">If your agency is stuck at the same revenue amount for more than a month, something needs to change</a></p>
+      <div class="reel-stats">
+        <span>May 09</span>
+        <span>Reach: <strong>135</strong></span>
+        <span>Saved: <strong>0.76%</strong></span>
+        <span>Watched: <strong>11.13%</strong></span>
+        <span>Length: <strong>44s</strong></span>
+      </div>
+      <p class="reel-read">Posted yesterday. Generic principle hook: names the problem ("stuck at the same revenue") but never promises what changes. "Something needs to change" is the empty payoff. Disqualifier structure with no tactical specificity.</p>
+    </div>
+
+    <div class="reel-card miss">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill miss">Miss</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DYC_Gd4xBTr/">why is it that you can get a three dollar cost per lead for clients and they still churn?</a></p>
+      <div class="reel-stats">
+        <span>May 07</span>
+        <span>Reach: <strong>381</strong></span>
+        <span>Saved: <strong>0.48%</strong></span>
+        <span>Watched: <strong>11.25%</strong></span>
+        <span>Length: <strong>71s</strong></span>
+      </div>
+      <p class="reel-read">Question-as-hook with no implied answer. The "why is it that" framing forces the viewer to hope you'll deliver. Same death pattern as last week's "CBO vs ABO" reel. The body has the answer (clients care about ROI not lead cost) but the hook never signals it.</p>
+    </div>
+
+    <div class="reel-card miss">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill miss">Miss</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DYF7ZB9x9oF/">I doubled my show rate when I implemented these three things…</a></p>
+      <div class="reel-stats">
+        <span>May 08</span>
+        <span>Reach: <strong>305</strong></span>
+        <span>Saved: <strong>0.33%</strong></span>
+        <span>Watched: <strong>7.31%</strong></span>
+        <span>Length: <strong>56s</strong></span>
+      </div>
+      <p class="reel-read">7.31% completion: lowest of the week. First-person + ellipsis tease + no agency identity in the hook. The "double your show rate" angle worked at 3.81% when the hook was second-person ("you need to do these three things if you want to double your show rate"). Same content, wrong subject.</p>
+    </div>
+
+    <div class="reel-card miss">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill miss">Miss</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DX_0jmHRHgX/">your agency can't scale if you're the bottleneck</a></p>
+      <div class="reel-stats">
+        <span>May 06</span>
+        <span>Reach: <strong>184</strong></span>
+        <span>Saved: <strong>0.00%</strong></span>
+        <span>Watched: <strong>11.47%</strong></span>
+        <span>Length: <strong>57s</strong></span>
+      </div>
+      <p class="reel-read">Zero saves on 184 reach. Bare principle hook. "You're the bottleneck" is a diagnosis without a fix in the hook. Compare to the breakout: "you're cooked if you're not booking 5-10 appointments" carries an implicit "and here's how to start." This one stops at the diagnosis.</p>
+    </div>
+
+    <div class="reel-card miss">
+      <div class="reel-row1">
+        <span class="pill format">Talking-Head</span>
+        <span class="pill miss">Miss</span>
+      </div>
+      <p class="reel-hook"><a href="https://www.instagram.com/reel/DX4I7l1x0md/">When I started working less on my agency, I scaled quicker than ever before</a></p>
+      <div class="reel-stats">
+        <span>May 03</span>
+        <span>Reach: <strong>187</strong></span>
+        <span>Saved: <strong>0.00%</strong></span>
+        <span>Watched: <strong>14.12%</strong></span>
+        <span>Length: <strong>59s</strong></span>
+      </div>
+      <p class="reel-read">First-person growth claim hook. Zero saves on 187 reach. Same flaw as "I doubled my show rate" above: the hook is about Noah, not the viewer. Compare to "I started closing more deals when I doubled my prices" (1.82% on 1,472 reach) — the difference is "doubled my prices" is a specific, repeatable tactic. "Working less" is a vague life claim.</p>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>The numbers</h2>
+
+    <details class="numbers">
+      <summary>Top 10 rolling (all reels, reach ≥ 500)</summary>
+      <div class="num-block">
+        <table class="num">
+          <thead>
+            <tr><th>#</th><th>Save</th><th>Reach</th><th>Length</th><th>Format</th><th>Hook</th></tr>
+          </thead>
+          <tbody>
+            <tr class="top-row"><td>1</td><td>3.81%</td><td>1,299</td><td>67s</td><td>Talking-Head</td><td>you need to do these three things if you want to double your show rate</td></tr>
+            <tr class="top-row"><td>2</td><td>3.79%</td><td>3,304</td><td>57s</td><td>Talking-Head</td><td>you're cooked if you're not booking 5-10 appointments per day for your agency</td></tr>
+            <tr class="top-row"><td>3</td><td>3.75%</td><td>1,358</td><td>58s</td><td>Talking-Head</td><td>How do I print 4-6 appts/day with paid ads</td></tr>
+            <tr class="top-row"><td>4</td><td>3.04%</td><td>884</td><td>58s</td><td>Talking-Head</td><td>You need to do these three things if you wanna start charging more for your agency</td></tr>
+            <tr class="top-row"><td>5</td><td>2.91%</td><td>6,679</td><td>38s</td><td>Talking-Head</td><td>this is the easiest way to book 10 appointments today for your agency</td></tr>
+            <tr class="top-row"><td>6</td><td>2.86%</td><td>3,304</td><td>60s</td><td>Talking-Head</td><td>I charge $10k to agency clients and I haven't shared my screen in months…</td></tr>
+            <tr class="top-row"><td>7</td><td>2.81%</td><td>3,045</td><td>56s</td><td>Talking-Head</td><td>If you get off the call without collecting payment, you're never hearing from the prospect again, most of the time</td></tr>
+            <tr class="top-row"><td>8</td><td>2.71%</td><td>813</td><td>56s</td><td>Talking-Head</td><td>if you're charging under $5000 per client, you need to see this</td></tr>
+            <tr class="top-row"><td>9</td><td>2.63%</td><td>571</td><td>n/a</td><td>(legacy)</td><td>I just broke the matrix.</td></tr>
+            <tr class="top-row"><td>10</td><td>2.62%</td><td>1,872</td><td>77s</td><td>Talking-Head</td><td>What are the highest leverage things to work on in your agency?</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <details class="numbers">
+      <summary>Bottom 10 rolling</summary>
+      <div class="num-block">
+        <table class="num">
+          <thead>
+            <tr><th>#</th><th>Save</th><th>Reach</th><th>Length</th><th>Hook</th></tr>
+          </thead>
+          <tbody>
+            <tr class="bot-row"><td>1</td><td>0.00%</td><td>829</td><td>44s</td><td>be grateful.</td></tr>
+            <tr class="bot-row"><td>2</td><td>0.00%</td><td>553</td><td>n/a</td><td>pov: you're about to have the craziest comeback in 2026</td></tr>
+            <tr class="bot-row"><td>3</td><td>0.00%</td><td>572</td><td>n/a</td><td>We all have the same tools, what matters is how you use them.</td></tr>
+            <tr class="bot-row"><td>4</td><td>0.00%</td><td>636</td><td>n/a</td><td>Get back to work bro.</td></tr>
+            <tr class="bot-row"><td>5</td><td>0.12%</td><td>1,495</td><td>14s</td><td>times have changed.</td></tr>
+            <tr class="bot-row"><td>6</td><td>0.12%</td><td>716</td><td>6s</td><td>cafemaxxing &gt;&gt; ☕</td></tr>
+            <tr class="bot-row"><td>7</td><td>0.15%</td><td>679</td><td>n/a</td><td>#smma #aiagency</td></tr>
+            <tr class="bot-row"><td>8</td><td>0.16%</td><td>1,880</td><td>n/a</td><td>just keep pushing bro, your time will come.</td></tr>
+            <tr class="bot-row"><td>9</td><td>0.17%</td><td>585</td><td>n/a</td><td>Spamming cafe method</td></tr>
+            <tr class="bot-row"><td>10</td><td>0.17%</td><td>587</td><td>n/a</td><td>The only way to $30k months.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <details class="numbers">
+      <summary>Best length band + format leaderboard</summary>
+      <div class="num-block">
+        <p class="num-h3">Save rate by length</p>
+        <table class="num">
+          <thead><tr><th>Length</th><th>Reels</th><th>Median save</th></tr></thead>
+          <tbody>
+            <tr><td>0-30s</td><td>5</td><td>0.26%</td></tr>
+            <tr><td>31-45s</td><td>13</td><td>0.73%</td></tr>
+            <tr style="background:var(--green-fill)"><td><strong>46-60s</strong></td><td>15</td><td><strong>1.34%</strong></td></tr>
+            <tr><td>61-90s</td><td>15</td><td>1.18%</td></tr>
+            <tr><td>90s+</td><td>6</td><td>1.14%</td></tr>
+          </tbody>
+        </table>
+
+        <p class="num-h3">Save rate by format</p>
+        <table class="num">
+          <thead><tr><th>Format</th><th>Reels</th><th>Median save</th></tr></thead>
+          <tbody>
+            <tr style="background:var(--green-fill)"><td><strong>Green-Screen-Type</strong></td><td>8</td><td><strong>1.63%</strong></td></tr>
+            <tr><td>Talking-Head</td><td>28</td><td>1.18%</td></tr>
+            <tr><td>Podcast-Type</td><td>2</td><td>0.73%</td></tr>
+            <tr><td>Coaching-Call-Type</td><td>2</td><td>0.52%</td></tr>
+            <tr><td>Long-Form-Clip-Type</td><td>1</td><td>0.30%</td></tr>
+            <tr><td>Discord-QA</td><td>0</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+  </section>
+
+  <section>
+    <details class="numbers">
+      <summary>What the words mean</summary>
+      <div class="num-block">
+        <ul class="glossary-list">
+          <li><strong>Reach.</strong> Number of people who saw the reel at all. Bigger reach means IG pushed it.</li>
+          <li><strong>Save rate.</strong> % of people who hit Save. The strongest signal a reel actually resonated: way more meaningful than likes.</li>
+          <li><strong>Completion rate.</strong> Average % of the reel watched. Not "watched to the end": average across all viewers.</li>
+          <li><strong>Median (vs average).</strong> The middle reel: half scored higher, half lower. Used instead of average so one breakout doesn't distort the picture.</li>
+          <li><strong>Rolling baseline.</strong> The median across every reel ever, qualified at 500+ reach. Anything 2x baseline is a hit.</li>
+          <li><strong>Format / Pillar.</strong> What kind of reel it is: Green-Screen, Talking-Head, Podcast clip, etc. Set in the Notion tracker.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <footer>
+    Generated 2026-05-10 · auto-posted to #ig-weekly-content-report. Next report: 2026-05-17.
+  </footer>
+
+</div>
+</body>
+</html>
