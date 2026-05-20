@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Per-Video Analysis: I Built a $235,289 AI Service For a Client in 31 Minutes (Live)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f1e8;
+    --bg-card: #fdfaf3;
+    --text: #1a1a1a;
+    --text-muted: #5a5a5a;
+    --text-faint: #8a8a8a;
+    --accent: #c4622d;
+    --accent-soft: #e8d5c4;
+    --border: #e0d8c8;
+    --code-bg: #f0e9da;
+    --tof: #2d7a3e;
+    --mof: #b8860b;
+    --bof: #b03030;
+    --tof-soft: #d4e8d8;
+    --mof-soft: #f0e3bb;
+    --bof-soft: #f0d4d4;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, -apple-system, sans-serif; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  body { padding: 56px 24px 96px; }
+  .container { max-width: 760px; margin: 0 auto; }
+
+  .meta-line { font-size: 12px; color: var(--text-faint); margin-bottom: 10px; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; }
+  h1 { font-size: 38px; font-weight: 800; letter-spacing: -0.025em; margin: 0 0 36px; line-height: 1.12; }
+  h2 {
+    font-size: 22px; font-weight: 700; margin: 64px 0 24px; letter-spacing: -0.005em;
+    padding-bottom: 10px; border-bottom: 2px solid var(--accent-soft);
+    color: var(--text);
+  }
+  h2:first-of-type { margin-top: 32px; }
+  h3 {
+    font-size: 17px; font-weight: 700; margin: 40px 0 10px;
+    color: var(--text); line-height: 1.35;
+  }
+  h4 { font-size: 14px; font-weight: 700; margin: 24px 0 8px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+
+  p { margin: 0 0 18px; }
+  ul, ol { margin: 0 0 20px; padding-left: 22px; }
+  ul li, ol li { margin-bottom: 10px; line-height: 1.65; }
+  ul li::marker { color: var(--accent); }
+  ol li::marker { color: var(--accent); font-weight: 600; }
+  strong { font-weight: 600; color: var(--text); }
+  em { font-style: italic; color: var(--text-muted); }
+
+  /* Nested lists tighter */
+  ul ul, ol ol, ul ol, ol ul { margin-bottom: 8px; margin-top: 8px; }
+
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft); }
+  a:hover { border-bottom-color: var(--accent); }
+
+  code { font-family: 'JetBrains Mono', monospace; font-size: 13px; background: var(--code-bg); padding: 2px 6px; border-radius: 3px; }
+  pre { background: var(--code-bg); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 0 0 16px; font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.5; }
+  pre code { background: none; padding: 0; }
+
+  blockquote { border-left: 3px solid var(--accent); padding-left: 16px; color: var(--text-muted); margin: 0 0 16px; font-style: italic; }
+
+  table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 14px; background: var(--bg-card); border-radius: 6px; overflow: hidden; }
+  th { background: var(--accent-soft); padding: 10px 14px; text-align: left; font-weight: 600; color: var(--text); border-bottom: 1px solid var(--border); }
+  td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+  .hero {
+    background: linear-gradient(135deg, var(--bg-card) 0%, #faf3e5 100%);
+    border-left: 5px solid var(--accent);
+    padding: 32px 36px;
+    border-radius: 8px;
+    margin: 0 0 56px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  }
+  .hero .hero-label { font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; margin-bottom: 12px; }
+  .hero .hero-body { font-size: 17px; line-height: 1.7; color: var(--text); }
+  .hero .hero-body p { margin: 0 0 14px; }
+  .hero .hero-body p:last-child { margin-bottom: 0; }
+  .hero strong { color: var(--accent); font-weight: 700; }
+
+  /* Pattern + recommendation cards via class-mod (added via post-processing) */
+  /* General "section divider" for finer breaks */
+  .section-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin: 16px 0 24px;
+  }
+
+  /* Print + PDF rendering */
+  @media print {
+    body { background: white; padding: 24px 16px; font-size: 11pt; line-height: 1.55; }
+    .container { max-width: 100%; }
+    h1 { font-size: 24pt; }
+    h2 { font-size: 14pt; margin: 24px 0 12px; page-break-after: avoid; }
+    h3 { font-size: 12pt; margin: 16px 0 6px; page-break-after: avoid; }
+    p, li { font-size: 11pt; }
+    .hero { box-shadow: none; page-break-inside: avoid; padding: 20px 24px; }
+    .retention-chart { page-break-inside: avoid; max-width: 100%; }
+    .footer { display: none; }
+    a { color: inherit; border: none; }
+    .stage-tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  .footer { margin-top: 80px; padding-top: 24px; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-faint); text-align: center; }
+
+  /* Retention curve chart */
+  .retention-chart {
+    display: block;
+    margin: 12px 0 32px;
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .chart-label {
+    display: block;
+    margin: 20px 0 4px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .chart-label .chart-title { color: var(--text); text-transform: none; font-size: 13px; font-weight: 600; }
+
+  /* Score badges */
+  .score-badge {
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 500;
+    margin: 0 2px;
+    vertical-align: middle;
+    line-height: 1;
+  }
+  .stage-tag {
+    padding: 2px 7px;
+    border-radius: 3px;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 11px;
+  }
+  .stage-tag.tof { background: var(--tof); }
+  .stage-tag.mof { background: var(--mof); }
+  .stage-tag.bof { background: var(--bof); }
+  .stage-tag.unknown { background: var(--text-faint); }
+
+  .score-pill {
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: var(--code-bg);
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 0.2px;
+  }
+  .score-pill.low { background: #f0e9da; color: #a8836b; }
+  .score-pill.mid { background: #f5e6c8; color: #8b6f47; font-weight: 600; }
+  .score-pill.high { background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+
+  /* Verdict highlighting (inline keyword tags) */
+  .verdict-pass {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 4px;
+    background: #d4e8d8;
+    color: #1d5b2a;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  .verdict-mixed {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 4px;
+    background: #f5e6c8;
+    color: #8b6f1f;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  .verdict-fail {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 4px;
+    background: #f0d4d4;
+    color: #8b1f1f;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  /* Featured video thumbnail (single-video reports only) */
+  .video-thumb-wrap {
+    margin: 0 0 28px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border: 1px solid var(--border);
+  }
+  .video-thumb-wrap img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .video-thumb-caption {
+    padding: 10px 16px;
+    background: var(--bg-card);
+    font-size: 12px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .video-thumb-caption a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+  }
+
+  /* Big verdict banner (near title) */
+  .verdict-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 28px;
+    padding: 8px 18px 8px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .verdict-banner .badge-big {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 6px 14px;
+    border-radius: 5px;
+    color: white;
+  }
+  .verdict-banner .banner-text { color: var(--text); font-weight: 500; }
+  .verdict-banner.pass { background: #d4e8d8; }
+  .verdict-banner.pass .badge-big { background: #2d7a3e; }
+  .verdict-banner.mixed { background: #f5e6c8; }
+  .verdict-banner.mixed .badge-big { background: #b8860b; }
+  .verdict-banner.fail { background: #f0d4d4; }
+  .verdict-banner.fail .badge-big { background: #b03030; }
+  .verdict-banner .stage-pill {
+    padding: 4px 11px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: white;
+  }
+  .verdict-banner .stage-pill.tof { background: var(--tof); }
+  .verdict-banner .stage-pill.mof { background: var(--mof); }
+  .verdict-banner .stage-pill.bof { background: var(--bof); }
+
+  /* Stat grid (replaces the Video stats markdown table) */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 12px 0 32px;
+  }
+  .stat-card {
+    padding: 16px 18px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .stat-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .stat-value {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--text);
+  }
+
+  /* Action card (the "What to do in the next video" section) */
+  .action-card {
+    margin: 28px 0 40px;
+    padding: 24px 28px;
+    background: #e8f0ea;
+    border-left: 5px solid #2d7a3e;
+    border-radius: 8px;
+  }
+  .action-card h2 {
+    margin: 0 0 16px;
+    padding: 0;
+    border: none;
+    font-size: 18px;
+    color: #1d5b2a;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .action-card h2::before { content: "➤ "; }
+  .action-card ul { margin: 0; padding-left: 22px; }
+  .action-card li { color: var(--text); font-size: 15px; margin-bottom: 10px; line-height: 1.6; }
+  .action-card li::marker { color: #2d7a3e; }
+  .action-card strong { color: #1d5b2a; font-weight: 700; }
+
+  /* Color-tinted sections (Hook=orange, Retention=red, CTA=yellow, Verdict=gray) */
+  .section-tinted {
+    margin: 28px 0;
+    padding: 20px 24px;
+    border-radius: 8px;
+    border-left: 4px solid;
+  }
+  .section-tinted h2 {
+    margin: 0 0 12px;
+    padding: 0 0 8px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom-width: 1.5px;
+  }
+  .section-tinted ul { margin: 0; }
+  .section-tinted.hook-tint {
+    background: #fbecdc;
+    border-left-color: #c4622d;
+  }
+  .section-tinted.hook-tint h2 { color: #8b3f17; border-bottom-color: #e8d5c4; }
+  .section-tinted.retention-tint {
+    background: #f5dada;
+    border-left-color: #b03030;
+  }
+  .section-tinted.retention-tint h2 { color: #6b1f1f; border-bottom-color: #e8c4c4; }
+  .section-tinted.cta-tint {
+    background: #f5ecc8;
+    border-left-color: #b8860b;
+  }
+  .section-tinted.cta-tint h2 { color: #6b5010; border-bottom-color: #e0d5a8; }
+  .section-tinted.verdict-tint-fail {
+    background: #f0d4d4;
+    border-left-color: #b03030;
+  }
+  .section-tinted.verdict-tint-fail h2 { color: #6b1f1f; border-bottom-color: #e8c4c4; }
+  .section-tinted.verdict-tint-mixed {
+    background: #f5e6c8;
+    border-left-color: #b8860b;
+  }
+  .section-tinted.verdict-tint-mixed h2 { color: #6b5010; }
+  .section-tinted.verdict-tint-pass {
+    background: #d4e8d8;
+    border-left-color: #2d7a3e;
+  }
+  .section-tinted.verdict-tint-pass h2 { color: #1d5b2a; }
+
+  /* Section number badges (small, prepended to H2) */
+  .section-num {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-faint);
+    margin-right: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  /* Score board with visual progress bars (replaces the inline pills) */
+  .score-board {
+    display: block;
+    margin: 16px 0 28px;
+    padding: 18px 22px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .score-board .board-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .score-board .board-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+  }
+  .score-bar-row {
+    display: grid;
+    grid-template-columns: 110px 1fr 30px;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .score-bar-row:last-child { margin-bottom: 0; }
+  .score-bar-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .score-bar-track {
+    height: 10px;
+    background: #efe7d7;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .score-bar-fill {
+    height: 100%;
+    border-radius: 5px;
+    background: var(--accent);
+    transition: width 0.3s;
+  }
+  .score-bar-fill.high { background: var(--accent); }
+  .score-bar-fill.mid { background: #b8860b; }
+  .score-bar-fill.low { background: #a8836b; }
+  .score-bar-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: right;
+    color: var(--text);
+  }
+
+  /* Glossary */
+  .glossary {
+    margin: 64px 0 24px;
+    padding: 24px 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .glossary h3 {
+    margin: 0 0 16px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    font-weight: 700;
+    border: none;
+  }
+  .glossary dl { margin: 0; }
+  .glossary dt { font-weight: 600; color: var(--text); margin: 12px 0 4px; font-size: 13px; }
+  .glossary dt:first-of-type { margin-top: 0; }
+  .glossary dd { margin: 0; color: var(--text-muted); line-height: 1.55; font-size: 13px; }
+  .glossary .score-range { display: inline-flex; gap: 8px; margin-top: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+  .glossary .score-range span { padding: 2px 8px; border-radius: 3px; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="meta-line">2026-05-20 · Consulting Agency OS / Noah Haupt</div>
+<h1>Per-Video Analysis: I Built a $235,289 AI Service For a Client in 31 Minutes (Live)</h1>
+<div class="video-thumb-wrap"><img src="https://i.ytimg.com/vi/vEumyQQQTU0/maxresdefault.jpg" alt="I Built a $235,289 AI Service For a Client in 31 Minutes (Live)" loading="lazy"/><div class="video-thumb-caption"><span>I Built a $235,289 AI Service For a Client in 31 Minutes (Live)</span><a href="https://www.youtube.com/watch?v=vEumyQQQTU0" target="_blank">Watch on YouTube →</a></div></div><div class="verdict-banner fail"><span class="badge-big">FAIL</span><span class="stage-pill mof">MOF</span><span class="banner-text">Missed the stage benchmark.</span></div><div class="hero"><div class="hero-label">Executive Summary</div><div class="hero-body"><p><strong>FAIL against MOF benchmark.</strong> Avg View % of 11.3% sits well below the 20% MOF threshold, and 4 subs gained is far under 40. The single sharpest fix: tighten the first 30 seconds, because retention collapses from 86% to 30% by the 5% mark, killing the entire video's potential.</p></div></div>
+<div class="action-card"><h2><span class="section-num">01</span>What to do in the next video</h2>
+<ul>
+<li><strong>Action 1:</strong> Cut the repetitive intro setup (the "stuck doing stuff manually" line appears twice back-to-back) and deliver the first concrete on-screen action within 20 seconds.</li>
+<li><strong>Action 2:</strong> Show the $235K result on screen with a payout/dashboard screenshot in the first 10 seconds instead of just claiming it verbally, since the thumbnail promise needs visual proof early.</li>
+<li><strong>Action 3:</strong> Add a mid-roll CTA around the 8-10 minute mark tied to the coaching offer ("if you want me to build this with you, apply below"), because there is currently zero verbal CTA in the transcript.</li>
+</ul>
+</div><h2><span class="section-num">02</span>Video stats</h2>
+<div class="stat-grid"><div class="stat-card"><div class="stat-label">Published</div><div class="stat-value">2026-05-15</div></div><div class="stat-card"><div class="stat-label">Video Length</div><div class="stat-value">31 min 46 sec</div></div><div class="stat-card"><div class="stat-label">Views</div><div class="stat-value">579</div></div><div class="stat-card"><div class="stat-label">Avg View %</div><div class="stat-value">11.3%</div></div><div class="stat-card"><div class="stat-label">Avg Watch Time</div><div class="stat-value">216 sec</div></div><div class="stat-card"><div class="stat-label">Subs Gained</div><div class="stat-value">4</div></div></div>
+<p><div class="score-board"><div class="board-header"><span class="stage-tag mof">MOF</span><span class="board-title">Multi-Dimensional Funnel Scores</span></div><div class="score-bar-row" title="How well this pulls new viewers via search/suggested traffic"><div class="score-bar-label">Discovery</div><div class="score-bar-track"><div class="score-bar-fill mid" style="width: 55%"></div></div><div class="score-bar-value">55</div></div><div class="score-bar-row" title="How tactical and system-demonstrating the video is"><div class="score-bar-label">Mechanism</div><div class="score-bar-track"><div class="score-bar-fill high" style="width: 78%"></div></div><div class="score-bar-value">78</div></div><div class="score-bar-row" title="How close to triggering the $4-5K offer purchase"><div class="score-bar-label">Offer Proximity</div><div class="score-bar-track"><div class="score-bar-fill mid" style="width: 52%"></div></div><div class="score-bar-value">52</div></div></div></p>
+<div class="section-tinted hook-tint"><h2><span class="section-num">03</span>Hook analysis</h2>
+<ul>
+<li><strong>Transcript:</strong> "My agency does over $70,000 per month and using this exact AI service delivery system, I generated one of my clients over $235,000 in profit within the last 6 months. And the craziest part, this is literally all with AI and you can set it up within 35 minutes. So, in this video, I'm going to show you the exact process step-by-step."</li>
+<li><strong>Retention at 30s:</strong> ~29.7% (at 5% mark, ~95s in)</li>
+<li><strong>Verdict:</strong> weak</li>
+<li><strong>Why:</strong> The number claim is strong but unproven visually, so skeptical viewers bounce before the demo starts.</li>
+<li><strong>Why:</strong> The hook restates the same "agency owners stuck doing stuff manually" sentence twice, signaling unedited rambling and triggering early exits.</li>
+</ul>
+</div><div class="section-tinted retention-tint"><h2><span class="section-num">04</span>Retention story</h2>
+<ul>
+<li><strong>Curve summary:</strong> Start 86.3%, 25% mark 19.4%, 50% mark 15.4%, 75% mark 13.7%, end 7.5%</li>
+<li><strong>Major drop-off moments:</strong></li>
+<li>"0% to 5% (drop from 86.3% to 29.7%)" - the catastrophic intro cliff</li>
+<li>"20% to 25% (drop from 23.1% to 19.4%)" - mid-setup fatigue</li>
+<li>"90% to 99% (drop from 15.4% to 7.5%)" - no payoff/CTA at end</li>
+<li><strong>What's at those moments:</strong></li>
+<li>0-5%: "Because most agency owners are still doing a lot of the stuff manually... Because a lot of agency owners are still stuck doing the stuff manually" (duplicate filler)</li>
+<li>20-25%: viewers grinding through Facebook Ad Library swipe-file collection ("we're just going to keep going like this")</li>
+<li>90-99%: no verbal payoff or CTA visible in transcript</li>
+<li><strong>Hypothesis:</strong></li>
+<li>Early drop: hook delivers a claim with no visual proof, plus duplicated sentences leak that the video is unscripted.</li>
+<li>Mid drop: the "copy image, paste, copy image, paste" sequence feels low-value for $5-10K MRR agency owners who already know ad libraries exist.</li>
+<li>End drop: no CTA close means viewers who made it have nothing to act on.</li>
+</ul>
+<p><div class="chart-label">Retention: <span class="chart-title">I Built a $235,289 AI Service For a Client in 31 Minutes (Live)</span> · 2026-05-15 · Avg View 11.3%</div><svg viewBox="0 0 640 240" class="retention-chart" preserveAspectRatio="xMidYMid meet"><defs><linearGradient id="ret-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c4622d" stop-opacity="0.35"/><stop offset="100%" stop-color="#c4622d" stop-opacity="0.02"/></linearGradient></defs><rect x="40" y="20" width="590" height="190" fill="#fdfaf3" stroke="#e0d8c8" stroke-width="0.5"/><line x1="40" y1="67.5" x2="630" y2="67.5" stroke="#e0d8c8" stroke-width="0.5" stroke-dasharray="2,3"/><line x1="40" y1="115.0" x2="630" y2="115.0" stroke="#e0d8c8" stroke-width="0.5" stroke-dasharray="2,3"/><line x1="40" y1="162.5" x2="630" y2="162.5" stroke="#e0d8c8" stroke-width="0.5" stroke-dasharray="2,3"/><polygon points="40.0,46.0 46.0,127.1 51.9,143.9 57.9,145.1 63.8,147.6 69.8,153.5 75.8,155.6 81.7,154.3 87.7,157.3 93.6,159.8 99.6,163.5 105.6,159.8 111.5,158.5 117.5,160.2 123.4,161.9 129.4,164.8 135.4,166.9 141.3,170.7 147.3,168.6 153.2,170.7 159.2,166.1 165.2,166.9 171.1,164.4 177.1,170.2 183.0,171.9 189.0,173.2 194.9,171.1 200.9,174.4 206.9,174.8 212.8,176.5 218.8,174.4 224.7,175.3 230.7,176.1 236.7,174.8 242.6,175.3 248.6,173.6 254.5,174.4 260.5,171.1 266.5,176.5 272.4,174.4 278.4,175.7 284.3,177.4 290.3,179.9 296.3,180.3 302.2,183.2 308.2,181.1 314.1,181.5 320.1,179.9 326.1,182.0 332.0,182.0 338.0,180.7 343.9,182.4 349.9,181.5 355.9,181.5 361.8,180.7 367.8,179.0 373.7,180.7 379.7,179.9 385.7,179.9 391.6,180.7 397.6,182.0 403.5,181.5 409.5,176.1 415.5,182.4 421.4,182.4 427.4,182.0 433.3,182.4 439.3,181.1 445.3,175.7 451.2,176.5 457.2,179.4 463.1,184.0 469.1,182.0 475.1,181.5 481.0,179.9 487.0,184.0 492.9,178.2 498.9,179.0 504.8,180.3 510.8,179.4 516.8,181.1 522.7,176.5 528.7,180.7 534.6,182.8 540.6,184.9 546.6,182.8 552.5,184.5 558.5,182.8 564.4,184.9 570.4,183.2 576.4,180.7 582.3,183.6 588.3,184.0 594.2,187.8 600.2,185.7 606.2,184.9 612.1,183.6 618.1,187.8 624.0,191.2 630.0,195.8 630.0,210 40.0,210" fill="url(#ret-grad)"/><polyline points="40.0,46.0 46.0,127.1 51.9,143.9 57.9,145.1 63.8,147.6 69.8,153.5 75.8,155.6 81.7,154.3 87.7,157.3 93.6,159.8 99.6,163.5 105.6,159.8 111.5,158.5 117.5,160.2 123.4,161.9 129.4,164.8 135.4,166.9 141.3,170.7 147.3,168.6 153.2,170.7 159.2,166.1 165.2,166.9 171.1,164.4 177.1,170.2 183.0,171.9 189.0,173.2 194.9,171.1 200.9,174.4 206.9,174.8 212.8,176.5 218.8,174.4 224.7,175.3 230.7,176.1 236.7,174.8 242.6,175.3 248.6,173.6 254.5,174.4 260.5,171.1 266.5,176.5 272.4,174.4 278.4,175.7 284.3,177.4 290.3,179.9 296.3,180.3 302.2,183.2 308.2,181.1 314.1,181.5 320.1,179.9 326.1,182.0 332.0,182.0 338.0,180.7 343.9,182.4 349.9,181.5 355.9,181.5 361.8,180.7 367.8,179.0 373.7,180.7 379.7,179.9 385.7,179.9 391.6,180.7 397.6,182.0 403.5,181.5 409.5,176.1 415.5,182.4 421.4,182.4 427.4,182.0 433.3,182.4 439.3,181.1 445.3,175.7 451.2,176.5 457.2,179.4 463.1,184.0 469.1,182.0 475.1,181.5 481.0,179.9 487.0,184.0 492.9,178.2 498.9,179.0 504.8,180.3 510.8,179.4 516.8,181.1 522.7,176.5 528.7,180.7 534.6,182.8 540.6,184.9 546.6,182.8 552.5,184.5 558.5,182.8 564.4,184.9 570.4,183.2 576.4,180.7 582.3,183.6 588.3,184.0 594.2,187.8 600.2,185.7 606.2,184.9 612.1,183.6 618.1,187.8 624.0,191.2 630.0,195.8" fill="none" stroke="#c4622d" stroke-width="2.2" stroke-linejoin="round"/><text x="34" y="24" font-size="10" font-family="Inter" fill="#5a5a5a" text-anchor="end">100%</text><text x="34" y="70" font-size="10" font-family="Inter" fill="#8a8a8a" text-anchor="end">75%</text><text x="34" y="118" font-size="10" font-family="Inter" fill="#8a8a8a" text-anchor="end">50%</text><text x="34" y="166" font-size="10" font-family="Inter" fill="#8a8a8a" text-anchor="end">25%</text><text x="34" y="208" font-size="10" font-family="Inter" fill="#5a5a5a" text-anchor="end">0%</text><text x="40" y="234" font-size="10" font-family="Inter" fill="#8a8a8a">0%</text><text x="335.0" y="234" font-size="11" font-family="Inter" font-weight="600" fill="#5a5a5a" text-anchor="middle">video progress (0% to 100%)</text><text x="630" y="234" font-size="10" font-family="Inter" fill="#8a8a8a" text-anchor="end">100%</text><circle cx="51.9" cy="143.9" r="4" fill="#b03030" stroke="#fff" stroke-width="1.5"/><text x="51.9" y="134.9" font-size="9" font-family="Inter" font-weight="600" fill="#b03030" text-anchor="middle">2% · -51.5pp</text></svg></p>
+</div><div class="section-tinted cta-tint"><h2><span class="section-num">05</span>CTA section</h2>
+<ul>
+<li><strong>Timestamp:</strong> No verbal CTA found in the transcript provided.</li>
+<li><strong>CTA ask:</strong> (none spoken)</li>
+<li><strong>Retention at CTA:</strong> N/A</li>
+<li><strong>Verdict:</strong> weak</li>
+<li><strong>Suggested rewrite:</strong> Insert at ~9 min: "If you're at $5-10K/mo and want me to install this AI delivery system inside your agency directly, the application link is in the description: only taking agencies doing $5K+."</li>
+</ul>
+</div><h2><span class="section-num">06</span>Description analysis</h2>
+<ul>
+<li><strong>CTAs in description:</strong> 3 links (apply, GHL affiliate, IG). Verdict: solid, tracked apply link with UTM is the lead.</li>
+<li><strong>Timestamp chapters:</strong> absent</li>
+<li><strong>First 150 chars (search-ranking signal):</strong> "Work with me 1-1: https://agencyascension.io/apply..." - verdict: weak. No keywords like "AI agency," "service delivery," or "AI automation" appear before the link, wasting search signal.</li>
+<li><strong>Verdict + suggestion:</strong> Lead the description with 1-2 sentences of keyword-rich copy ("How I built an AI service delivery system that generated $235K for a roofing client...") before any link, and add chapter timestamps to rescue retention via re-watching.</li>
+</ul>
+<div class="section-tinted verdict-tint-fail"><h2><span class="section-num">07</span>Verdict against stage benchmark</h2>
+<ul>
+<li><strong>Stage:</strong> MOF</li>
+<li><strong>Benchmark hit?</strong> <span class="verdict-fail">FAIL</span></li>
+<li><strong>Math:</strong> Avg View % 11.3% vs benchmark 20% (miss by 8.7pts); Subs Gained 4 vs benchmark 40 (10x miss).</li>
+<li><strong>Diagnosis:</strong> A duplicated, unscripted intro plus a 32-minute runtime with no mid-roll CTA turned a strong title/thumbnail promise into a low-retention demo that converted almost no subs.</li>
+</ul></div>
+<div class="glossary">
+<h3>How to read this report</h3>
+<dl>
+<dt>Discovery Score</dt>
+<dd>How well this video pulls new viewers via YouTube search + suggested traffic. High = broad topic, curiosity-baited title, no insider jargon, accessible to a cold viewer.</dd>
+<dt>Mechanism Score</dt>
+<dd>How tactical this video is. High = single named system demonstrated end-to-end with specific tools/numbers + replicable by viewer.</dd>
+<dt>Offer Proximity Score</dt>
+<dd>How close this video is to triggering the $4-5K coaching offer purchase. High = directly demonstrates the buying outcome (live deal closes, case studies, "this is what we do together").</dd>
+<dt>Primary Stage</dt>
+<dd>Derived from the dominant dimension. TOF = top-of-funnel acquisition (Discovery wins). MOF = middle-funnel pre-sell (Mechanism wins). BOF = bottom-funnel trust-build (Offer Proximity wins).</dd>
+<dt>Score ranges</dt>
+<dd>
+<div class="score-range">
+  <span style="background:#f0e9da;color:#a8836b">0-39 weak</span>
+  <span style="background:#f5e6c8;color:#8b6f47">40-59 mixed</span>
+  <span style="background:#e8d5c4;color:#c4622d">60-79 strong</span>
+  <span style="background:#e8d5c4;color:#c4622d;font-weight:700">80+ excellent</span>
+</div>
+</dd>
+<dt>Stage benchmarks (PASS thresholds)</dt>
+<dd>TOF: Avg View % > 25% OR Views > 3000 OR Subs/View > 1.5%. MOF: Avg View % > 20% AND Subs Gained > 40. BOF: Avg View % > 12% AND end-of-curve retention > 8%.</dd>
+</dl>
+</div>
+
+<div class="footer">Generated 2026-05-20 · Source: [C] Per-Video Report video_vEumyQQQTU0 2026-05-20.md</div>
+</div>
+</body>
+</html>
