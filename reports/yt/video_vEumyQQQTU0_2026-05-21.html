@@ -363,6 +363,193 @@
   .cross-ref-card li::marker { color: #2d5b7a; }
   .cross-ref-card ul { margin: 0; padding-left: 22px; }
 
+  /* Comment themes card: voice-of-audience signal (purple) */
+  .themes-card {
+    margin: 28px 0;
+    padding: 22px 26px;
+    background: #f1e8f5;
+    border-left: 4px solid #6b3d8b;
+    border-radius: 8px;
+  }
+  .themes-card h2 {
+    margin: 0 0 14px;
+    padding: 0;
+    border: none;
+    font-size: 16px;
+    color: #4d2870;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .themes-card h2::before { content: "💬 "; }
+  .themes-card strong { color: #4d2870; font-weight: 700; }
+  .themes-card li::marker { color: #6b3d8b; }
+  .themes-card ul { margin: 0; padding-left: 22px; }
+
+  /* Thumbnail card: visual/design analysis (teal) */
+  .thumbnail-card {
+    margin: 28px 0;
+    padding: 22px 26px;
+    background: #e0f0ee;
+    border-left: 4px solid #2d7a73;
+    border-radius: 8px;
+  }
+  .thumbnail-card h2 {
+    margin: 0 0 14px;
+    padding: 0;
+    border: none;
+    font-size: 16px;
+    color: #1d5b56;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .thumbnail-card h2::before { content: "🎨 "; }
+  .thumbnail-card strong { color: #1d5b56; font-weight: 700; }
+  .thumbnail-card li::marker { color: #2d7a73; }
+  .thumbnail-card ul { margin: 0; padding-left: 22px; }
+
+  /* Description card: metadata analysis (neutral gray) */
+  .description-card {
+    margin: 28px 0;
+    padding: 22px 26px;
+    background: #ededed;
+    border-left: 4px solid #757575;
+    border-radius: 8px;
+  }
+  .description-card h2 {
+    margin: 0 0 14px;
+    padding: 0;
+    border: none;
+    font-size: 16px;
+    color: #424242;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .description-card h2::before { content: "📄 "; }
+  .description-card strong { color: #424242; font-weight: 700; }
+  .description-card li::marker { color: #757575; }
+  .description-card ul { margin: 0; padding-left: 22px; }
+
+  /* Stage mix card: special card showing TOF/MOF/BOF distribution with color bars */
+  .stage-mix-card {
+    margin: 28px 0;
+    padding: 24px 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .stage-mix-card h2 {
+    margin: 0 0 18px;
+    padding: 0 0 10px;
+    border-bottom: 2px solid var(--accent-soft);
+    font-size: 16px;
+    color: var(--text);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .stage-mix-card h2::before { content: "🎯 "; }
+  .stage-mix-card table { background: transparent; margin: 0 0 18px; }
+  .stage-mix-card table tr td:first-child,
+  .stage-mix-card table tr th:first-child { font-weight: 700; }
+  /* Stage-colored row markers */
+  .stage-mix-card table tbody tr.row-tof td:first-child { border-left: 4px solid var(--tof); padding-left: 12px; }
+  .stage-mix-card table tbody tr.row-mof td:first-child { border-left: 4px solid var(--mof); padding-left: 12px; }
+  .stage-mix-card table tbody tr.row-bof td:first-child { border-left: 4px solid var(--bof); padding-left: 12px; }
+  .stage-mix-bars { margin: 18px 0 8px; }
+  .stage-mix-bar-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 60px;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 10px;
+  }
+  .stage-mix-bar-label { font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  .stage-mix-bar-track { height: 14px; background: #efe7d7; border-radius: 7px; overflow: hidden; }
+  .stage-mix-bar-fill { height: 100%; border-radius: 7px; transition: width 0.3s; }
+  .stage-mix-bar-fill.tof { background: var(--tof); }
+  .stage-mix-bar-fill.mof { background: var(--mof); }
+  .stage-mix-bar-fill.bof { background: var(--bof); }
+  .stage-mix-bar-value { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; text-align: right; }
+
+  /* Top performer cards: per-stage color-coded (green/gold/red) */
+  .top-perf-card {
+    margin: 28px 0;
+    padding: 24px 28px;
+    border-radius: 10px;
+    border-left: 5px solid;
+    background: var(--bg-card);
+  }
+  .top-perf-card h2 {
+    margin: 0 0 16px;
+    padding: 0;
+    border: none;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .top-perf-card h2::before { content: "🏆 "; }
+  .top-perf-card h3 { margin: 0 0 14px; font-size: 16px; font-weight: 700; }
+  .top-perf-card.tof { background: #ecf4ee; border-left-color: var(--tof); }
+  .top-perf-card.tof h2,
+  .top-perf-card.tof h3,
+  .top-perf-card.tof strong { color: #1d5b2a; }
+  .top-perf-card.tof li::marker { color: var(--tof); }
+  .top-perf-card.mof { background: #f5edd2; border-left-color: var(--mof); }
+  .top-perf-card.mof h2,
+  .top-perf-card.mof h3,
+  .top-perf-card.mof strong { color: #7a5b08; }
+  .top-perf-card.mof li::marker { color: var(--mof); }
+  .top-perf-card.bof { background: #f5dada; border-left-color: var(--bof); }
+  .top-perf-card.bof h2,
+  .top-perf-card.bof h3,
+  .top-perf-card.bof strong { color: #6b1f1f; }
+  .top-perf-card.bof li::marker { color: var(--bof); }
+  .top-perf-card ul { margin: 0; padding-left: 22px; }
+
+  /* Bottom performer cards: red-tinted "what died" treatment */
+  .bottom-perf-card {
+    margin: 28px 0;
+    padding: 22px 26px;
+    background: #fdeded;
+    border-left: 4px solid #b03030;
+    border-radius: 8px;
+  }
+  .bottom-perf-card h2 {
+    margin: 0 0 14px;
+    padding: 0;
+    border: none;
+    font-size: 16px;
+    color: #6b1f1f;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .bottom-perf-card h2::before { content: "📉 "; }
+  .bottom-perf-card h3 { margin: 0 0 12px; font-size: 15px; font-weight: 700; color: #6b1f1f; }
+  .bottom-perf-card strong { color: #6b1f1f; font-weight: 700; }
+  .bottom-perf-card li::marker { color: #b03030; }
+  .bottom-perf-card ul { margin: 0; padding-left: 22px; }
+
+  /* Open questions / data gaps card: gray informational */
+  .open-q-card {
+    margin: 28px 0 40px;
+    padding: 20px 24px;
+    background: #f3f0ea;
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+  }
+  .open-q-card h2 {
+    margin: 0 0 12px;
+    padding: 0;
+    border: none;
+    font-size: 14px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .open-q-card h2::before { content: "❓ "; }
+  .open-q-card ul { margin: 0; padding-left: 22px; font-size: 13px; }
+  .open-q-card li { color: var(--text-muted); margin-bottom: 6px; }
+
   /* Color-tinted sections (Hook=orange, Retention=red, CTA=yellow, Verdict=gray) */
   .section-tinted {
     margin: 28px 0;
@@ -552,20 +739,20 @@
 <li><strong>Verdict:</strong> weak</li>
 <li><strong>Suggested rewrite:</strong> Around the 80% mark say: "If you want me to build this exact AI infrastructure with you for your agency, the application link is in the description - I review every one personally."</li>
 </ul>
-</div><h2><span class="section-num">07</span>Comment themes</h2>
+<div class="themes-card"></div><h2><span class="section-num">07</span>Comment themes</h2>
 <ul>
 <li><strong>Recurring questions:</strong> No genuine questions. Two comments are service solicitations (editor, thumbnail designer).</li>
 <li><strong>Recurring objections / friction:</strong> One troll comment ("Mums calling") suggests audience-age perception issue but isn't a pattern.</li>
 <li><strong>Video idea seeds:</strong> Low signal - skip idea generation from this batch.</li>
 <li><strong>Sentiment shorthand:</strong> Low engagement, mixed vibe with one "tuff video style" positive and minimal substantive feedback.</li>
 </ul>
-<h2><span class="section-num">08</span>Thumbnail analysis</h2>
+</div><div class="thumbnail-card"><h2><span class="section-num">08</span>Thumbnail analysis</h2>
 <ul>
 <li><strong>Visual elements:</strong> black/yellow/green palette, face present, "LIVE 1 CLIENT $235,289" text, center composition, photo style.</li>
 <li><strong>Read against this video's stage benchmark:</strong> The dollar figure is strong, but "LIVE 1 CLIENT" is ambiguous wording that doesn't telegraph the mechanism. Top MOF performer "How I Hired 10 Commission-Only Cold Callers in 3 Days For Free" leads with a specific number + clear mechanism + free in the title; this thumbnail's text is decoded slower.</li>
 <li><strong>Suggested change for next video:</strong> Replace "LIVE 1 CLIENT" with the mechanism phrase like "AI DELIVERY" or "31 MIN BUILD" so the value prop reads in under one second.</li>
 </ul>
-<div class="cross-ref-card"><h2><span class="section-num">09</span>How this compares to the top MOF performer</h2>
+</div><div class="cross-ref-card"><h2><span class="section-num">09</span>How this compares to the top MOF performer</h2>
 <ul>
 <li><strong>Top performer:</strong> "How I Hired 10 Commission-Only Cold Callers in 3 Days For Free" - 4,685 views, 20.5% avg view %, 106 subs gained, 23m16s</li>
 <li><strong>What they did differently:</strong></li>
@@ -574,14 +761,14 @@
 <li>Subject (hiring cold callers) hits the immediate $5-10K MRR pain; AI service delivery is a layer removed from urgent revenue.</li>
 <li><strong>Gap to close:</strong> 9.2 points of Avg View % - closing this requires a tighter cut (under 22 min) and a more pain-adjacent topic, not better delivery.</li>
 </ul>
-</div><h2><span class="section-num">10</span>Description analysis</h2>
+</div><div class="description-card"><h2><span class="section-num">10</span>Description analysis</h2>
 <ul>
 <li><strong>CTAs in description:</strong> 3 (apply link, GHL affiliate, Instagram DM) - specific links with UTM tracking, verdict: solid structure but no hierarchy.</li>
 <li><strong>Timestamp chapters:</strong> absent</li>
 <li><strong>First 150 chars (search-ranking signal):</strong> "Work with me 1-1: https://agencyascension.io/apply?utm_source=..." - verdict: wastes search real estate on a link instead of keywords like "AI service delivery agency."</li>
 <li><strong>Verdict + suggestion:</strong> Lead the description with one search-optimized sentence ("How to build an AI service delivery system for your agency clients in 31 minutes") then drop the apply link.</li>
 </ul>
-<div class="section-tinted verdict-tint-fail"><h2><span class="section-num">11</span>Verdict against stage benchmark</h2>
+</div><div class="section-tinted verdict-tint-fail"><h2><span class="section-num">11</span>Verdict against stage benchmark</h2>
 <ul>
 <li><strong>Stage:</strong> MOF</li>
 <li><strong>Benchmark hit?</strong> <span class="verdict-fail">FAIL</span></li>
