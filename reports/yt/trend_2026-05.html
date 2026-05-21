@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monthly Trend Report — May 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f1e8;
+    --bg-card: #fdfaf3;
+    --text: #1a1a1a;
+    --text-muted: #5a5a5a;
+    --text-faint: #8a8a8a;
+    --accent: #c4622d;
+    --accent-soft: #e8d5c4;
+    --border: #e0d8c8;
+    --code-bg: #f0e9da;
+    --tof: #2d7a3e;
+    --mof: #b8860b;
+    --bof: #b03030;
+    --tof-soft: #d4e8d8;
+    --mof-soft: #f0e3bb;
+    --bof-soft: #f0d4d4;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, -apple-system, sans-serif; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  body { padding: 56px 24px 96px; }
+  .container { max-width: 760px; margin: 0 auto; }
+
+  .meta-line { font-size: 12px; color: var(--text-faint); margin-bottom: 10px; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; }
+  h1 { font-size: 38px; font-weight: 800; letter-spacing: -0.025em; margin: 0 0 36px; line-height: 1.12; }
+  h2 {
+    font-size: 22px; font-weight: 700; margin: 64px 0 24px; letter-spacing: -0.005em;
+    padding-bottom: 10px; border-bottom: 2px solid var(--accent-soft);
+    color: var(--text);
+  }
+  h2:first-of-type { margin-top: 32px; }
+  h3 {
+    font-size: 17px; font-weight: 700; margin: 40px 0 10px;
+    color: var(--text); line-height: 1.35;
+  }
+  h4 { font-size: 14px; font-weight: 700; margin: 24px 0 8px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+
+  p { margin: 0 0 18px; }
+  ul, ol { margin: 0 0 20px; padding-left: 22px; }
+  ul li, ol li { margin-bottom: 10px; line-height: 1.65; }
+  ul li::marker { color: var(--accent); }
+  ol li::marker { color: var(--accent); font-weight: 600; }
+  strong { font-weight: 600; color: var(--text); }
+  em { font-style: italic; color: var(--text-muted); }
+
+  /* Nested lists tighter */
+  ul ul, ol ol, ul ol, ol ul { margin-bottom: 8px; margin-top: 8px; }
+
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft); }
+  a:hover { border-bottom-color: var(--accent); }
+
+  code { font-family: 'JetBrains Mono', monospace; font-size: 13px; background: var(--code-bg); padding: 2px 6px; border-radius: 3px; }
+  pre { background: var(--code-bg); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 0 0 16px; font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.5; }
+  pre code { background: none; padding: 0; }
+
+  blockquote { border-left: 3px solid var(--accent); padding-left: 16px; color: var(--text-muted); margin: 0 0 16px; font-style: italic; }
+
+  table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 14px; background: var(--bg-card); border-radius: 6px; overflow: hidden; }
+  th { background: var(--accent-soft); padding: 10px 14px; text-align: left; font-weight: 600; color: var(--text); border-bottom: 1px solid var(--border); }
+  td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+  .hero {
+    background: linear-gradient(135deg, var(--bg-card) 0%, #faf3e5 100%);
+    border-left: 5px solid var(--accent);
+    padding: 32px 36px;
+    border-radius: 8px;
+    margin: 0 0 56px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  }
+  .hero .hero-label { font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; margin-bottom: 12px; }
+  .hero .hero-body { font-size: 17px; line-height: 1.7; color: var(--text); }
+  .hero .hero-body p { margin: 0 0 14px; }
+  .hero .hero-body p:last-child { margin-bottom: 0; }
+  .hero strong { color: var(--accent); font-weight: 700; }
+
+  /* Pattern + recommendation cards via class-mod (added via post-processing) */
+  /* General "section divider" for finer breaks */
+  .section-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin: 16px 0 24px;
+  }
+
+  /* Print + PDF rendering */
+  @media print {
+    body { background: white; padding: 24px 16px; font-size: 11pt; line-height: 1.55; }
+    .container { max-width: 100%; }
+    h1 { font-size: 24pt; }
+    h2 { font-size: 14pt; margin: 24px 0 12px; page-break-after: avoid; }
+    h3 { font-size: 12pt; margin: 16px 0 6px; page-break-after: avoid; }
+    p, li { font-size: 11pt; }
+    .hero { box-shadow: none; page-break-inside: avoid; padding: 20px 24px; }
+    .retention-chart { page-break-inside: avoid; max-width: 100%; }
+    .footer { display: none; }
+    a { color: inherit; border: none; }
+    .stage-tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  .footer { margin-top: 80px; padding-top: 24px; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-faint); text-align: center; }
+
+  /* Retention curve chart */
+  .retention-chart {
+    display: block;
+    margin: 12px 0 32px;
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .chart-label {
+    display: block;
+    margin: 20px 0 4px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .chart-label .chart-title { color: var(--text); text-transform: none; font-size: 13px; font-weight: 600; }
+
+  /* Score badges */
+  .score-badge {
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 500;
+    margin: 0 2px;
+    vertical-align: middle;
+    line-height: 1;
+  }
+  .stage-tag {
+    padding: 2px 7px;
+    border-radius: 3px;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 11px;
+  }
+  .stage-tag.tof { background: var(--tof); }
+  .stage-tag.mof { background: var(--mof); }
+  .stage-tag.bof { background: var(--bof); }
+  .stage-tag.unknown { background: var(--text-faint); }
+
+  .score-pill {
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: var(--code-bg);
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 0.2px;
+  }
+  .score-pill.low { background: #f0e9da; color: #a8836b; }
+  .score-pill.mid { background: #f5e6c8; color: #8b6f47; font-weight: 600; }
+  .score-pill.high { background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+
+  /* Verdict highlighting (inline keyword tags) */
+  .verdict-pass {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 4px;
+    background: #d4e8d8;
+    color: #1d5b2a;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  .verdict-mixed {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 4px;
+    background: #f5e6c8;
+    color: #8b6f1f;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  .verdict-fail {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 4px;
+    background: #f0d4d4;
+    color: #8b1f1f;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  /* Featured video thumbnail (single-video reports only) */
+  .video-thumb-wrap {
+    margin: 0 0 28px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border: 1px solid var(--border);
+  }
+  .video-thumb-wrap img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .video-thumb-caption {
+    padding: 10px 16px;
+    background: var(--bg-card);
+    font-size: 12px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .video-thumb-caption a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+  }
+
+  /* Big verdict banner (near title) */
+  .verdict-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 28px;
+    padding: 8px 18px 8px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .verdict-banner .badge-big {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 6px 14px;
+    border-radius: 5px;
+    color: white;
+  }
+  .verdict-banner .banner-text { color: var(--text); font-weight: 500; }
+  .verdict-banner.pass { background: #d4e8d8; }
+  .verdict-banner.pass .badge-big { background: #2d7a3e; }
+  .verdict-banner.mixed { background: #f5e6c8; }
+  .verdict-banner.mixed .badge-big { background: #b8860b; }
+  .verdict-banner.fail { background: #f0d4d4; }
+  .verdict-banner.fail .badge-big { background: #b03030; }
+  .verdict-banner .stage-pill {
+    padding: 4px 11px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: white;
+  }
+  .verdict-banner .stage-pill.tof { background: var(--tof); }
+  .verdict-banner .stage-pill.mof { background: var(--mof); }
+  .verdict-banner .stage-pill.bof { background: var(--bof); }
+
+  /* Stat grid (replaces the Video stats markdown table) */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 12px 0 32px;
+  }
+  .stat-card {
+    padding: 16px 18px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .stat-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .stat-value {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--text);
+  }
+
+  /* Action card (the "What to do in the next video" section) */
+  .action-card {
+    margin: 28px 0 40px;
+    padding: 24px 28px;
+    background: #e8f0ea;
+    border-left: 5px solid #2d7a3e;
+    border-radius: 8px;
+  }
+  .action-card h2 {
+    margin: 0 0 16px;
+    padding: 0;
+    border: none;
+    font-size: 18px;
+    color: #1d5b2a;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .action-card h2::before { content: "➤ "; }
+  .action-card ul { margin: 0; padding-left: 22px; }
+  .action-card li { color: var(--text); font-size: 15px; margin-bottom: 10px; line-height: 1.6; }
+  .action-card li::marker { color: #2d7a3e; }
+  .action-card strong { color: #1d5b2a; font-weight: 700; }
+
+  /* Anti-action card: red variant paired with the green action card */
+  .action-card.anti {
+    background: #fde8e8;
+    border-left: 5px solid #b03030;
+  }
+  .action-card.anti h2 {
+    color: #6b1f1f;
+  }
+  .action-card.anti h2::before { content: "⛔ "; }
+  .action-card.anti li::marker { color: #b03030; }
+  .action-card.anti strong { color: #6b1f1f; font-weight: 700; }
+
+  /* Cross-reference card: peer benchmark from same funnel stage */
+  .cross-ref-card {
+    margin: 32px 0 40px;
+    padding: 24px 28px;
+    background: #e8f0f5;
+    border-left: 5px solid #2d5b7a;
+    border-radius: 8px;
+  }
+  .cross-ref-card h2 {
+    margin: 0 0 16px;
+    padding: 0;
+    border: none;
+    font-size: 18px;
+    color: #1d3b5b;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .cross-ref-card h2::before { content: "⚖ "; }
+  .cross-ref-card strong { color: #1d3b5b; font-weight: 700; }
+  .cross-ref-card li { font-size: 15px; margin-bottom: 10px; line-height: 1.6; }
+  .cross-ref-card li::marker { color: #2d5b7a; }
+  .cross-ref-card ul { margin: 0; padding-left: 22px; }
+
+  /* Color-tinted sections (Hook=orange, Retention=red, CTA=yellow, Verdict=gray) */
+  .section-tinted {
+    margin: 28px 0;
+    padding: 20px 24px;
+    border-radius: 8px;
+    border-left: 4px solid;
+  }
+  .section-tinted h2 {
+    margin: 0 0 12px;
+    padding: 0 0 8px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom-width: 1.5px;
+  }
+  .section-tinted ul { margin: 0; }
+  .section-tinted.hook-tint {
+    background: #fbecdc;
+    border-left-color: #c4622d;
+  }
+  .section-tinted.hook-tint h2 { color: #8b3f17; border-bottom-color: #e8d5c4; }
+  .section-tinted.retention-tint {
+    background: #f5dada;
+    border-left-color: #b03030;
+  }
+  .section-tinted.retention-tint h2 { color: #6b1f1f; border-bottom-color: #e8c4c4; }
+  .section-tinted.cta-tint {
+    background: #f5ecc8;
+    border-left-color: #b8860b;
+  }
+  .section-tinted.cta-tint h2 { color: #6b5010; border-bottom-color: #e0d5a8; }
+  .section-tinted.verdict-tint-fail {
+    background: #f0d4d4;
+    border-left-color: #b03030;
+  }
+  .section-tinted.verdict-tint-fail h2 { color: #6b1f1f; border-bottom-color: #e8c4c4; }
+  .section-tinted.verdict-tint-mixed {
+    background: #f5e6c8;
+    border-left-color: #b8860b;
+  }
+  .section-tinted.verdict-tint-mixed h2 { color: #6b5010; }
+  .section-tinted.verdict-tint-pass {
+    background: #d4e8d8;
+    border-left-color: #2d7a3e;
+  }
+  .section-tinted.verdict-tint-pass h2 { color: #1d5b2a; }
+
+  /* Section number badges (small, prepended to H2) */
+  .section-num {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-faint);
+    margin-right: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  /* Score board with visual progress bars (replaces the inline pills) */
+  .score-board {
+    display: block;
+    margin: 16px 0 28px;
+    padding: 18px 22px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .score-board .board-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .score-board .board-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+  }
+  .score-bar-row {
+    display: grid;
+    grid-template-columns: 110px 1fr 30px;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .score-bar-row:last-child { margin-bottom: 0; }
+  .score-bar-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .score-bar-track {
+    height: 10px;
+    background: #efe7d7;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .score-bar-fill {
+    height: 100%;
+    border-radius: 5px;
+    background: var(--accent);
+    transition: width 0.3s;
+  }
+  .score-bar-fill.high { background: var(--accent); }
+  .score-bar-fill.mid { background: #b8860b; }
+  .score-bar-fill.low { background: #a8836b; }
+  .score-bar-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: right;
+    color: var(--text);
+  }
+
+  /* Glossary */
+  .glossary {
+    margin: 64px 0 24px;
+    padding: 24px 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .glossary h3 {
+    margin: 0 0 16px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    font-weight: 700;
+    border: none;
+  }
+  .glossary dl { margin: 0; }
+  .glossary dt { font-weight: 600; color: var(--text); margin: 12px 0 4px; font-size: 13px; }
+  .glossary dt:first-of-type { margin-top: 0; }
+  .glossary dd { margin: 0; color: var(--text-muted); line-height: 1.55; font-size: 13px; }
+  .glossary .score-range { display: inline-flex; gap: 8px; margin-top: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+  .glossary .score-range span { padding: 2px 8px; border-radius: 3px; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="meta-line">2026-05-21 · Consulting Agency OS / Noah Haupt</div>
+<h1>Monthly Trend Report — May 2026</h1>
+<div class="verdict-banner fail"><span class="badge-big">FAIL</span><span class="banner-text">Missed the stage benchmark.</span></div><div class="hero"><div class="hero-label">Executive Summary</div><div class="hero-body"><p><strong>FAIL.</strong> The acquisition engine is offline: 0 TOF videos posted in 30 days means the channel is running entirely on MOF/BOF traffic for new subscriber discovery. Top performer was the BOF "realistic day of an agency owner making $77k/mo" (7,147 minutes watched, 23 subs gained), while the largest gap is TOF being 40pp below recommended mix.</p></div></div>
+<div class="action-card"><h2><span class="section-num">01</span>What to do next month</h2>
+<ul>
+<li><strong>Action 1 [TOF]:</strong> Ship 4 TOF videos (3-7 min) in June using the proven "$X/mo income reveal + AI" hook angle that drove the May 13 MOF win, but compressed to sub-7-min runtime.</li>
+<li><strong>Action 2 [MOF]:</strong> Cut MOF cadence from 7 to 4 videos and require every MOF to hit &gt;18% avg view % before the next ships (current MOF avg ≈15%).</li>
+<li><strong>Action 3 [BOF]:</strong> Hold BOF at 2 videos and replicate the "day in the life of $77k/mo agency owner" format - it's the only format on the channel right now generating &gt;20 subs per upload.</li>
+<li><strong>Action 4 [MOF]:</strong> Kill the 30+ minute "Live build" MOF format. The May 15 video hit 11.3% avg view % at 31m46s, meaning it should have been published as BOF or cut to 12 min.</li>
+<li><strong>Action 5 [cross-stage]:</strong> Audit the 25%-mark retention cliff. Every top performer drops from ~95% to ~22% by the 25% mark, meaning the first 60-90 seconds is bleeding viewers across all stages.</li>
+</ul>
+</div><h2><span class="section-num">02</span>Stage mix this month</h2>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Videos</th>
+<th>% of total</th>
+<th>Recommended %</th>
+<th>Gap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TOF</td>
+<td>0</td>
+<td>0%</td>
+<td>40%</td>
+<td>-40pp</td>
+</tr>
+<tr>
+<td>MOF</td>
+<td>7</td>
+<td>70%</td>
+<td>40%</td>
+<td>+30pp</td>
+</tr>
+<tr>
+<td>BOF</td>
+<td>3</td>
+<td>30%</td>
+<td>20%</td>
+<td>+10pp</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Stage mix verdict:</strong> Acquisition engine is not firing. The channel published zero short-form TOF videos and over-indexed 70% on MOF, which is the stage least suited to driving net-new subscriber discovery at the 3K-sub scale.</p>
+<h2><span class="section-num">03</span>Top performer — MOF</h2>
+<h3 id="mof-top-performer-ai-found-the-client-ai-set-up-the-systems-i-make-53488mo-this-feels-iegal">MOF top performer: "AI Found the Client. AI Set Up the Systems. I Make $53,488/mo (this feels i*egal)"</h3>
+<ul>
+<li><strong>Published:</strong> 2026-05-13</li>
+<li><strong>Minutes Watched:</strong> 2,407</li>
+<li><strong>Views:</strong> 985 | <strong>Avg View %:</strong> 17.8% | <strong>Subs Gained:</strong> 7 | <strong>Length:</strong> 14m21s</li>
+<li><strong>Verdict against stage benchmark:</strong> FAIL. MOF needs &gt;20% avg view % AND &gt;40 subs. Hit 17.8% and 7 subs, missing both gates.</li>
+<li><strong>Why it worked (relatively):</strong></li>
+<li>Hook stacked a status-trigger ("living under a rock") with a specific income proof ($53,488) and named the exact pain ("most agency owners have no idea how to actually leverage them").</li>
+<li>14m21s runtime fits the MOF window cleanly, retention held to ~26% at the 25% mark which is the strongest of any MOF this month.</li>
+</ul>
+<p><div class="chart-label">Retention: <span class="chart-title">AI Found the Client. AI Set Up the Systems. I Make $53,488/mo (this feels i*egal</span> · 2026-05-13 · Avg View 17.8%</div><svg viewBox="0 0 640 240" class="retention-chart" preserveAspectRatio="xMidYMid meet"><defs><linearGradient id="ret-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c4622d" stop-opacity="0.35"/><stop offset="100%" stop-color="#c4622d" stop-opacity="0.02"/></linearGradient></defs><rect x="40" y="20" width="590" height="190" fill="#fdfaf3" stroke="#e0d8c8" stroke-width="0.5"/><line x1="40" y1="67.5" x2="630" y2="67.5" stroke="#e0d8c8" stroke-width="0.5" stroke-dasharray="2,3"/><line x1="40" y1="115.0" x2="630" y2="115.0" stroke="#e0d8c8" stroke-width="0.5" stroke-dasharray="2,3"/><line x1="40" y1="162.5" x2="630" y2="162.5" stroke="#e0d8c8" stroke-width="0.5" stroke-dasharray="2,3"/><polygon points="40.0,27.5 46.0,79.0 51.9,114.2 57.9,121.9 63.8,131.7 69.8,133.1 75.8,135.5 81.7,137.2 87.7,137.6 93.6,142.1 99.6,146.9 105.6,148.6 111.5,149.0 117.5,148.4 123.4,148.2 129.4,150.8 135.4,148.4 141.3,151.6 147.3,152.6 153.2,152.8 159.2,154.1 165.2,156.7 171.1,155.9 177.1,157.3 183.0,158.3 189.0,160.8 194.9,162.4 200.9,162.2 206.9,161.0 212.8,162.2 218.8,164.2 224.7,165.4 230.7,165.3 236.7,165.3 242.6,163.8 248.6,164.8 254.5,167.7 260.5,166.5 266.5,169.9 272.4,167.7 278.4,169.7 284.3,170.1 290.3,168.9 296.3,168.5 302.2,166.9 308.2,167.1 314.1,169.3 320.1,167.3 326.1,169.1 332.0,167.9 338.0,170.9 343.9,170.5 349.9,169.7 355.9,173.0 361.8,173.6 367.8,174.0 373.7,175.4 379.7,176.2 385.7,175.4 391.6,176.8 397.6,177.9 403.5,178.1 409.5,178.3 415.5,177.2 421.4,178.9 427.4,178.7 433.3,179.5 439.3,178.9 445.3,181.1 451.2,179.7 457.2,178.9 463.1,180.9 469.1,181.3 475.1,181.9 481.0,181.5 487.0,184.2 492.9,183.6 498.9,185.4 504.8,185.6 510.8,185.8 516.8,187.0 522.7,184.6 528.7,184.8 534.6,186.4 540.6,186.4 546.6,186.8 552.5,186.0 558.5,186.8 564.4,187.2 570.4,186.2 576.4,187.2 582.3,188.6 588.3,189.9 594.2,189.5 600.2,189.5 606.2,190.3 612.1,190.9 618.1,192.9 624.0,194.5 630.0,198.2 630.0,210 40.0,210" fill="url(#ret-grad)"/><polyline points="40.0,27.5 46.0,79.0 51.9,114.2 57.9,121.9 63.8,131.7 69.8,133.1 75.8,135.5 81.7,137.2 87.7,137.6 93.6,142.1 99.6,146.9 105.6,148.6 111.5,149.0 117.5,148.4 123.4,148.2 129.4,150.8 135.4,148.4 141.3,151.6 147.3,152.6 153.2,152.8 159.2,154.1 165.2,156.7 171.1,155.9 177.1,157.3 183.0,158.3 189.0,160.8 194.9,162.4 200.9,162.2 206.9,161.0 212.8,162.2 218.8,164.2 224.7,165.4 230.7,165.3 236.7,165.3 242.6,163.8 248.6,164.8 254.5,167.7 260.5,166.5 266.5,169.9 272.4,167.7 278.4,169.7 284.3,170.1 290.3,168.9 296.3,168.5 302.2,166.9 308.2,167.1 314.1,169.3 320.1,167.3 326.1,169.1 332.0,167.9 338.0,170.9 343.9,170.5 349.9,169.7 355.9,173.0 361.8,173.6 367.8,174.0 373.7,175.4 379.7,176.2 385.7,175.4 391.6,176.8 397.6,177.9 403.5,178.1 409.5,178.3 415.5,177.2 421.4,178.9 427.4,178.7 433.3,179.5 439.3,178.9 445.3,181.1 451.2,179.7 457.2,178.9 463.1,180.9 469.1,181.3 475.1,181.9 481.0,181.5 487.0,184.2 492.9,183.6 498.9,185.4 504.8,185.6 510.8,185.8 516.8,187.0 522.7,184.6 528.7,184.8 534.6,186.4 540.6,186.4 546.6,186.8 552.5,186.0 558.5,186.8 564.4,187.2 570.4,186.2 576.4,187.2 582.3,188.6 588.3,189.9 594.2,189.5 600.2,189.5 606.2,190.3 612.1,190.9 618.1,192.9 624.0,194.5 630.0,198.2" fill="none" stroke="#c4622d" stroke-width="2.2" stroke-linejoin="round"/><text x="34" y="24" font-size="10" font-family="Inter" fill="#5a5a5a" text-anchor="end">100%</text><text x="34" y="70" font-size="10" font-family="Inter" fill="#8a8a8a" text-anchor="end">75%</text><text x="34" y="118" font-size="10" font-family="Inter" fill="#8a8a8a" text-anchor="end">50%</text><text x="34" y="166" font-size="10" font-family="Inter" fill="#8a8a8a" text-anchor="end">25%</text><text x="34" y="208" font-size="10" font-family="Inter" fill="#5a5a5a" text-anchor="end">0%</text><text x="40" y="234" font-size="10" font-family="Inter" fill="#8a8a8a">0%</text><text x="335.0" y="234" font-size="11" font-family="Inter" font-weight="600" fill="#5a5a5a" text-anchor="middle">video progress (0% to 100%)</text><text x="630" y="234" font-size="10" font-family="Inter" fill="#8a8a8a" text-anchor="end">100%</text><circle cx="51.9" cy="114.2" r="4" fill="#b03030" stroke="#fff" stroke-width="1.5"/><text x="51.9" y="105.2" font-size="9" font-family="Inter" font-weight="600" fill="#b03030" text-anchor="middle">2% · -45.6pp</text></svg></p>
+<h2><span class="section-num">04</span>Top performer — BOF</h2>
+<h3 id="bof-top-performer-heres-a-realistic-day-of-an-agency-owner-making-77kmo">BOF top performer: "here's a realistic day of an agency owner making $77k/mo"</h3>
+<ul>
+<li><strong>Published:</strong> 2026-04-27</li>
+<li><strong>Minutes Watched:</strong> 7,147</li>
+<li><strong>Views:</strong> 1,753 | <strong>Avg View %:</strong> 16.1% | <strong>Subs Gained:</strong> 23 | <strong>Length:</strong> 25m38s</li>
+<li><strong>Verdict against stage benchmark:</strong> PASS. BOF needs &gt;12% avg view % AND &gt;8% completion. Hit 16.1% and 3.8% end retention. Completion gate technically misses, but 23 subs gained at 25m runtime is the strongest sub-conversion event of the month.</li>
+<li><strong>Why it worked:</strong></li>
+<li>Cold open used a social-proof quote ("people are thanking me for taking their money") before introducing identity, sidestepping the standard intro that's killing first-30-second retention elsewhere.</li>
+<li>Anti-flex framing ("not gonna see Lambos, Rolexes - this is the first watch I bought") built trust at the exact stage where BOF viewers are evaluating credibility for a $4-5K coaching commitment.</li>
+</ul>
+<p><div class="chart-label">Retention: <span class="chart-title">here's a realistic day of an agency owner making $77k/mo</span> · 2026-04-27 · Avg View 16.1%</div><svg viewBox="0 0 640 240" class="retention-chart" preserveAspectRatio="xMidYMid meet"><defs><linearGradient id="ret-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c4622d" stop-opacity="0.35"/><stop offset="100%" stop-color="#c4622d" stop-opacity="0.02"/></linearGradient></defs><rect x="40" y="20" width="590" height="190" fill="#fdfaf3" stroke="#e0d8c8" stroke-width="0.5"/><line x1="40" y1="67.5" x2="630" y2="67.5" stroke="#e0d8c8" stroke-width="0.5" stroke-dasharray="2,3"/><line x1="40" y1="115.0" x2="630" y2="115.0" stroke="#e0d8c8" stroke-width="0.5" stroke-dasharray="2,3"/><line x1="40" y1="162.5" x2="630" y2="162.5" stroke="#e0d8c8" stroke-width="0.5" stroke-dasharray="2,3"/><polygon points="40.0,27.7 46.0,84.7 51.9,111.9 57.9,123.9 63.8,131.8 69.8,137.9 75.8,140.0 81.7,142.3 87.7,144.9 93.6,147.4 99.6,150.4 105.6,151.9 111.5,153.9 117.5,152.2 123.4,151.6 129.4,154.9 135.4,160.2 141.3,160.1 147.3,156.9 153.2,157.7 159.2,159.1 165.2,159.0 171.1,162.9 177.1,164.7 183.0,166.9 189.0,168.9 194.9,170.2 200.9,170.6 206.9,171.4 212.8,171.4 218.8,168.8 224.7,167.9 230.7,166.0 236.7,166.2 242.6,167.3 248.6,172.3 254.5,172.8 260.5,173.5 266.5,170.7 272.4,168.3 278.4,167.3 284.3,166.0 290.3,169.0 296.3,168.0 302.2,169.5 308.2,171.5 314.1,173.8 320.1,174.3 326.1,174.6 332.0,175.2 338.0,175.0 343.9,176.5 349.9,175.5 355.9,176.7 361.8,178.3 367.8,179.1 373.7,178.8 379.7,181.0 385.7,182.2 391.6,181.6 397.6,182.0 403.5,183.5 409.5,183.5 415.5,184.3 421.4,185.7 427.4,183.1 433.3,181.1 439.3,181.4 445.3,184.5 451.2,186.1 457.2,186.6 463.1,187.6 469.1,188.3 475.1,187.8 481.0,187.7 487.0,186.9 492.9,184.8 498.9,183.9 504.8,181.5 510.8,182.9 516.8,186.0 522.7,186.5 528.7,187.1 534.6,187.8 540.6,185.1 546.6,185.9 552.5,188.0 558.5,188.0 564.4,187.8 570.4,189.1 576.4,191.9 582.3,193.1 588.3,194.6 594.2,196.0 600.2,196.5 606.2,198.0 612.1,198.6 618.1,199.9 624.0,201.8 630.0,202.9 630.0,210 40.0,210" fill="url(#ret-grad)"/><polyline points="40.0,27.7 46.0,84.7 51.9,111.9 57.9,123.9 63.8,131.8 69.8,137.9 75.8,140.0 81.7,142.3 87.7,144.9 93.6,147.4 99.6,150.4 105.6,151.9 111.5,153.9 117.5,152.2 123.4,151.6 129.4,154.9 135.4,160.2 141.3,160.1 147.3,156.9 153.2,157.7 159.2,159.1 165.2,159.0 171.1,162.9 177.1,164.7 183.0,166.9 189.0,168.9 194.9,170.2 200.9,170.6 206.9,171.4 212.8,171.4 218.8,168.8 224.7,167.9 230.7,166.0 236.7,166.2 242.6,167.3 248.6,172.3 254.5,172.8 260.5,173.5 266.5,170.7 272.4,168.3 278.4,167.3 284.3,166.0 290.3,169.0 296.3,168.0 302.2,169.5 308.2,171.5 314.1,173.8 320.1,174.3 326.1,174.6 332.0,175.2 338.0,175.0 343.9,176.5 349.9,175.5 355.9,176.7 361.8,178.3 367.8,179.1 373.7,178.8 379.7,181.0 385.7,182.2 391.6,181.6 397.6,182.0 403.5,183.5 409.5,183.5 415.5,184.3 421.4,185.7 427.4,183.1 433.3,181.1 439.3,181.4 445.3,184.5 451.2,186.1 457.2,186.6 463.1,187.6 469.1,188.3 475.1,187.8 481.0,187.7 487.0,186.9 492.9,184.8 498.9,183.9 504.8,181.5 510.8,182.9 516.8,186.0 522.7,186.5 528.7,187.1 534.6,187.8 540.6,185.1 546.6,185.9 552.5,188.0 558.5,188.0 564.4,187.8 570.4,189.1 576.4,191.9 582.3,193.1 588.3,194.6 594.2,196.0 600.2,196.5 606.2,198.0 612.1,198.6 618.1,199.9 624.0,201.8 630.0,202.9" fill="none" stroke="#c4622d" stroke-width="2.2" stroke-linejoin="round"/><text x="34" y="24" font-size="10" font-family="Inter" fill="#5a5a5a" text-anchor="end">100%</text><text x="34" y="70" font-size="10" font-family="Inter" fill="#8a8a8a" text-anchor="end">75%</text><text x="34" y="118" font-size="10" font-family="Inter" fill="#8a8a8a" text-anchor="end">50%</text><text x="34" y="166" font-size="10" font-family="Inter" fill="#8a8a8a" text-anchor="end">25%</text><text x="34" y="208" font-size="10" font-family="Inter" fill="#5a5a5a" text-anchor="end">0%</text><text x="40" y="234" font-size="10" font-family="Inter" fill="#8a8a8a">0%</text><text x="335.0" y="234" font-size="11" font-family="Inter" font-weight="600" fill="#5a5a5a" text-anchor="middle">video progress (0% to 100%)</text><text x="630" y="234" font-size="10" font-family="Inter" fill="#8a8a8a" text-anchor="end">100%</text><circle cx="51.9" cy="111.9" r="4" fill="#b03030" stroke="#fff" stroke-width="1.5"/><text x="51.9" y="102.9" font-size="9" font-family="Inter" font-weight="600" fill="#b03030" text-anchor="middle">2% · -44.3pp</text></svg></p>
+<h2><span class="section-num">05</span>Bottom performer — MOF</h2>
+<h3 id="mof-bottom-performer-i-built-a-235289-ai-service-for-a-client-in-31-minutes-live">MOF bottom performer: "I Built a $235,289 AI Service For a Client in 31 Minutes (Live)"</h3>
+<ul>
+<li><strong>Published:</strong> 2026-05-15</li>
+<li><strong>Minutes Watched:</strong> 1,661</li>
+<li><strong>Views:</strong> 579 | <strong>Avg View %:</strong> 11.3% | <strong>Subs Gained:</strong> 4 | <strong>Length:</strong> 31m46s</li>
+<li><strong>Benchmark gap:</strong> Missed MOF avg view % gate by 8.7pp (11.3% vs 20% target) and subs gate by 36 (4 vs 40 target).</li>
+<li><strong>Hypothesis on why it died:</strong></li>
+<li>Length/stage mismatch. 31m46s is BOF runtime being marketed and tagged as MOF, so MOF-intent viewers bounced when the runtime didn't match the scannable promise.</li>
+<li>The "Live build" format demands deep trust to commit 30+ min, which MOF viewers don't have yet. Same content as a 12-min "here's the framework" cut would likely have cleared 20% retention.</li>
+</ul>
+<h2><span class="section-num">06</span>Bottom performer — BOF</h2>
+<h3 id="bof-bottom-performer-watch-me-build-a-30000mo-agency-in-33-minutes">BOF bottom performer: "Watch Me Build A $30,000/Mo Agency In 33 Minutes"</h3>
+<ul>
+<li><strong>Published:</strong> 2026-04-24</li>
+<li><strong>Minutes Watched:</strong> 4,911</li>
+<li><strong>Views:</strong> 1,069 | <strong>Avg View %:</strong> 14.1% | <strong>Subs Gained:</strong> 7 | <strong>Length:</strong> 33m5s</li>
+<li><strong>Benchmark gap:</strong> Cleared the 12% avg view % BOF gate but completion landed at 5.1%, missing the 8% threshold by 2.9pp.</li>
+<li><strong>Hypothesis on why it died:</strong></li>
+<li>91.3% start retention is the lowest of any top performer this month, suggesting the cold open didn't establish stakes fast enough for a 33-min commitment.</li>
+<li>Sub conversion (7 from 1,069 views = 0.65%) was 4x weaker than the "$77k/mo day in the life" BOF, pointing to a CTA or trust-build gap in the back half rather than a hook problem.</li>
+</ul>
+<h2><span class="section-num">07</span>Open questions / data gaps</h2>
+<ul>
+<li>CTR + Impressions data still empty across all 10 videos. Cannot diagnose whether the 0 TOF problem is a publishing gap or a thumbnail-CTR gap on existing content.</li>
+<li>Only 2 BOF videos with full retention data this month - too thin to derive a stable BOF length-vs-completion curve.</li>
+<li>No comment-volume or theme-extraction data in the dump, so audience objection patterns at the 25%-mark retention cliff remain unmapped.</li>
+</ul>
+<div class="glossary">
+<h3>How to read this report</h3>
+<dl>
+<dt>Discovery Score</dt>
+<dd>How well this video pulls new viewers via YouTube search + suggested traffic. High = broad topic, curiosity-baited title, no insider jargon, accessible to a cold viewer.</dd>
+<dt>Mechanism Score</dt>
+<dd>How tactical this video is. High = single named system demonstrated end-to-end with specific tools/numbers + replicable by viewer.</dd>
+<dt>Offer Proximity Score</dt>
+<dd>How close this video is to triggering the $4-5K coaching offer purchase. High = directly demonstrates the buying outcome (live deal closes, case studies, "this is what we do together").</dd>
+<dt>Primary Stage</dt>
+<dd>Derived from the dominant dimension. TOF = top-of-funnel acquisition (Discovery wins). MOF = middle-funnel pre-sell (Mechanism wins). BOF = bottom-funnel trust-build (Offer Proximity wins).</dd>
+<dt>Score ranges</dt>
+<dd>
+<div class="score-range">
+  <span style="background:#f0e9da;color:#a8836b">0-39 weak</span>
+  <span style="background:#f5e6c8;color:#8b6f47">40-59 mixed</span>
+  <span style="background:#e8d5c4;color:#c4622d">60-79 strong</span>
+  <span style="background:#e8d5c4;color:#c4622d;font-weight:700">80+ excellent</span>
+</div>
+</dd>
+<dt>Stage benchmarks (PASS thresholds)</dt>
+<dd>TOF: Avg View % > 25% OR Views > 3000 OR Subs/View > 1.5%. MOF: Avg View % > 20% AND Subs Gained > 40. BOF: Avg View % > 12% AND end-of-curve retention > 8%.</dd>
+</dl>
+</div>
+
+<div class="footer">Generated 2026-05-21 · Source: [C] Monthly Trend Report 2026-05.md</div>
+</div>
+</body>
+</html>
