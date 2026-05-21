@@ -363,6 +363,193 @@
   .cross-ref-card li::marker { color: #2d5b7a; }
   .cross-ref-card ul { margin: 0; padding-left: 22px; }
 
+  /* Comment themes card: voice-of-audience signal (purple) */
+  .themes-card {
+    margin: 28px 0;
+    padding: 22px 26px;
+    background: #f1e8f5;
+    border-left: 4px solid #6b3d8b;
+    border-radius: 8px;
+  }
+  .themes-card h2 {
+    margin: 0 0 14px;
+    padding: 0;
+    border: none;
+    font-size: 16px;
+    color: #4d2870;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .themes-card h2::before { content: "💬 "; }
+  .themes-card strong { color: #4d2870; font-weight: 700; }
+  .themes-card li::marker { color: #6b3d8b; }
+  .themes-card ul { margin: 0; padding-left: 22px; }
+
+  /* Thumbnail card: visual/design analysis (teal) */
+  .thumbnail-card {
+    margin: 28px 0;
+    padding: 22px 26px;
+    background: #e0f0ee;
+    border-left: 4px solid #2d7a73;
+    border-radius: 8px;
+  }
+  .thumbnail-card h2 {
+    margin: 0 0 14px;
+    padding: 0;
+    border: none;
+    font-size: 16px;
+    color: #1d5b56;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .thumbnail-card h2::before { content: "🎨 "; }
+  .thumbnail-card strong { color: #1d5b56; font-weight: 700; }
+  .thumbnail-card li::marker { color: #2d7a73; }
+  .thumbnail-card ul { margin: 0; padding-left: 22px; }
+
+  /* Description card: metadata analysis (neutral gray) */
+  .description-card {
+    margin: 28px 0;
+    padding: 22px 26px;
+    background: #ededed;
+    border-left: 4px solid #757575;
+    border-radius: 8px;
+  }
+  .description-card h2 {
+    margin: 0 0 14px;
+    padding: 0;
+    border: none;
+    font-size: 16px;
+    color: #424242;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .description-card h2::before { content: "📄 "; }
+  .description-card strong { color: #424242; font-weight: 700; }
+  .description-card li::marker { color: #757575; }
+  .description-card ul { margin: 0; padding-left: 22px; }
+
+  /* Stage mix card: special card showing TOF/MOF/BOF distribution with color bars */
+  .stage-mix-card {
+    margin: 28px 0;
+    padding: 24px 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .stage-mix-card h2 {
+    margin: 0 0 18px;
+    padding: 0 0 10px;
+    border-bottom: 2px solid var(--accent-soft);
+    font-size: 16px;
+    color: var(--text);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .stage-mix-card h2::before { content: "🎯 "; }
+  .stage-mix-card table { background: transparent; margin: 0 0 18px; }
+  .stage-mix-card table tr td:first-child,
+  .stage-mix-card table tr th:first-child { font-weight: 700; }
+  /* Stage-colored row markers */
+  .stage-mix-card table tbody tr.row-tof td:first-child { border-left: 4px solid var(--tof); padding-left: 12px; }
+  .stage-mix-card table tbody tr.row-mof td:first-child { border-left: 4px solid var(--mof); padding-left: 12px; }
+  .stage-mix-card table tbody tr.row-bof td:first-child { border-left: 4px solid var(--bof); padding-left: 12px; }
+  .stage-mix-bars { margin: 18px 0 8px; }
+  .stage-mix-bar-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 60px;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 10px;
+  }
+  .stage-mix-bar-label { font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  .stage-mix-bar-track { height: 14px; background: #efe7d7; border-radius: 7px; overflow: hidden; }
+  .stage-mix-bar-fill { height: 100%; border-radius: 7px; transition: width 0.3s; }
+  .stage-mix-bar-fill.tof { background: var(--tof); }
+  .stage-mix-bar-fill.mof { background: var(--mof); }
+  .stage-mix-bar-fill.bof { background: var(--bof); }
+  .stage-mix-bar-value { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; text-align: right; }
+
+  /* Top performer cards: per-stage color-coded (green/gold/red) */
+  .top-perf-card {
+    margin: 28px 0;
+    padding: 24px 28px;
+    border-radius: 10px;
+    border-left: 5px solid;
+    background: var(--bg-card);
+  }
+  .top-perf-card h2 {
+    margin: 0 0 16px;
+    padding: 0;
+    border: none;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .top-perf-card h2::before { content: "🏆 "; }
+  .top-perf-card h3 { margin: 0 0 14px; font-size: 16px; font-weight: 700; }
+  .top-perf-card.tof { background: #ecf4ee; border-left-color: var(--tof); }
+  .top-perf-card.tof h2,
+  .top-perf-card.tof h3,
+  .top-perf-card.tof strong { color: #1d5b2a; }
+  .top-perf-card.tof li::marker { color: var(--tof); }
+  .top-perf-card.mof { background: #f5edd2; border-left-color: var(--mof); }
+  .top-perf-card.mof h2,
+  .top-perf-card.mof h3,
+  .top-perf-card.mof strong { color: #7a5b08; }
+  .top-perf-card.mof li::marker { color: var(--mof); }
+  .top-perf-card.bof { background: #f5dada; border-left-color: var(--bof); }
+  .top-perf-card.bof h2,
+  .top-perf-card.bof h3,
+  .top-perf-card.bof strong { color: #6b1f1f; }
+  .top-perf-card.bof li::marker { color: var(--bof); }
+  .top-perf-card ul { margin: 0; padding-left: 22px; }
+
+  /* Bottom performer cards: red-tinted "what died" treatment */
+  .bottom-perf-card {
+    margin: 28px 0;
+    padding: 22px 26px;
+    background: #fdeded;
+    border-left: 4px solid #b03030;
+    border-radius: 8px;
+  }
+  .bottom-perf-card h2 {
+    margin: 0 0 14px;
+    padding: 0;
+    border: none;
+    font-size: 16px;
+    color: #6b1f1f;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .bottom-perf-card h2::before { content: "📉 "; }
+  .bottom-perf-card h3 { margin: 0 0 12px; font-size: 15px; font-weight: 700; color: #6b1f1f; }
+  .bottom-perf-card strong { color: #6b1f1f; font-weight: 700; }
+  .bottom-perf-card li::marker { color: #b03030; }
+  .bottom-perf-card ul { margin: 0; padding-left: 22px; }
+
+  /* Open questions / data gaps card: gray informational */
+  .open-q-card {
+    margin: 28px 0 40px;
+    padding: 20px 24px;
+    background: #f3f0ea;
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+  }
+  .open-q-card h2 {
+    margin: 0 0 12px;
+    padding: 0;
+    border: none;
+    font-size: 14px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .open-q-card h2::before { content: "❓ "; }
+  .open-q-card ul { margin: 0; padding-left: 22px; font-size: 13px; }
+  .open-q-card li { color: var(--text-muted); margin-bottom: 6px; }
+
   /* Color-tinted sections (Hook=orange, Retention=red, CTA=yellow, Verdict=gray) */
   .section-tinted {
     margin: 28px 0;
@@ -555,20 +742,20 @@
 <li><strong>Verdict:</strong> weak</li>
 <li><strong>Suggested rewrite:</strong> At the 60% mark say "If you want my actual N8N + GHL snapshot that runs this for me, the apply link is in the description: it's for agencies at $5-10K/mo ready to systemize to $30K." Tie the CTA to the exact ICP and the exact pain.</li>
 </ul>
-</div><h2><span class="section-num">07</span>Comment themes</h2>
+<div class="themes-card"></div><h2><span class="section-num">07</span>Comment themes</h2>
 <ul>
 <li><strong>Recurring questions:</strong> Which specific AI tools/prompts to use; whether the systems work in non-US markets (Germany example); whether cold calling still beats paid ads for early-stage agencies.</li>
 <li><strong>Recurring objections / friction:</strong> "You didn't actually tell us the tools" (12 likes, top voted) signals broken promise. One "quit lyin" skepticism comment on the $53K claim.</li>
 <li><strong>Video idea seeds:</strong> (1) "The Exact 7 AI Prompts I Use to Run a $53K/mo Agency" with screen recordings of each. (2) "Cold Calls vs Paid Ads at $0-5K/mo: Which Actually Gets Your First Client."</li>
 <li><strong>Sentiment shorthand:</strong> Frustrated curiosity: viewers want to believe but feel shortchanged on specifics.</li>
 </ul>
-<h2><span class="section-num">08</span>Thumbnail analysis</h2>
+</div><div class="thumbnail-card"><h2><span class="section-num">08</span>Thumbnail analysis</h2>
 <ul>
 <li><strong>Visual elements:</strong> black/red/white palette, face present, single text element "$53,488", center composition, photo style.</li>
 <li><strong>Read against MOF benchmark:</strong> The income-number-only thumbnail is a TOF pattern (curiosity bait), not MOF (mechanism-driven). The top performer's thumbnail ("10 Commission-Only Cold Callers in 3 Days For Free") sells a specific mechanism + outcome combo, which is why it converts MOF viewers who already know Noah.</li>
 <li><strong>Suggested change for next video:</strong> Add a second text element naming the mechanism (e.g., "$53K/mo" + "AI + N8N" or "0 Cold Calls"). Income alone attracts tire-kickers; mechanism + income filters for the ICP.</li>
 </ul>
-<div class="cross-ref-card"><h2><span class="section-num">09</span>How this compares to the top MOF performer</h2>
+</div><div class="cross-ref-card"><h2><span class="section-num">09</span>How this compares to the top MOF performer</h2>
 <ul>
 <li><strong>Top performer:</strong> "How I Hired 10 Commission-Only Cold Callers in 3 Days For Free" - 4,685 views, 20.5% avg view %, 106 subs gained, 23m16s</li>
 <li><strong>What they did differently:</strong></li>
@@ -577,14 +764,14 @@
 <li>Subs/view ratio is 2.26% vs this video's 0.71%: the top performer delivered enough mechanism to convert viewers into subs.</li>
 <li><strong>Gap to close:</strong> Deliver one named, demonstrable system end-to-end on screen rather than narrating a tools-and-costs overview.</li>
 </ul>
-</div><h2><span class="section-num">10</span>Description analysis</h2>
+</div><div class="description-card"><h2><span class="section-num">10</span>Description analysis</h2>
 <ul>
 <li><strong>CTAs in description:</strong> 3 (apply link with full UTM tracking, GHL affiliate, Instagram). Verdict: tracking is strong, but no context/value-prop copy around the links.</li>
 <li><strong>Timestamp chapters:</strong> absent</li>
 <li><strong>First 150 chars (search-ranking signal):</strong> "Work with me 1-1: https://agencyascension.io/apply?utm_source=aifoundclientsaisetupsystems..." Verdict: zero searchable keywords; the link eats the prime SEO real estate.</li>
 <li><strong>Verdict + suggestion:</strong> Lead the description with 2-3 sentences using "AI agency systems," "automate agency with N8N," "$53K/mo agency AI workflow" before the apply link. Add chapter timestamps to recover the 75%+ drop-off zone.</li>
 </ul>
-<div class="section-tinted verdict-tint-fail"><h2><span class="section-num">11</span>Verdict against stage benchmark</h2>
+</div><div class="section-tinted verdict-tint-fail"><h2><span class="section-num">11</span>Verdict against stage benchmark</h2>
 <ul>
 <li><strong>Stage:</strong> MOF</li>
 <li><strong>Benchmark hit?</strong> <span class="verdict-fail">FAIL</span></li>
