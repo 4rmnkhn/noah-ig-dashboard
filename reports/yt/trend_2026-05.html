@@ -363,6 +363,193 @@
   .cross-ref-card li::marker { color: #2d5b7a; }
   .cross-ref-card ul { margin: 0; padding-left: 22px; }
 
+  /* Comment themes card: voice-of-audience signal (purple) */
+  .themes-card {
+    margin: 28px 0;
+    padding: 22px 26px;
+    background: #f1e8f5;
+    border-left: 4px solid #6b3d8b;
+    border-radius: 8px;
+  }
+  .themes-card h2 {
+    margin: 0 0 14px;
+    padding: 0;
+    border: none;
+    font-size: 16px;
+    color: #4d2870;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .themes-card h2::before { content: "💬 "; }
+  .themes-card strong { color: #4d2870; font-weight: 700; }
+  .themes-card li::marker { color: #6b3d8b; }
+  .themes-card ul { margin: 0; padding-left: 22px; }
+
+  /* Thumbnail card: visual/design analysis (teal) */
+  .thumbnail-card {
+    margin: 28px 0;
+    padding: 22px 26px;
+    background: #e0f0ee;
+    border-left: 4px solid #2d7a73;
+    border-radius: 8px;
+  }
+  .thumbnail-card h2 {
+    margin: 0 0 14px;
+    padding: 0;
+    border: none;
+    font-size: 16px;
+    color: #1d5b56;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .thumbnail-card h2::before { content: "🎨 "; }
+  .thumbnail-card strong { color: #1d5b56; font-weight: 700; }
+  .thumbnail-card li::marker { color: #2d7a73; }
+  .thumbnail-card ul { margin: 0; padding-left: 22px; }
+
+  /* Description card: metadata analysis (neutral gray) */
+  .description-card {
+    margin: 28px 0;
+    padding: 22px 26px;
+    background: #ededed;
+    border-left: 4px solid #757575;
+    border-radius: 8px;
+  }
+  .description-card h2 {
+    margin: 0 0 14px;
+    padding: 0;
+    border: none;
+    font-size: 16px;
+    color: #424242;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .description-card h2::before { content: "📄 "; }
+  .description-card strong { color: #424242; font-weight: 700; }
+  .description-card li::marker { color: #757575; }
+  .description-card ul { margin: 0; padding-left: 22px; }
+
+  /* Stage mix card: special card showing TOF/MOF/BOF distribution with color bars */
+  .stage-mix-card {
+    margin: 28px 0;
+    padding: 24px 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .stage-mix-card h2 {
+    margin: 0 0 18px;
+    padding: 0 0 10px;
+    border-bottom: 2px solid var(--accent-soft);
+    font-size: 16px;
+    color: var(--text);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .stage-mix-card h2::before { content: "🎯 "; }
+  .stage-mix-card table { background: transparent; margin: 0 0 18px; }
+  .stage-mix-card table tr td:first-child,
+  .stage-mix-card table tr th:first-child { font-weight: 700; }
+  /* Stage-colored row markers */
+  .stage-mix-card table tbody tr.row-tof td:first-child { border-left: 4px solid var(--tof); padding-left: 12px; }
+  .stage-mix-card table tbody tr.row-mof td:first-child { border-left: 4px solid var(--mof); padding-left: 12px; }
+  .stage-mix-card table tbody tr.row-bof td:first-child { border-left: 4px solid var(--bof); padding-left: 12px; }
+  .stage-mix-bars { margin: 18px 0 8px; }
+  .stage-mix-bar-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 60px;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 10px;
+  }
+  .stage-mix-bar-label { font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  .stage-mix-bar-track { height: 14px; background: #efe7d7; border-radius: 7px; overflow: hidden; }
+  .stage-mix-bar-fill { height: 100%; border-radius: 7px; transition: width 0.3s; }
+  .stage-mix-bar-fill.tof { background: var(--tof); }
+  .stage-mix-bar-fill.mof { background: var(--mof); }
+  .stage-mix-bar-fill.bof { background: var(--bof); }
+  .stage-mix-bar-value { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; text-align: right; }
+
+  /* Top performer cards: per-stage color-coded (green/gold/red) */
+  .top-perf-card {
+    margin: 28px 0;
+    padding: 24px 28px;
+    border-radius: 10px;
+    border-left: 5px solid;
+    background: var(--bg-card);
+  }
+  .top-perf-card h2 {
+    margin: 0 0 16px;
+    padding: 0;
+    border: none;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .top-perf-card h2::before { content: "🏆 "; }
+  .top-perf-card h3 { margin: 0 0 14px; font-size: 16px; font-weight: 700; }
+  .top-perf-card.tof { background: #ecf4ee; border-left-color: var(--tof); }
+  .top-perf-card.tof h2,
+  .top-perf-card.tof h3,
+  .top-perf-card.tof strong { color: #1d5b2a; }
+  .top-perf-card.tof li::marker { color: var(--tof); }
+  .top-perf-card.mof { background: #f5edd2; border-left-color: var(--mof); }
+  .top-perf-card.mof h2,
+  .top-perf-card.mof h3,
+  .top-perf-card.mof strong { color: #7a5b08; }
+  .top-perf-card.mof li::marker { color: var(--mof); }
+  .top-perf-card.bof { background: #f5dada; border-left-color: var(--bof); }
+  .top-perf-card.bof h2,
+  .top-perf-card.bof h3,
+  .top-perf-card.bof strong { color: #6b1f1f; }
+  .top-perf-card.bof li::marker { color: var(--bof); }
+  .top-perf-card ul { margin: 0; padding-left: 22px; }
+
+  /* Bottom performer cards: red-tinted "what died" treatment */
+  .bottom-perf-card {
+    margin: 28px 0;
+    padding: 22px 26px;
+    background: #fdeded;
+    border-left: 4px solid #b03030;
+    border-radius: 8px;
+  }
+  .bottom-perf-card h2 {
+    margin: 0 0 14px;
+    padding: 0;
+    border: none;
+    font-size: 16px;
+    color: #6b1f1f;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .bottom-perf-card h2::before { content: "📉 "; }
+  .bottom-perf-card h3 { margin: 0 0 12px; font-size: 15px; font-weight: 700; color: #6b1f1f; }
+  .bottom-perf-card strong { color: #6b1f1f; font-weight: 700; }
+  .bottom-perf-card li::marker { color: #b03030; }
+  .bottom-perf-card ul { margin: 0; padding-left: 22px; }
+
+  /* Open questions / data gaps card: gray informational */
+  .open-q-card {
+    margin: 28px 0 40px;
+    padding: 20px 24px;
+    background: #f3f0ea;
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+  }
+  .open-q-card h2 {
+    margin: 0 0 12px;
+    padding: 0;
+    border: none;
+    font-size: 14px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .open-q-card h2::before { content: "❓ "; }
+  .open-q-card ul { margin: 0; padding-left: 22px; font-size: 13px; }
+  .open-q-card li { color: var(--text-muted); margin-bottom: 6px; }
+
   /* Color-tinted sections (Hook=orange, Retention=red, CTA=yellow, Verdict=gray) */
   .section-tinted {
     margin: 28px 0;
@@ -518,7 +705,7 @@
 <li><strong>Action 4 [MOF]:</strong> Kill the 30+ minute "Live build" MOF format. The May 15 video hit 11.3% avg view % at 31m46s, meaning it should have been published as BOF or cut to 12 min.</li>
 <li><strong>Action 5 [cross-stage]:</strong> Audit the 25%-mark retention cliff. Every top performer drops from ~95% to ~22% by the 25% mark, meaning the first 60-90 seconds is bleeding viewers across all stages.</li>
 </ul>
-</div><h2><span class="section-num">02</span>Stage mix this month</h2>
+</div><div class="stage-mix-card"><h2><span class="section-num">02</span>Stage mix this month</h2>
 <table>
 <thead>
 <tr>
@@ -530,21 +717,21 @@
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="row-tof">
 <td>TOF</td>
 <td>0</td>
 <td>0%</td>
 <td>40%</td>
 <td>-40pp</td>
 </tr>
-<tr>
+<tr class="row-mof">
 <td>MOF</td>
 <td>7</td>
 <td>70%</td>
 <td>40%</td>
 <td>+30pp</td>
 </tr>
-<tr>
+<tr class="row-bof">
 <td>BOF</td>
 <td>3</td>
 <td>30%</td>
@@ -554,7 +741,7 @@
 </tbody>
 </table>
 <p><strong>Stage mix verdict:</strong> Acquisition engine is not firing. The channel published zero short-form TOF videos and over-indexed 70% on MOF, which is the stage least suited to driving net-new subscriber discovery at the 3K-sub scale.</p>
-<h2><span class="section-num">03</span>Top performer — MOF</h2>
+<div class="stage-mix-bars"><div class="stage-mix-bar-row"><div class="stage-mix-bar-label" style="color: var(--tof)">TOF</div><div class="stage-mix-bar-track"><div class="stage-mix-bar-fill tof" style="width: 0.5%"></div></div><div class="stage-mix-bar-value">0.0%</div></div><div class="stage-mix-bar-row"><div class="stage-mix-bar-label" style="color: var(--mof)">MOF</div><div class="stage-mix-bar-track"><div class="stage-mix-bar-fill mof" style="width: 70.0%"></div></div><div class="stage-mix-bar-value">70.0%</div></div><div class="stage-mix-bar-row"><div class="stage-mix-bar-label" style="color: var(--bof)">BOF</div><div class="stage-mix-bar-track"><div class="stage-mix-bar-fill bof" style="width: 30.0%"></div></div><div class="stage-mix-bar-value">30.0%</div></div></div></div><div class="top-perf-card mof"><h2><span class="section-num">03</span>Top performer — MOF</h2>
 <h3 id="mof-top-performer-ai-found-the-client-ai-set-up-the-systems-i-make-53488mo-this-feels-iegal">MOF top performer: "AI Found the Client. AI Set Up the Systems. I Make $53,488/mo (this feels i*egal)"</h3>
 <ul>
 <li><strong>Published:</strong> 2026-05-13</li>
@@ -566,7 +753,7 @@
 <li>14m21s runtime fits the MOF window cleanly, retention held to ~26% at the 25% mark which is the strongest of any MOF this month.</li>
 </ul>
 <p><div class="chart-label">Retention: <span class="chart-title">AI Found the Client. AI Set Up the Systems. I Make $53,488/mo (this feels i*egal</span> · 2026-05-13 · Avg View 17.8%</div><svg viewBox="0 0 640 240" class="retention-chart" preserveAspectRatio="xMidYMid meet"><defs><linearGradient id="ret-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c4622d" stop-opacity="0.35"/><stop offset="100%" stop-color="#c4622d" stop-opacity="0.02"/></linearGradient></defs><rect x="40" y="20" width="590" height="190" fill="#fdfaf3" stroke="#e0d8c8" stroke-width="0.5"/><line x1="40" y1="67.5" x2="630" y2="67.5" stroke="#e0d8c8" stroke-width="0.5" stroke-dasharray="2,3"/><line x1="40" y1="115.0" x2="630" y2="115.0" stroke="#e0d8c8" stroke-width="0.5" stroke-dasharray="2,3"/><line x1="40" y1="162.5" x2="630" y2="162.5" stroke="#e0d8c8" stroke-width="0.5" stroke-dasharray="2,3"/><polygon points="40.0,27.5 46.0,79.0 51.9,114.2 57.9,121.9 63.8,131.7 69.8,133.1 75.8,135.5 81.7,137.2 87.7,137.6 93.6,142.1 99.6,146.9 105.6,148.6 111.5,149.0 117.5,148.4 123.4,148.2 129.4,150.8 135.4,148.4 141.3,151.6 147.3,152.6 153.2,152.8 159.2,154.1 165.2,156.7 171.1,155.9 177.1,157.3 183.0,158.3 189.0,160.8 194.9,162.4 200.9,162.2 206.9,161.0 212.8,162.2 218.8,164.2 224.7,165.4 230.7,165.3 236.7,165.3 242.6,163.8 248.6,164.8 254.5,167.7 260.5,166.5 266.5,169.9 272.4,167.7 278.4,169.7 284.3,170.1 290.3,168.9 296.3,168.5 302.2,166.9 308.2,167.1 314.1,169.3 320.1,167.3 326.1,169.1 332.0,167.9 338.0,170.9 343.9,170.5 349.9,169.7 355.9,173.0 361.8,173.6 367.8,174.0 373.7,175.4 379.7,176.2 385.7,175.4 391.6,176.8 397.6,177.9 403.5,178.1 409.5,178.3 415.5,177.2 421.4,178.9 427.4,178.7 433.3,179.5 439.3,178.9 445.3,181.1 451.2,179.7 457.2,178.9 463.1,180.9 469.1,181.3 475.1,181.9 481.0,181.5 487.0,184.2 492.9,183.6 498.9,185.4 504.8,185.6 510.8,185.8 516.8,187.0 522.7,184.6 528.7,184.8 534.6,186.4 540.6,186.4 546.6,186.8 552.5,186.0 558.5,186.8 564.4,187.2 570.4,186.2 576.4,187.2 582.3,188.6 588.3,189.9 594.2,189.5 600.2,189.5 606.2,190.3 612.1,190.9 618.1,192.9 624.0,194.5 630.0,198.2 630.0,210 40.0,210" fill="url(#ret-grad)"/><polyline points="40.0,27.5 46.0,79.0 51.9,114.2 57.9,121.9 63.8,131.7 69.8,133.1 75.8,135.5 81.7,137.2 87.7,137.6 93.6,142.1 99.6,146.9 105.6,148.6 111.5,149.0 117.5,148.4 123.4,148.2 129.4,150.8 135.4,148.4 141.3,151.6 147.3,152.6 153.2,152.8 159.2,154.1 165.2,156.7 171.1,155.9 177.1,157.3 183.0,158.3 189.0,160.8 194.9,162.4 200.9,162.2 206.9,161.0 212.8,162.2 218.8,164.2 224.7,165.4 230.7,165.3 236.7,165.3 242.6,163.8 248.6,164.8 254.5,167.7 260.5,166.5 266.5,169.9 272.4,167.7 278.4,169.7 284.3,170.1 290.3,168.9 296.3,168.5 302.2,166.9 308.2,167.1 314.1,169.3 320.1,167.3 326.1,169.1 332.0,167.9 338.0,170.9 343.9,170.5 349.9,169.7 355.9,173.0 361.8,173.6 367.8,174.0 373.7,175.4 379.7,176.2 385.7,175.4 391.6,176.8 397.6,177.9 403.5,178.1 409.5,178.3 415.5,177.2 421.4,178.9 427.4,178.7 433.3,179.5 439.3,178.9 445.3,181.1 451.2,179.7 457.2,178.9 463.1,180.9 469.1,181.3 475.1,181.9 481.0,181.5 487.0,184.2 492.9,183.6 498.9,185.4 504.8,185.6 510.8,185.8 516.8,187.0 522.7,184.6 528.7,184.8 534.6,186.4 540.6,186.4 546.6,186.8 552.5,186.0 558.5,186.8 564.4,187.2 570.4,186.2 576.4,187.2 582.3,188.6 588.3,189.9 594.2,189.5 600.2,189.5 606.2,190.3 612.1,190.9 618.1,192.9 624.0,194.5 630.0,198.2" fill="none" stroke="#c4622d" stroke-width="2.2" stroke-linejoin="round"/><text x="34" y="24" font-size="10" font-family="Inter" fill="#5a5a5a" text-anchor="end">100%</text><text x="34" y="70" font-size="10" font-family="Inter" fill="#8a8a8a" text-anchor="end">75%</text><text x="34" y="118" font-size="10" font-family="Inter" fill="#8a8a8a" text-anchor="end">50%</text><text x="34" y="166" font-size="10" font-family="Inter" fill="#8a8a8a" text-anchor="end">25%</text><text x="34" y="208" font-size="10" font-family="Inter" fill="#5a5a5a" text-anchor="end">0%</text><text x="40" y="234" font-size="10" font-family="Inter" fill="#8a8a8a">0%</text><text x="335.0" y="234" font-size="11" font-family="Inter" font-weight="600" fill="#5a5a5a" text-anchor="middle">video progress (0% to 100%)</text><text x="630" y="234" font-size="10" font-family="Inter" fill="#8a8a8a" text-anchor="end">100%</text><circle cx="51.9" cy="114.2" r="4" fill="#b03030" stroke="#fff" stroke-width="1.5"/><text x="51.9" y="105.2" font-size="9" font-family="Inter" font-weight="600" fill="#b03030" text-anchor="middle">2% · -45.6pp</text></svg></p>
-<h2><span class="section-num">04</span>Top performer — BOF</h2>
+</div><div class="top-perf-card bof"><h2><span class="section-num">04</span>Top performer — BOF</h2>
 <h3 id="bof-top-performer-heres-a-realistic-day-of-an-agency-owner-making-77kmo">BOF top performer: "here's a realistic day of an agency owner making $77k/mo"</h3>
 <ul>
 <li><strong>Published:</strong> 2026-04-27</li>
@@ -578,7 +765,7 @@
 <li>Anti-flex framing ("not gonna see Lambos, Rolexes - this is the first watch I bought") built trust at the exact stage where BOF viewers are evaluating credibility for a $4-5K coaching commitment.</li>
 </ul>
 <p><div class="chart-label">Retention: <span class="chart-title">here's a realistic day of an agency owner making $77k/mo</span> · 2026-04-27 · Avg View 16.1%</div><svg viewBox="0 0 640 240" class="retention-chart" preserveAspectRatio="xMidYMid meet"><defs><linearGradient id="ret-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c4622d" stop-opacity="0.35"/><stop offset="100%" stop-color="#c4622d" stop-opacity="0.02"/></linearGradient></defs><rect x="40" y="20" width="590" height="190" fill="#fdfaf3" stroke="#e0d8c8" stroke-width="0.5"/><line x1="40" y1="67.5" x2="630" y2="67.5" stroke="#e0d8c8" stroke-width="0.5" stroke-dasharray="2,3"/><line x1="40" y1="115.0" x2="630" y2="115.0" stroke="#e0d8c8" stroke-width="0.5" stroke-dasharray="2,3"/><line x1="40" y1="162.5" x2="630" y2="162.5" stroke="#e0d8c8" stroke-width="0.5" stroke-dasharray="2,3"/><polygon points="40.0,27.7 46.0,84.7 51.9,111.9 57.9,123.9 63.8,131.8 69.8,137.9 75.8,140.0 81.7,142.3 87.7,144.9 93.6,147.4 99.6,150.4 105.6,151.9 111.5,153.9 117.5,152.2 123.4,151.6 129.4,154.9 135.4,160.2 141.3,160.1 147.3,156.9 153.2,157.7 159.2,159.1 165.2,159.0 171.1,162.9 177.1,164.7 183.0,166.9 189.0,168.9 194.9,170.2 200.9,170.6 206.9,171.4 212.8,171.4 218.8,168.8 224.7,167.9 230.7,166.0 236.7,166.2 242.6,167.3 248.6,172.3 254.5,172.8 260.5,173.5 266.5,170.7 272.4,168.3 278.4,167.3 284.3,166.0 290.3,169.0 296.3,168.0 302.2,169.5 308.2,171.5 314.1,173.8 320.1,174.3 326.1,174.6 332.0,175.2 338.0,175.0 343.9,176.5 349.9,175.5 355.9,176.7 361.8,178.3 367.8,179.1 373.7,178.8 379.7,181.0 385.7,182.2 391.6,181.6 397.6,182.0 403.5,183.5 409.5,183.5 415.5,184.3 421.4,185.7 427.4,183.1 433.3,181.1 439.3,181.4 445.3,184.5 451.2,186.1 457.2,186.6 463.1,187.6 469.1,188.3 475.1,187.8 481.0,187.7 487.0,186.9 492.9,184.8 498.9,183.9 504.8,181.5 510.8,182.9 516.8,186.0 522.7,186.5 528.7,187.1 534.6,187.8 540.6,185.1 546.6,185.9 552.5,188.0 558.5,188.0 564.4,187.8 570.4,189.1 576.4,191.9 582.3,193.1 588.3,194.6 594.2,196.0 600.2,196.5 606.2,198.0 612.1,198.6 618.1,199.9 624.0,201.8 630.0,202.9 630.0,210 40.0,210" fill="url(#ret-grad)"/><polyline points="40.0,27.7 46.0,84.7 51.9,111.9 57.9,123.9 63.8,131.8 69.8,137.9 75.8,140.0 81.7,142.3 87.7,144.9 93.6,147.4 99.6,150.4 105.6,151.9 111.5,153.9 117.5,152.2 123.4,151.6 129.4,154.9 135.4,160.2 141.3,160.1 147.3,156.9 153.2,157.7 159.2,159.1 165.2,159.0 171.1,162.9 177.1,164.7 183.0,166.9 189.0,168.9 194.9,170.2 200.9,170.6 206.9,171.4 212.8,171.4 218.8,168.8 224.7,167.9 230.7,166.0 236.7,166.2 242.6,167.3 248.6,172.3 254.5,172.8 260.5,173.5 266.5,170.7 272.4,168.3 278.4,167.3 284.3,166.0 290.3,169.0 296.3,168.0 302.2,169.5 308.2,171.5 314.1,173.8 320.1,174.3 326.1,174.6 332.0,175.2 338.0,175.0 343.9,176.5 349.9,175.5 355.9,176.7 361.8,178.3 367.8,179.1 373.7,178.8 379.7,181.0 385.7,182.2 391.6,181.6 397.6,182.0 403.5,183.5 409.5,183.5 415.5,184.3 421.4,185.7 427.4,183.1 433.3,181.1 439.3,181.4 445.3,184.5 451.2,186.1 457.2,186.6 463.1,187.6 469.1,188.3 475.1,187.8 481.0,187.7 487.0,186.9 492.9,184.8 498.9,183.9 504.8,181.5 510.8,182.9 516.8,186.0 522.7,186.5 528.7,187.1 534.6,187.8 540.6,185.1 546.6,185.9 552.5,188.0 558.5,188.0 564.4,187.8 570.4,189.1 576.4,191.9 582.3,193.1 588.3,194.6 594.2,196.0 600.2,196.5 606.2,198.0 612.1,198.6 618.1,199.9 624.0,201.8 630.0,202.9" fill="none" stroke="#c4622d" stroke-width="2.2" stroke-linejoin="round"/><text x="34" y="24" font-size="10" font-family="Inter" fill="#5a5a5a" text-anchor="end">100%</text><text x="34" y="70" font-size="10" font-family="Inter" fill="#8a8a8a" text-anchor="end">75%</text><text x="34" y="118" font-size="10" font-family="Inter" fill="#8a8a8a" text-anchor="end">50%</text><text x="34" y="166" font-size="10" font-family="Inter" fill="#8a8a8a" text-anchor="end">25%</text><text x="34" y="208" font-size="10" font-family="Inter" fill="#5a5a5a" text-anchor="end">0%</text><text x="40" y="234" font-size="10" font-family="Inter" fill="#8a8a8a">0%</text><text x="335.0" y="234" font-size="11" font-family="Inter" font-weight="600" fill="#5a5a5a" text-anchor="middle">video progress (0% to 100%)</text><text x="630" y="234" font-size="10" font-family="Inter" fill="#8a8a8a" text-anchor="end">100%</text><circle cx="51.9" cy="111.9" r="4" fill="#b03030" stroke="#fff" stroke-width="1.5"/><text x="51.9" y="102.9" font-size="9" font-family="Inter" font-weight="600" fill="#b03030" text-anchor="middle">2% · -44.3pp</text></svg></p>
-<h2><span class="section-num">05</span>Bottom performer — MOF</h2>
+</div><div class="bottom-perf-card"><h2><span class="section-num">05</span>Bottom performer — MOF</h2>
 <h3 id="mof-bottom-performer-i-built-a-235289-ai-service-for-a-client-in-31-minutes-live">MOF bottom performer: "I Built a $235,289 AI Service For a Client in 31 Minutes (Live)"</h3>
 <ul>
 <li><strong>Published:</strong> 2026-05-15</li>
@@ -589,7 +776,7 @@
 <li>Length/stage mismatch. 31m46s is BOF runtime being marketed and tagged as MOF, so MOF-intent viewers bounced when the runtime didn't match the scannable promise.</li>
 <li>The "Live build" format demands deep trust to commit 30+ min, which MOF viewers don't have yet. Same content as a 12-min "here's the framework" cut would likely have cleared 20% retention.</li>
 </ul>
-<h2><span class="section-num">06</span>Bottom performer — BOF</h2>
+</div><div class="bottom-perf-card"><h2><span class="section-num">06</span>Bottom performer — BOF</h2>
 <h3 id="bof-bottom-performer-watch-me-build-a-30000mo-agency-in-33-minutes">BOF bottom performer: "Watch Me Build A $30,000/Mo Agency In 33 Minutes"</h3>
 <ul>
 <li><strong>Published:</strong> 2026-04-24</li>
@@ -600,12 +787,12 @@
 <li>91.3% start retention is the lowest of any top performer this month, suggesting the cold open didn't establish stakes fast enough for a 33-min commitment.</li>
 <li>Sub conversion (7 from 1,069 views = 0.65%) was 4x weaker than the "$77k/mo day in the life" BOF, pointing to a CTA or trust-build gap in the back half rather than a hook problem.</li>
 </ul>
-<h2><span class="section-num">07</span>Open questions / data gaps</h2>
+</div><div class="open-q-card"><h2><span class="section-num">07</span>Open questions / data gaps</h2>
 <ul>
 <li>CTR + Impressions data still empty across all 10 videos. Cannot diagnose whether the 0 TOF problem is a publishing gap or a thumbnail-CTR gap on existing content.</li>
 <li>Only 2 BOF videos with full retention data this month - too thin to derive a stable BOF length-vs-completion curve.</li>
 <li>No comment-volume or theme-extraction data in the dump, so audience objection patterns at the 25%-mark retention cliff remain unmapped.</li>
-</ul>
+</ul></div>
 <div class="glossary">
 <h3>How to read this report</h3>
 <dl>
