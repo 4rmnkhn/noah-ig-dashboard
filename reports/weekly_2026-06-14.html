@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Noah IG Weekly - Jun 13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f1e8;
+    --surface: #fbf8f2;
+    --ink: #1a1a1a;
+    --ink-muted: #5c5c5c;
+    --line: #e3ddd0;
+    --line-strong: #1a1a1a;
+
+    --green-fill: #ecf7ee;
+    --green-edge: #2e8b3a;
+    --green-ink: #1f5f27;
+
+    --yellow-fill: #fff7d1;
+    --yellow-edge: #b58105;
+    --yellow-ink: #6b4d00;
+
+    --red-fill: #ffe1e1;
+    --red-edge: #c0392b;
+    --red-ink: #7a1f15;
+
+    --blue-fill: #e3edfa;
+    --blue-edge: #305bab;
+    --blue-ink: #1f3d75;
+
+    --gray-fill: var(--surface);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    font-feature-settings: "cv11", "ss01", "ss03";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 64px 32px 96px;
+  }
+
+  /* header */
+  header { margin-bottom: 56px; }
+  .eyebrow {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-muted);
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: 44px;
+    line-height: 1.1;
+    font-weight: 700;
+    margin: 0 0 16px;
+    letter-spacing: -0.02em;
+  }
+  .subtitle {
+    font-size: 19px;
+    color: var(--ink-muted);
+    margin: 0;
+    max-width: 720px;
+    line-height: 1.5;
+  }
+
+  /* section */
+  section { margin-top: 56px; }
+  h2 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-muted);
+    font-weight: 600;
+    margin: 0 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  /* breakout card */
+  .breakout {
+    padding: 32px;
+    background: var(--green-fill);
+    border: 1.5px solid var(--green-edge);
+    border-radius: 12px;
+  }
+  .breakout-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--green-ink);
+    margin: 0 0 8px;
+  }
+  .breakout-title {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 16px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .breakout-stats {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+    font-size: 14px;
+    color: var(--green-ink);
+  }
+  .breakout-stats strong { color: var(--ink); font-size: 18px; }
+  .breakout-body {
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .breakout-body strong { color: var(--green-ink); }
+
+  /* action cards */
+  .actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .action {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 20px;
+    padding: 20px 22px;
+    background: var(--gray-fill);
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+  }
+  .action.tinted-green  { background: var(--green-fill);  border-color: var(--green-edge);  }
+  .action.tinted-yellow { background: var(--yellow-fill); border-color: var(--yellow-edge); }
+  .action.tinted-blue   { background: var(--blue-fill);   border-color: var(--blue-edge);   }
+
+  .action-num {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+    padding-top: 2px;
+  }
+  .action-num.green  { color: var(--green-ink); }
+  .action-num.yellow { color: var(--yellow-ink); }
+  .action-num.blue   { color: var(--blue-ink); }
+
+  .action-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+  .action-body {
+    font-size: 15px;
+    color: var(--ink-muted);
+    margin: 0;
+    line-height: 1.55;
+  }
+  .action-body strong { color: var(--ink); }
+
+  /* misses callout */
+  .misses {
+    padding: 24px 28px;
+    background: var(--red-fill);
+    border-left: 4px solid var(--red-edge);
+    border-radius: 6px;
+  }
+  .misses-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--red-ink);
+    margin: 0 0 12px;
+  }
+  .misses-list { margin: 0; padding: 0; list-style: none; }
+  .misses-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(192,57,43,0.2);
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .misses-list li:last-child { border-bottom: none; }
+  .misses-list .hook { font-weight: 600; }
+  .misses-list .why { color: var(--red-ink); font-size: 14px; }
+
+  /* delta grid */
+  .delta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .delta-card {
+    padding: 18px 20px;
+    background: var(--blue-fill);
+    border: 1.5px solid var(--blue-edge);
+    border-radius: 10px;
+  }
+  .delta-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--blue-ink);
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+  .delta-value {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 4px;
+    color: var(--ink);
+  }
+  .delta-arrow { font-size: 18px; }
+  .delta-arrow.up   { color: var(--green-ink); }
+  .delta-arrow.down { color: var(--red-ink); }
+  .delta-arrow.flat { color: var(--ink-muted); }
+  .delta-was {
+    font-size: 12px;
+    color: var(--ink-muted);
+  }
+
+  /* empty-state card for no-reel weeks */
+  .empty-week {
+    padding: 28px 30px;
+    background: var(--surface);
+    border: 1.5px dashed var(--line);
+    border-radius: 10px;
+    text-align: center;
+  }
+  .empty-week-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    color: var(--ink);
+  }
+  .empty-week-body {
+    font-size: 14px;
+    color: var(--ink-muted);
+    margin: 0;
+    line-height: 1.55;
+  }
+
+  /* the numbers (tables) */
+  details.numbers {
+    margin-top: 12px;
+    padding: 18px 22px;
+    background: var(--surface);
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+  }
+  details.numbers summary {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+    list-style: none;
+    user-select: none;
+  }
+  details.numbers summary::-webkit-details-marker { display: none; }
+  details.numbers summary::before {
+    content: "▸ ";
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-right: 4px;
+  }
+  details.numbers[open] summary::before { content: "▾ "; }
+  details.numbers > .num-block { margin-top: 18px; }
+
+  table.num {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 22px;
+  }
+  table.num thead tr { border-bottom: 2px solid var(--line-strong); }
+  table.num th {
+    text-align: left;
+    padding: 8px 10px;
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-muted);
+  }
+  table.num tbody tr { border-bottom: 1px solid var(--line); }
+  table.num td { padding: 8px 10px; vertical-align: top; }
+  table.num tr.top-row { background: var(--green-fill); }
+  table.num tr.bot-row { background: var(--red-fill); }
+  .num-h3 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ink-muted); margin: 0 0 10px; font-weight: 700; }
+
+  /* glossary */
+  .glossary {
+    padding: 22px 24px;
+    background: var(--surface);
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+  }
+  .glossary-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 28px;
+  }
+  .glossary-list li {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink-muted);
+  }
+  .glossary-list strong {
+    color: var(--ink);
+    display: block;
+    font-size: 13px;
+    margin-bottom: 2px;
+  }
+
+  footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--ink-muted);
+  }
+
+  @media (max-width: 720px) {
+    .wrap { padding: 40px 20px 64px; }
+    h1 { font-size: 32px; }
+    .breakout { padding: 24px; }
+    .breakout-title { font-size: 22px; }
+    .delta-grid { grid-template-columns: 1fr 1fr; }
+    .glossary-list { grid-template-columns: 1fr; }
+    .action { grid-template-columns: 44px 1fr; gap: 14px; padding: 16px 18px; }
+    .action-num { font-size: 20px; }
+    table.num { display: block; overflow-x: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">weekly report · jun 13</div>
+    <h1>Zero reels posted. The June YouTube pivot stopped the IG feed cold.</h1>
+    <p class="subtitle">Nothing went out between Jun 7 and Jun 13. The Noah call on May 25 locked June as the YouTube month, and the IG cadence followed. Last week's read still holds: comparison hooks and Cold SMS were the only patterns clearing the bar when filming was active.</p>
+
+    <div class="breakout">
+      <p class="breakout-eyebrow">★ Rolling #1 · what to anchor on when filming resumes</p>
+      <p class="breakout-title"><a href="https://www.instagram.com/reel/DYmyvqSRLTx/" style="color:inherit;text-decoration:none;border-bottom:1px dotted #999;">"this is how to book 5 to 10 appointments/day using paid ads"</a></p>
+      <div class="breakout-stats">
+        <span><strong>2,980</strong><br/>people saw it</span>
+        <span><strong>4.35%</strong><br/>saved it</span>
+        <span><strong>54s</strong><br/>length</span>
+        <span><strong>Talking-Head</strong><br/>format</span>
+      </div>
+      <p class="breakout-body">The rolling #1 by save rate at <strong>3.7x baseline</strong>. The hook does the work in the first six words: <strong>specific outcome</strong> ("book 5 to 10 appointments/day"), <strong>specific channel</strong> ("using paid ads"). Tight 54s, Talking-Head, no theatrics. Six of the top ten by save rate are in this exact family: paid-ads tactical reels naming a measurable appointment count. The recipe to film against next.</p>
+    </div>
+  </header>
+
+  <section>
+    <h2>Make when filming resumes</h2>
+    <div class="actions">
+
+      <div class="action tinted-green">
+        <div class="action-num green">1</div>
+        <div>
+          <p class="action-title">Open the next batch with paid-ads-to-appointments.</p>
+          <p class="action-body">The rolling top 10 is now built on six paid-ads-to-appointments reels: "<strong>book 5 to 10 appointments/day using paid ads</strong>" (4.35%), "<strong>print 4-6 appts/day with paid ads</strong>" (3.96%), "<strong>$100k/mo image ads</strong>" (3.62%), "<strong>booking 10 appointment today with paid ads</strong>" (3.20%), and two Andromeda-update reels. The structure is the same every time: dollar number or appointment count in the first line, then the campaign mechanics. Ship three more in this family before any other angle when the feed reopens. Hooks to film next: "this is how I print 6 appointments a day with $50/day in ads", "the exact Meta campaign structure I use for $100k/mo agencies", "image ads vs video ads for booking calls" (re-cut of last week's #1, see action #3).</p>
+        </div>
+      </div>
+
+      <div class="action tinted-yellow">
+        <div class="action-num yellow">2</div>
+        <div>
+          <p class="action-title">Lock the 46-90s duration band as the default.</p>
+          <p class="action-body">The rolling read on length tightened: <strong>61-90s saves at 1.80% median</strong> on 37 reels, <strong>46-60s at 1.76% on 32 reels</strong>, the two bands sit almost tied. The rolling top 10 averages 60s exactly. Under 45s collapses (0-30s at 0.26%, 31-45s at 0.73%). Set the default script length at 55-75s. Push to 90s only when a multi-step ad-strategy breakdown earns the runway. Never under 45s on a tactical reel.</p>
+        </div>
+      </div>
+
+      <div class="action tinted-blue">
+        <div class="action-num blue">3</div>
+        <div>
+          <p class="action-title">Re-cut last week's comparison breakout for reach.</p>
+          <p class="action-body">"<strong>image ads vs video ads for agency owners</strong>" saved at 2.39% on Jun 3 (the only Jun 1-6 reel to clear rolling baseline) but reached only <strong>559</strong>. The save says it lands, the open didn't travel. Re-shoot with the verdict spoken in the first second and the two options as a bold on-screen split ("IMAGE ADS vs VIDEO ADS") behind Noah's head. Also worth a Green-Screen variant with both ad types side by side on screen.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Avoid when filming resumes</h2>
+    <div class="misses">
+      <p class="misses-label">✕ 4 patterns the rolling data and last week's misses already proved kill save rate. Don't re-open the feed with these.</p>
+      <ul class="misses-list">
+        <li>
+          <div class="hook">Off-pillar lifestyle and motivation. "walkmaxxing", "trust in God", "be grateful", "Get back to work bro"</div>
+          <div class="why">Every reel on the bottom 10 rolling list (saves 0.00% to 0.17%) is off-pillar lifestyle or generic motivation. Last week's "walkmaxxing" pulled <strong>1,420 reach with 0.63% save</strong>: high reach, no agency takeaway, dragged the median down. Keep the feed agency-only.</div>
+        </li>
+        <li>
+          <div class="hook">Crowd framing. "every entrepreneur and business owner", "Most agency owners", "as a business owner"</div>
+          <div class="why">Last week's "every entrepreneur and business owner should be doing this" saved at <strong>0.27%</strong> on a 28s reel. Crowd framing lets the viewer opt out before the hook lands. Address "you" and name what you're saying in the first line.</div>
+        </li>
+        <li>
+          <div class="hook">Numbered sequels. "how to scale your agency with paid ads part 10"</div>
+          <div class="why">Zero saves on 158 reach, 99s, 7.8% completion. "part 10" signals an exhausted series with no fresh promise. If the paid-ads angle earns another reel, give it a new specific hook in the appointments-per-day family.</div>
+        </li>
+        <li>
+          <div class="hook">Reels under 45 seconds.</div>
+          <div class="why">0-30s saves at <strong>0.26% rolling</strong>, 31-45s at <strong>0.73%</strong>. The 61-90s peak is 1.80%. Even the 28s "every entrepreneur" reel last week is the live example: short, high completion, zero save. Default to 55-75s on every tactical script.</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>The week in numbers</h2>
+    <div class="delta-grid">
+      <div class="delta-card">
+        <div class="delta-label">Reels posted</div>
+        <div class="delta-value">0 <span class="delta-arrow down">↓</span></div>
+        <div class="delta-was">Last week: 14</div>
+      </div>
+      <div class="delta-card">
+        <div class="delta-label">Median reach</div>
+        <div class="delta-value">— <span class="delta-arrow flat"></span></div>
+        <div class="delta-was">Last week: 459</div>
+      </div>
+      <div class="delta-card">
+        <div class="delta-label">Median save rate</div>
+        <div class="delta-value">— <span class="delta-arrow flat"></span></div>
+        <div class="delta-was">Last week: 0.95%</div>
+      </div>
+    </div>
+    <p style="font-size:14px;color:var(--ink-muted);margin-top:14px;line-height:1.55;">No reels means no weekly medians to read. The only number that moved was velocity: 14 last week to 0 this week. The Noah call on May 25 locked June as the YouTube month and the IG cadence followed. Account momentum decays without distribution: every week dark is a week the algorithm widens the gap between Noah and his rolling top 10's reach (8,038 on the "you're cooked" reel, 5,358 on the SMS reel). Plan a reset week when filming resumes: three paid-ads-to-appointments reels back to back in the 55-75s band.</p>
+  </section>
+
+  <section>
+    <h2>This week's reels</h2>
+    <div class="empty-week">
+      <p class="empty-week-title">No reels posted Jun 7 - Jun 13.</p>
+      <p class="empty-week-body">IG feed dark for the YouTube-pivot week. Resume the cadence the week filming opens back up. Anchor the first batch on the paid-ads-to-appointments hook family (see breakout and action #1).</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>The numbers</h2>
+
+    <details class="numbers">
+      <summary>Top 10 rolling (all reels, reach ≥ 500)</summary>
+      <div class="num-block">
+        <table class="num">
+          <thead>
+            <tr><th>#</th><th>Save</th><th>Reach</th><th>Length</th><th>Format</th><th>Hook</th></tr>
+          </thead>
+          <tbody>
+<tr class="top-row"><td>1</td><td>4.35%</td><td>2,980</td><td>54s</td><td>Talking-Head</td><td>this is how to book 5 to 10 appointments/day using paid ads</td></tr>
+<tr class="top-row"><td>2</td><td>4.01%</td><td>5,358</td><td>71s</td><td>Talking-Head</td><td>this SMS message will book you 10 appointments today</td></tr>
+<tr class="top-row"><td>3</td><td>3.96%</td><td>3,764</td><td>58s</td><td>Talking-Head</td><td>How do I print 4-6 appts/day with paid ads</td></tr>
+<tr class="top-row"><td>4</td><td>3.91%</td><td>4,211</td><td>56s</td><td>Talking-Head</td><td>breaking down a $100k/mo agency</td></tr>
+<tr class="top-row"><td>5</td><td>3.89%</td><td>601</td><td>61s</td><td>Talking-Head</td><td>how to scale to $100k/mo with paid ads</td></tr>
+<tr class="top-row"><td>6</td><td>3.79%</td><td>1,358</td><td>67s</td><td>Talking-Head</td><td>you need to do these three things if you want to double your show rate</td></tr>
+<tr class="top-row"><td>7</td><td>3.62%</td><td>2,612</td><td>66s</td><td>Talking-Head</td><td>this is exactly how I print $100k/mo image ads for my agency</td></tr>
+<tr class="top-row"><td>8</td><td>3.40%</td><td>10,244</td><td>57s</td><td>Talking-Head</td><td>you’re cooked if you’re not booking 5-10 appointments per day for your agency</td></tr>
+<tr class="top-row"><td>9</td><td>3.37%</td><td>1,604</td><td>56s</td><td>Talking-Head</td><td>with the new Andromeda update, the way you run ads has changed</td></tr>
+<tr class="top-row"><td>10</td><td>3.20%</td><td>1,539</td><td>67s</td><td>Talking-Head</td><td>booking 10 appointment today with paid ads is a lot simpler than most people think</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <details class="numbers">
+      <summary>Bottom 10 rolling</summary>
+      <div class="num-block">
+        <table class="num">
+          <thead>
+            <tr><th>#</th><th>Save</th><th>Reach</th><th>Length</th><th>Hook</th></tr>
+          </thead>
+          <tbody>
+<tr class="bot-row"><td>1</td><td>0.00%</td><td>829</td><td>44s</td><td>be grateful.</td></tr>
+<tr class="bot-row"><td>2</td><td>0.00%</td><td>553</td><td>n/a</td><td>pov: you’re about to have the craziest comeback in 2026</td></tr>
+<tr class="bot-row"><td>3</td><td>0.00%</td><td>572</td><td>n/a</td><td>We all have the same tools, what matters is how you use them.</td></tr>
+<tr class="bot-row"><td>4</td><td>0.00%</td><td>636</td><td>n/a</td><td>Get back to work bro.</td></tr>
+<tr class="bot-row"><td>5</td><td>0.12%</td><td>1,495</td><td>14s</td><td>times have changed.</td></tr>
+<tr class="bot-row"><td>6</td><td>0.12%</td><td>716</td><td>6s</td><td>cafemaxxing >> ☕️</td></tr>
+<tr class="bot-row"><td>7</td><td>0.15%</td><td>679</td><td>n/a</td><td>#smma #aiagency</td></tr>
+<tr class="bot-row"><td>8</td><td>0.16%</td><td>1,880</td><td>n/a</td><td>just keep pushing bro, your time will come.</td></tr>
+<tr class="bot-row"><td>9</td><td>0.17%</td><td>585</td><td>n/a</td><td>Spamming cafe method</td></tr>
+<tr class="bot-row"><td>10</td><td>0.17%</td><td>587</td><td>n/a</td><td>The only way to $30k months.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <details class="numbers">
+      <summary>Best length band + format leaderboard</summary>
+      <div class="num-block">
+        <p class="num-h3">Save rate by length</p>
+        <table class="num">
+          <thead><tr><th>Length</th><th>Reels</th><th>Median save</th></tr></thead>
+          <tbody>
+<tr><td>0-30s</td><td>5</td><td>0.26%</td></tr>
+<tr><td>31-45s</td><td>15</td><td>0.73%</td></tr>
+<tr><td>46-60s</td><td>32</td><td>1.75%</td></tr>
+<tr style="background:var(--green-fill)"><td><strong>61-90s</strong></td><td>37</td><td><strong>1.80%</strong></td></tr>
+<tr><td>90s+</td><td>14</td><td>1.56%</td></tr>
+          </tbody>
+        </table>
+
+        <p class="num-h3">Save rate by format</p>
+        <table class="num">
+          <thead><tr><th>Format</th><th>Reels</th><th>Median save</th></tr></thead>
+          <tbody>
+<tr style="background:var(--green-fill)"><td><strong>Talking-Head</strong></td><td>74</td><td><strong>1.76%</strong></td></tr>
+<tr><td>Green-Screen-Type</td><td>8</td><td>1.62%</td></tr>
+<tr><td>Podcast-Type</td><td>2</td><td>0.73%</td></tr>
+<tr><td>Coaching-Call-Type</td><td>2</td><td>0.52%</td></tr>
+<tr><td>Long-Form-Clip-Type</td><td>1</td><td>0.30%</td></tr>
+<tr><td>Discord-QA</td><td>0</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+  </section>
+
+  <section>
+    <details class="numbers">
+      <summary>What the words mean</summary>
+      <div class="num-block">
+        <ul class="glossary-list" style="list-style:none;padding-left:0;margin:0;">
+          <li style="margin-bottom:10px;"><strong>Reach.</strong> Number of people who saw the reel at all. Bigger reach = IG pushed it.</li>
+          <li style="margin-bottom:10px;"><strong>Save rate.</strong> % of people who hit Save. The strongest signal a reel actually resonated, way more meaningful than likes.</li>
+          <li style="margin-bottom:10px;"><strong>Completion rate.</strong> Average % of the reel watched. Not "watched to the end", average across all viewers.</li>
+          <li style="margin-bottom:10px;"><strong>Median (vs average).</strong> The middle reel. Half scored higher, half lower. Used instead of average so one breakout doesn't distort the picture.</li>
+          <li style="margin-bottom:10px;"><strong>Rolling baseline.</strong> The median across every reel ever, qualified at 500+ reach. Anything 2x baseline counts as a hit.</li>
+          <li><strong>Format / Pillar.</strong> What kind of reel it is: Green-Screen, Talking-Head, Podcast clip, etc. Set in the Notion tracker.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <footer>
+    Generated 2026-06-14 · auto-posted to #ig-weekly-content-report. Next report: 2026-06-21.
+  </footer>
+
+</div>
+</body>
+</html>
